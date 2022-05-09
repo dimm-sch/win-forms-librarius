@@ -61,6 +61,7 @@ namespace forms_librarie_app
 			if (!password.Equals(foundUser.Password))
 			{
 				MessageBox.Show("Parola introdusă este incorectă!");
+				textBoxUserPassword.Clear();
 				return;
 			}
 
