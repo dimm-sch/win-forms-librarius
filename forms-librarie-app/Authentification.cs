@@ -13,13 +13,12 @@ namespace forms_librarie_app
 	public partial class Authentification : Form
 	{
 
-		private Dictionary<string, UserInfo> usersCredentials = new Dictionary<string, UserInfo>();
-		private Main sender;
+		private Main mainSender;
 
-		public Authentification(Main sender)
+		public Authentification(Main mainSender)
 		{
 			InitializeComponent();
-			this.sender = sender;
+			this.mainSender = mainSender;
 		}
 
 		private void Authentification_Load(object sender, EventArgs e)
@@ -30,6 +29,8 @@ namespace forms_librarie_app
 
 		private void buttonLogIn_Click(object sender, EventArgs e)
 		{
+			Dictionary<string, UserInfo> usersCredentials = Registration.readSavedUsers();
+
 			string username = textBoxUserName.Text;
 			string password = textBoxUserPassword.Text;
 
@@ -64,7 +65,15 @@ namespace forms_librarie_app
 				return;
 			}
 
-			this.sender.authentifyUser(foundUser);
+			this.mainSender.authentifyUser(foundUser);
+			this.Close();
+		}
+
+		private void linkLabelSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Registration r = new Registration(mainSender);
+			r.StartPosition = FormStartPosition.CenterScreen;
+			r.Show();
 			this.Close();
 		}
 	}

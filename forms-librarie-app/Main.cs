@@ -82,9 +82,10 @@ namespace forms_librarie_app
 			catalog.Visible = false;
 		}
 
-		private void buttonMainPageAthentification_MouseClick(object sender, MouseEventArgs e)
+		private void buttonMainPageAthentification_Click(object sender, EventArgs e)
 		{
 			Authentification a = new Authentification(this);
+			a.StartPosition = FormStartPosition.CenterScreen;
 			a.Show();
 		}
 
@@ -97,5 +98,7 @@ namespace forms_librarie_app
 		{
 			authentifiedUser = user;
 		}
+
+
 	}
 }

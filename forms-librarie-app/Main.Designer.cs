@@ -37,6 +37,7 @@
 			this.textBoxDebug = new System.Windows.Forms.TextBox();
 			this.panelContent = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.buttonMainPageAthentification = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
 			this.panelMainPage.SuspendLayout();
 			this.panelContent.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSidebar
@@ -129,8 +131,6 @@
 			// 
 			this.panelContent.BackColor = System.Drawing.Color.Brown;
 			this.panelContent.Controls.Add(this.panel1);
-			this.panelContent.Controls.Add(this.label1);
-			this.panelContent.Controls.Add(this.buttonMainPageAthentification);
 			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelContent.Location = new System.Drawing.Point(220, 0);
 			this.panelContent.Name = "panelContent";
@@ -139,13 +139,24 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackgroundImage = global::forms_librarie_app.Properties.Resources.logo_removebg;
-			this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Location = new System.Drawing.Point(136, 0);
+			this.panel1.Controls.Add(this.panel2);
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Controls.Add(this.buttonMainPageAthentification);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(542, 247);
-			this.panel1.TabIndex = 5;
+			this.panel1.Size = new System.Drawing.Size(818, 605);
+			this.panel1.TabIndex = 0;
+			// 
+			// panel2
+			// 
+			this.panel2.BackgroundImage = global::forms_librarie_app.Properties.Resources.logo_removebg;
+			this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.panel2.Controls.Add(this.label2);
+			this.panel2.Location = new System.Drawing.Point(138, 31);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(542, 247);
+			this.panel2.TabIndex = 8;
 			// 
 			// label2
 			// 
@@ -163,10 +174,10 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(230, 328);
+			this.label1.Location = new System.Drawing.Point(232, 359);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(353, 34);
-			this.label1.TabIndex = 4;
+			this.label1.TabIndex = 7;
 			this.label1.Text = "Vă rugăm să vă autentificați";
 			// 
 			// buttonMainPageAthentification
@@ -174,13 +185,13 @@
 			this.buttonMainPageAthentification.BackColor = System.Drawing.Color.Brown;
 			this.buttonMainPageAthentification.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonMainPageAthentification.ForeColor = System.Drawing.Color.White;
-			this.buttonMainPageAthentification.Location = new System.Drawing.Point(183, 377);
+			this.buttonMainPageAthentification.Location = new System.Drawing.Point(185, 408);
 			this.buttonMainPageAthentification.Name = "buttonMainPageAthentification";
 			this.buttonMainPageAthentification.Size = new System.Drawing.Size(451, 94);
-			this.buttonMainPageAthentification.TabIndex = 3;
+			this.buttonMainPageAthentification.TabIndex = 6;
 			this.buttonMainPageAthentification.Text = "Autentificare";
 			this.buttonMainPageAthentification.UseVisualStyleBackColor = false;
-			this.buttonMainPageAthentification.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonMainPageAthentification_MouseClick);
+			this.buttonMainPageAthentification.Click += new System.EventHandler(this.buttonMainPageAthentification_Click);
 			// 
 			// Main
 			// 
@@ -202,9 +213,10 @@
 			this.panelCatalog.PerformLayout();
 			this.panelMainPage.ResumeLayout(false);
 			this.panelContent.ResumeLayout(false);
-			this.panelContent.PerformLayout();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -219,8 +231,9 @@
 		private System.Windows.Forms.Panel panelContent;
 		private System.Windows.Forms.Panel panelMainPage;
 		private System.Windows.Forms.Label labelMainPage;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button buttonMainPageAthentification;
 	}

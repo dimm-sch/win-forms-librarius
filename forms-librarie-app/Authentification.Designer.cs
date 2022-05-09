@@ -33,7 +33,7 @@
 			this.textBoxUserName = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.textBoxUserPassword = new System.Windows.Forms.TextBox();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.linkLabelSignUp = new System.Windows.Forms.LinkLabel();
 			this.label4 = new System.Windows.Forms.Label();
 			this.comboBoxLoginType = new System.Windows.Forms.ComboBox();
 			this.buttonLogIn = new System.Windows.Forms.Button();
@@ -89,17 +89,18 @@
 			this.textBoxUserPassword.TabIndex = 4;
 			this.textBoxUserPassword.UseSystemPasswordChar = true;
 			// 
-			// linkLabel1
+			// linkLabelSignUp
 			// 
-			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.linkLabel1.LinkColor = System.Drawing.Color.White;
-			this.linkLabel1.Location = new System.Drawing.Point(12, 421);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(166, 25);
-			this.linkLabel1.TabIndex = 5;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "Creare cont nou";
+			this.linkLabelSignUp.AutoSize = true;
+			this.linkLabelSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkLabelSignUp.LinkColor = System.Drawing.Color.White;
+			this.linkLabelSignUp.Location = new System.Drawing.Point(12, 421);
+			this.linkLabelSignUp.Name = "linkLabelSignUp";
+			this.linkLabelSignUp.Size = new System.Drawing.Size(166, 25);
+			this.linkLabelSignUp.TabIndex = 5;
+			this.linkLabelSignUp.TabStop = true;
+			this.linkLabelSignUp.Text = "Creare cont nou";
+			this.linkLabelSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSignUp_LinkClicked);
 			// 
 			// label4
 			// 
@@ -147,7 +148,7 @@
 			this.Controls.Add(this.buttonLogIn);
 			this.Controls.Add(this.comboBoxLoginType);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.linkLabel1);
+			this.Controls.Add(this.linkLabelSignUp);
 			this.Controls.Add(this.textBoxUserPassword);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.textBoxUserName);
@@ -168,7 +169,7 @@
 		private System.Windows.Forms.TextBox textBoxUserName;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox textBoxUserPassword;
-		private System.Windows.Forms.LinkLabel linkLabel1;
+		private System.Windows.Forms.LinkLabel linkLabelSignUp;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox comboBoxLoginType;
 		private System.Windows.Forms.Button buttonLogIn;

@@ -9,9 +9,16 @@ namespace forms_librarie_app
 	public class UserInfo
 	{
 
-		private string password;
 		private string name;
+		private string password;
 		private string role;
+
+		public UserInfo(string name, string password, string role)
+		{
+			this.name = name;
+			this.password = password;
+			this.role = role;
+		}
 
 		public string Password { get => password; }
 		public string Name { get => name; }
