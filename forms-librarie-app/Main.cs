@@ -13,7 +13,8 @@ namespace forms_librarie_app
 	public partial class Main : Form
 	{
 
-		Catalog catalog = new Catalog();
+		private UserInfo authentifiedUser = null;
+		private Catalog catalog = new Catalog();
 
 		public Main()
 		{
@@ -26,7 +27,7 @@ namespace forms_librarie_app
 			labelCatalog.Cursor = Cursors.Hand;
 			panelMainPage.Cursor = Cursors.Hand;
 			labelMainPage.Cursor = Cursors.Hand;
-
+			buttonMainPageAthentification.Cursor = Cursors.Hand;
 			catalog.Visible = false;
 			panelContent.Controls.Add(catalog);
 		}
@@ -61,14 +62,40 @@ namespace forms_librarie_app
 
 		private void catalog_Click(object sender, MouseEventArgs e)
 		{
+			if (!isUserAuthentified())
+			{
+				MessageBox.Show("Vă rugăm să vă autentificați");
+				return;
+			}
+
 			catalog.Visible = true;
 		}
 
 		private void mainPage_Click(object sender, MouseEventArgs e)
 		{
+			if (!isUserAuthentified())
+			{
+				MessageBox.Show("Vă rugăm să vă autentificați");
+				return;
+			}
+
 			catalog.Visible = false;
 		}
 
-		
+		private void buttonMainPageAthentification_MouseClick(object sender, MouseEventArgs e)
+		{
+			Authentification a = new Authentification(this);
+			a.Show();
+		}
+
+		private bool isUserAuthentified()
+		{
+			return authentifiedUser != null;
+		}
+
+		public void authentifyUser(UserInfo user)
+		{
+			authentifiedUser = user;
+		}
 	}
 }

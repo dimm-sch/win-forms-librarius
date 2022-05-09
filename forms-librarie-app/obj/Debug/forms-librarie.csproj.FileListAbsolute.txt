@@ -10,3 +10,4 @@ C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\
 C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.Catalog.resources
 C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.Main.resources
 C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.BookInformation.resources
+C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.Authentification.resources

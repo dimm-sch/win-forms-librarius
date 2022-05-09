@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.IO;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace forms_librarie_app
 {
@@ -16,9 +17,10 @@ namespace forms_librarie_app
 
 		static LibraryDatabase()
 		{
-			const string dataSource = "win-7\\sqlserver";
-			const string database = "librarius";
-			const string connectionString = "Data Source=" + dataSource + "; Database=" + database + "; Integrated Security = true;";
+			string hostname = Dns.GetHostName();
+			string dataSource = hostname + "\\sqlserver";
+			string database = "librarius";
+			string connectionString = "Data Source=" + dataSource + "; Database=" + database + "; Integrated Security = true;";
 			connection = new SqlConnection(connectionString);
 			connection.Open();
 		}

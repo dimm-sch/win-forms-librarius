@@ -47,11 +47,11 @@ namespace forms_librarie_app
 			dataGridViewCarti.Columns[0].Width = 450;
 		}
 
-		private void dataGridViewCarti_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+		private void dataGridViewCarti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			BookInformation bookInfo = new BookInformation();
 			Control[] label1Control = bookInfo.Controls.Find("label1", false);
-			Label label = (Label) label1Control[0];
+			Label label = (Label)label1Control[0];
 			label.Text = "You found me!";
 
 			bookInfo.Show();
