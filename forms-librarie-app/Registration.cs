@@ -67,7 +67,7 @@ namespace forms_librarie_app
 			Dictionary<string, UserInfo> users = readSavedUsers();
 			if (users.ContainsKey(username))
 			{
-				MessageBox.Show("Numele de utilizator introdus este ocupat. Vă rugăm să introduceți alt nume!");
+				MessageBox.Show("Numele de utilizator introdus este deja înregistrat. Vă rugăm să introduceți alt nume!");
 				return;
 			}
 
