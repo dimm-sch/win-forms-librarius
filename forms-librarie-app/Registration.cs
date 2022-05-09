@@ -54,7 +54,7 @@ namespace forms_librarie_app
 
 			if (username.Split(' ').Length > 1)
 			{
-				MessageBox.Show("Numele de utilizator trebuia să conțină doar un cuvânt. Puteți alipi cuvinte utilizând \"_\" sau \"-\"");
+				MessageBox.Show("Numele de utilizator nu trebuie să conțină spații. Puteți alipi cuvinte utilizând \"_\" sau \"-\"");
 				return;
 			}
 

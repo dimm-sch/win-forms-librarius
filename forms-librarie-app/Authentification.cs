@@ -45,6 +45,12 @@ namespace forms_librarie_app
 				return;
 			}
 
+			if (username.Split(' ').Length > 1)
+			{
+				MessageBox.Show("Numele de utilizator nu trebuie să conțină spații. Puteți alipi cuvinte utilizând \"_\" sau \"-\"");
+				return;
+			}
+
 			if (!usersCredentials.ContainsKey(username))
 			{
 				MessageBox.Show("Numele de utilizator introdus nu există!");
