@@ -91,13 +91,18 @@ namespace forms_librarie_app
 
 			MessageBox.Show(output);
 
+			/* TODO: maybe return the stringAttributes from separate method (either declared here or in LibraryDatabase)
+				possible signature: string[] getBookAttributes(string bookName) 
+			*/
+
+
 			//string pret = (string)carteProperties[1].; 
 
 			//control = bookInfo.Controls.Find("labelPlaceholderAuthor", false);
 			//Label labelAuthor = (Label)control[0];
 			//labelAuthor.Text = pret;
 
-			bookInfo.Show();
+			//bookInfo.Show();
 		}
 	}
 }

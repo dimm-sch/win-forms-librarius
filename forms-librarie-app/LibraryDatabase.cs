@@ -68,7 +68,7 @@ namespace forms_librarie_app
 		Starea stocului, reducere, Tipul, Gen, isbn */
 		public static DataTable getCarteInfoTable(string bookName)
 		{
-			SqlCommand command = new SqlCommand("select * from vCartiInfo where cartea like \'" 
+			SqlCommand command = new SqlCommand("select * from vCartiInfo where cartea like N\'" 
 				+ bookName + "\'", connection);
 			SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 			DataTable dataTable = new DataTable();
