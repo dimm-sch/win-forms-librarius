@@ -29,10 +29,10 @@
 		private void InitializeComponent()
 		{
 			this.panelSidebar = new System.Windows.Forms.Panel();
-			this.panelCatalog = new System.Windows.Forms.Panel();
-			this.labelCatalog = new System.Windows.Forms.Label();
-			this.panelMainPage = new System.Windows.Forms.Panel();
-			this.labelMainPage = new System.Windows.Forms.Label();
+			this.panelNavCatalog = new System.Windows.Forms.Panel();
+			this.labelNavCatalog = new System.Windows.Forms.Label();
+			this.panelNavMainPage = new System.Windows.Forms.Panel();
+			this.labelNavMainPage = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBoxDebug = new System.Windows.Forms.TextBox();
 			this.panelContent = new System.Windows.Forms.Panel();
@@ -42,8 +42,8 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.buttonMainPageAthentification = new System.Windows.Forms.Button();
 			this.panelSidebar.SuspendLayout();
-			this.panelCatalog.SuspendLayout();
-			this.panelMainPage.SuspendLayout();
+			this.panelNavCatalog.SuspendLayout();
+			this.panelNavMainPage.SuspendLayout();
 			this.panelContent.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -52,8 +52,8 @@
 			// panelSidebar
 			// 
 			this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.panelSidebar.Controls.Add(this.panelCatalog);
-			this.panelSidebar.Controls.Add(this.panelMainPage);
+			this.panelSidebar.Controls.Add(this.panelNavCatalog);
+			this.panelSidebar.Controls.Add(this.panelNavMainPage);
 			this.panelSidebar.Controls.Add(this.button1);
 			this.panelSidebar.Controls.Add(this.textBoxDebug);
 			this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -62,52 +62,52 @@
 			this.panelSidebar.Size = new System.Drawing.Size(220, 605);
 			this.panelSidebar.TabIndex = 0;
 			// 
-			// panelCatalog
+			// panelNavCatalog
 			// 
-			this.panelCatalog.Controls.Add(this.labelCatalog);
-			this.panelCatalog.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.panelCatalog.Location = new System.Drawing.Point(0, 102);
-			this.panelCatalog.Name = "panelCatalog";
-			this.panelCatalog.Size = new System.Drawing.Size(220, 105);
-			this.panelCatalog.TabIndex = 1;
-			this.panelCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
-			this.panelCatalog.MouseEnter += new System.EventHandler(this.menuEntryCatalog_Select);
-			this.panelCatalog.MouseLeave += new System.EventHandler(this.menuEntryCatalog_Unselect);
+			this.panelNavCatalog.Controls.Add(this.labelNavCatalog);
+			this.panelNavCatalog.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.panelNavCatalog.Location = new System.Drawing.Point(0, 102);
+			this.panelNavCatalog.Name = "panelNavCatalog";
+			this.panelNavCatalog.Size = new System.Drawing.Size(220, 105);
+			this.panelNavCatalog.TabIndex = 1;
+			this.panelNavCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
+			this.panelNavCatalog.MouseEnter += new System.EventHandler(this.menuEntryCatalog_Select);
+			this.panelNavCatalog.MouseLeave += new System.EventHandler(this.menuEntryCatalog_Unselect);
 			// 
-			// labelCatalog
+			// labelNavCatalog
 			// 
-			this.labelCatalog.AutoSize = true;
-			this.labelCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelCatalog.Location = new System.Drawing.Point(42, 33);
-			this.labelCatalog.Name = "labelCatalog";
-			this.labelCatalog.Size = new System.Drawing.Size(128, 37);
-			this.labelCatalog.TabIndex = 1;
-			this.labelCatalog.Text = "Catalog";
-			this.labelCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
-			this.labelCatalog.MouseEnter += new System.EventHandler(this.menuEntryCatalog_Select);
+			this.labelNavCatalog.AutoSize = true;
+			this.labelNavCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavCatalog.Location = new System.Drawing.Point(42, 33);
+			this.labelNavCatalog.Name = "labelNavCatalog";
+			this.labelNavCatalog.Size = new System.Drawing.Size(128, 37);
+			this.labelNavCatalog.TabIndex = 1;
+			this.labelNavCatalog.Text = "Catalog";
+			this.labelNavCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
+			this.labelNavCatalog.MouseEnter += new System.EventHandler(this.menuEntryCatalog_Select);
 			// 
-			// panelMainPage
+			// panelNavMainPage
 			// 
-			this.panelMainPage.Controls.Add(this.labelMainPage);
-			this.panelMainPage.Location = new System.Drawing.Point(0, 3);
-			this.panelMainPage.Name = "panelMainPage";
-			this.panelMainPage.Size = new System.Drawing.Size(220, 105);
-			this.panelMainPage.TabIndex = 3;
-			this.panelMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
-			this.panelMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
-			this.panelMainPage.MouseLeave += new System.EventHandler(this.menuEntryMainPage_Unselect);
+			this.panelNavMainPage.Controls.Add(this.labelNavMainPage);
+			this.panelNavMainPage.Location = new System.Drawing.Point(0, 3);
+			this.panelNavMainPage.Name = "panelNavMainPage";
+			this.panelNavMainPage.Size = new System.Drawing.Size(220, 105);
+			this.panelNavMainPage.TabIndex = 3;
+			this.panelNavMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
+			this.panelNavMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
+			this.panelNavMainPage.MouseLeave += new System.EventHandler(this.menuEntryMainPage_Unselect);
 			// 
-			// labelMainPage
+			// labelNavMainPage
 			// 
-			this.labelMainPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelMainPage.Location = new System.Drawing.Point(25, 6);
-			this.labelMainPage.Name = "labelMainPage";
-			this.labelMainPage.Size = new System.Drawing.Size(168, 81);
-			this.labelMainPage.TabIndex = 2;
-			this.labelMainPage.Text = "Pagina principală";
-			this.labelMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.labelMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
-			this.labelMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
+			this.labelNavMainPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavMainPage.Location = new System.Drawing.Point(25, 6);
+			this.labelNavMainPage.Name = "labelNavMainPage";
+			this.labelNavMainPage.Size = new System.Drawing.Size(168, 81);
+			this.labelNavMainPage.TabIndex = 2;
+			this.labelNavMainPage.Text = "Pagina principală";
+			this.labelNavMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelNavMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
+			this.labelNavMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
 			// 
 			// button1
 			// 
@@ -209,9 +209,9 @@
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.panelSidebar.ResumeLayout(false);
 			this.panelSidebar.PerformLayout();
-			this.panelCatalog.ResumeLayout(false);
-			this.panelCatalog.PerformLayout();
-			this.panelMainPage.ResumeLayout(false);
+			this.panelNavCatalog.ResumeLayout(false);
+			this.panelNavCatalog.PerformLayout();
+			this.panelNavMainPage.ResumeLayout(false);
 			this.panelContent.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -224,13 +224,13 @@
 		#endregion
 
 		private System.Windows.Forms.Panel panelSidebar;
-		private System.Windows.Forms.Panel panelCatalog;
-		private System.Windows.Forms.Label labelCatalog;
+		private System.Windows.Forms.Panel panelNavCatalog;
+		private System.Windows.Forms.Label labelNavCatalog;
 		private System.Windows.Forms.TextBox textBoxDebug;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panelContent;
-		private System.Windows.Forms.Panel panelMainPage;
-		private System.Windows.Forms.Label labelMainPage;
+		private System.Windows.Forms.Panel panelNavMainPage;
+		private System.Windows.Forms.Label labelNavMainPage;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label2;

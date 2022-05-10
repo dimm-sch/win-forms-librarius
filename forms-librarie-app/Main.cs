@@ -23,10 +23,10 @@ namespace forms_librarie_app
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			panelCatalog.Cursor = Cursors.Hand;
-			labelCatalog.Cursor = Cursors.Hand;
-			panelMainPage.Cursor = Cursors.Hand;
-			labelMainPage.Cursor = Cursors.Hand;
+			panelNavCatalog.Cursor = Cursors.Hand;
+			labelNavCatalog.Cursor = Cursors.Hand;
+			panelNavMainPage.Cursor = Cursors.Hand;
+			labelNavMainPage.Cursor = Cursors.Hand;
 			buttonMainPageAthentification.Cursor = Cursors.Hand;
 			catalog.Visible = false;
 			panelContent.Controls.Add(catalog);
@@ -36,22 +36,22 @@ namespace forms_librarie_app
 
 		private void menuEntryCatalog_Select(object sender, EventArgs e)
 		{
-			panelCatalog.BackColor = Color.Yellow;
+			panelNavCatalog.BackColor = Color.Yellow;
 		}
 
 		private void menuEntryCatalog_Unselect(object sender, EventArgs e)
 		{
-			panelCatalog.BackColor = Color.Empty;
+			panelNavCatalog.BackColor = Color.Empty;
 		}
 
 		private void menuEntryMainPage_Select(object sender, EventArgs e)
 		{
-			panelMainPage.BackColor = Color.Yellow;
+			panelNavMainPage.BackColor = Color.Yellow;
 		}
 
 		private void menuEntryMainPage_Unselect(object sender, EventArgs e)
 		{
-			panelMainPage.BackColor = Color.Empty;
+			panelNavMainPage.BackColor = Color.Empty;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -98,7 +98,6 @@ namespace forms_librarie_app
 		{
 			authentifiedUser = user;
 		}
-
 
 	}
 }
