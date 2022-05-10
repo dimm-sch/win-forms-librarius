@@ -36,7 +36,7 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBoxDebug = new System.Windows.Forms.TextBox();
 			this.panelContent = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.panelMainPage = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
 			this.panelNavCatalog.SuspendLayout();
 			this.panelNavMainPage.SuspendLayout();
 			this.panelContent.SuspendLayout();
-			this.panel1.SuspendLayout();
+			this.panelMainPage.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -130,23 +130,23 @@
 			// panelContent
 			// 
 			this.panelContent.BackColor = System.Drawing.Color.Brown;
-			this.panelContent.Controls.Add(this.panel1);
+			this.panelContent.Controls.Add(this.panelMainPage);
 			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelContent.Location = new System.Drawing.Point(220, 0);
 			this.panelContent.Name = "panelContent";
 			this.panelContent.Size = new System.Drawing.Size(818, 605);
 			this.panelContent.TabIndex = 3;
 			// 
-			// panel1
+			// panelMainPage
 			// 
-			this.panel1.Controls.Add(this.panel2);
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Controls.Add(this.buttonMainPageAthentification);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(818, 605);
-			this.panel1.TabIndex = 0;
+			this.panelMainPage.Controls.Add(this.panel2);
+			this.panelMainPage.Controls.Add(this.label1);
+			this.panelMainPage.Controls.Add(this.buttonMainPageAthentification);
+			this.panelMainPage.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelMainPage.Location = new System.Drawing.Point(0, 0);
+			this.panelMainPage.Name = "panelMainPage";
+			this.panelMainPage.Size = new System.Drawing.Size(818, 605);
+			this.panelMainPage.TabIndex = 0;
 			// 
 			// panel2
 			// 
@@ -213,8 +213,8 @@
 			this.panelNavCatalog.PerformLayout();
 			this.panelNavMainPage.ResumeLayout(false);
 			this.panelContent.ResumeLayout(false);
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
+			this.panelMainPage.ResumeLayout(false);
+			this.panelMainPage.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
@@ -231,7 +231,7 @@
 		private System.Windows.Forms.Panel panelContent;
 		private System.Windows.Forms.Panel panelNavMainPage;
 		private System.Windows.Forms.Label labelNavMainPage;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panelMainPage;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
