@@ -69,6 +69,7 @@ namespace forms_librarie_app
 			}
 
 			catalog.Visible = true;
+			panelMainPage.Visible = false;
 		}
 
 		private void mainPage_Click(object sender, MouseEventArgs e)
@@ -80,6 +81,7 @@ namespace forms_librarie_app
 			}
 
 			catalog.Visible = false;
+			panelMainPage.Visible = true;
 		}
 
 		private void buttonMainPageAthentification_Click(object sender, EventArgs e)
