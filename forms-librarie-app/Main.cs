@@ -27,9 +27,10 @@ namespace forms_librarie_app
 			labelNavCatalog.Cursor = Cursors.Hand;
 			panelNavMainPage.Cursor = Cursors.Hand;
 			labelNavMainPage.Cursor = Cursors.Hand;
-			buttonMainPageAthentification.Cursor = Cursors.Hand;
+			buttonMainPageAuthentification.Cursor = Cursors.Hand;
 			catalog.Visible = false;
 			panelContent.Controls.Add(catalog);
+			buttonMainPageLogOut.Visible = false;
 		}
 
 		// Events
@@ -99,7 +100,17 @@ namespace forms_librarie_app
 		public void authentifyUser(UserInfo user)
 		{
 			authentifiedUser = user;
+			buttonMainPageAuthentification.Visible = false;
+			buttonMainPageLogOut.Visible = true;
+			labelMainPageAuthentificationStatus.Text = "Bine ați venit, " + user.Name + "!";
 		}
 
+		private void buttonMainPageLogOut_Click(object sender, EventArgs e)
+		{
+			authentifiedUser = null;
+			buttonMainPageAuthentification.Visible = true;
+			buttonMainPageLogOut.Visible = false;
+			labelMainPageAuthentificationStatus.Text = "Vă rugăm să vă autentificați";
+		}
 	}
 }
