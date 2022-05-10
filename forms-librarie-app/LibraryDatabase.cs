@@ -64,5 +64,24 @@ namespace forms_librarie_app
 			return dataTable;
 		}
 
+		/* Cartea, Pretul cartii, Editura, Anul publicarii, nrPagini,
+		Starea stocului, reducere, Tipul, Gen, isbn */
+		public static DataTable getCarteInfoTable(string bookName)
+		{
+			SqlCommand command = new SqlCommand("select * from vCartiInfo where cartea like \'" 
+				+ bookName + "\'", connection);
+			SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+			DataTable dataTable = new DataTable();
+			dataAdapter.Fill(dataTable);
+
+			return dataTable;
+		}
+
+		//public static DataRow getCarteInfoRow(string bookName)
+		//{
+		//	DataTable cartiInfo = getCartiInfoTable();
+		//	DataRow row = cartiInfo.Rows.Find(bookName);
+		//	return row;
+		//}
 	}
 }

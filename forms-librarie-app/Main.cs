@@ -31,6 +31,9 @@ namespace forms_librarie_app
 			catalog.Visible = false;
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
+
+			// avoid log in for testing
+			authentifyUser(new UserInfo("test", "test", "test"));
 		}
 
 		// Events

@@ -50,9 +50,52 @@ namespace forms_librarie_app
 		private void dataGridViewCarti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			BookInformation bookInfo = new BookInformation();
-			Control[] label1Control = bookInfo.Controls.Find("label1", false);
-			Label label = (Label)label1Control[0];
-			label.Text = "You found me!";
+
+			DataGridView dataGrid = (DataGridView)sender;
+			DataGridViewCell selectedCell = dataGrid.SelectedCells[0];
+			string bookName = (string)selectedCell.Value;
+
+			Control[] control;
+			control = bookInfo.Controls.Find("labelPlaceholderBookName", false);
+			Label labelBookName = (Label)control[0];
+			labelBookName.Text = bookName;
+
+			DataTable carteInfo = LibraryDatabase.getCarteInfoTable(bookName);
+			DataRow attributesRow = carteInfo.Rows[0];
+			object[] attributes = attributesRow.ItemArray;
+			
+			const string NULL_ATTRIBUTE_MESSAGE = "nespecificat";
+			string[] stringAttributes = new string[attributes.Length];
+			for (int i = 0; i < attributes.Length; ++i)
+			{
+				stringAttributes[i] = (!string.IsNullOrEmpty(attributes[i].ToString()))
+					? attributes[i].ToString() 
+					: NULL_ATTRIBUTE_MESSAGE;
+			}
+
+			string price = stringAttributes[1];
+			string publisher = stringAttributes[2];
+			string publishYear = stringAttributes[3];
+			string pages = stringAttributes[4];
+			string stockState = stringAttributes[5];
+			string discount = stringAttributes[6];
+			string type = stringAttributes[7];
+			string genre = stringAttributes[8];
+			string isbn = stringAttributes[9];
+
+			string output = "";
+			foreach (var elm in stringAttributes)
+			{
+				output += elm + "\r\n";
+			}
+
+			MessageBox.Show(output);
+
+			//string pret = (string)carteProperties[1].; 
+
+			//control = bookInfo.Controls.Find("labelPlaceholderAuthor", false);
+			//Label labelAuthor = (Label)control[0];
+			//labelAuthor.Text = pret;
 
 			bookInfo.Show();
 		}
