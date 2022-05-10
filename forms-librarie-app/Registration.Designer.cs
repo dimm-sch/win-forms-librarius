@@ -93,10 +93,10 @@
 			this.buttonSignUp.BackColor = System.Drawing.Color.Brown;
 			this.buttonSignUp.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.buttonSignUp.ForeColor = System.Drawing.Color.White;
-			this.buttonSignUp.Location = new System.Drawing.Point(59, 395);
+			this.buttonSignUp.Location = new System.Drawing.Point(59, 389);
 			this.buttonSignUp.Name = "buttonSignUp";
 			this.buttonSignUp.Size = new System.Drawing.Size(177, 41);
-			this.buttonSignUp.TabIndex = 9;
+			this.buttonSignUp.TabIndex = 8;
 			this.buttonSignUp.Text = "Crează cont";
 			this.buttonSignUp.UseVisualStyleBackColor = false;
 			this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
@@ -109,7 +109,7 @@
 			this.label4.Location = new System.Drawing.Point(12, 281);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(140, 25);
-			this.label4.TabIndex = 10;
+			this.label4.TabIndex = 6;
 			this.label4.Text = "Parola repetat";
 			// 
 			// textBoxUserPasswordRepeated
@@ -118,7 +118,7 @@
 			this.textBoxUserPasswordRepeated.Location = new System.Drawing.Point(16, 325);
 			this.textBoxUserPasswordRepeated.Name = "textBoxUserPasswordRepeated";
 			this.textBoxUserPasswordRepeated.Size = new System.Drawing.Size(268, 26);
-			this.textBoxUserPasswordRepeated.TabIndex = 11;
+			this.textBoxUserPasswordRepeated.TabIndex = 7;
 			this.textBoxUserPasswordRepeated.UseSystemPasswordChar = true;
 			// 
 			// Registration

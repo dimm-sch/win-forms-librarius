@@ -97,7 +97,7 @@
 			this.linkLabelSignUp.Location = new System.Drawing.Point(12, 421);
 			this.linkLabelSignUp.Name = "linkLabelSignUp";
 			this.linkLabelSignUp.Size = new System.Drawing.Size(166, 25);
-			this.linkLabelSignUp.TabIndex = 5;
+			this.linkLabelSignUp.TabIndex = 8;
 			this.linkLabelSignUp.TabStop = true;
 			this.linkLabelSignUp.Text = "Creare cont nou";
 			this.linkLabelSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSignUp_LinkClicked);
@@ -110,7 +110,7 @@
 			this.label4.Location = new System.Drawing.Point(12, 254);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(140, 25);
-			this.label4.TabIndex = 6;
+			this.label4.TabIndex = 5;
 			this.label4.Text = "Tipul contului";
 			// 
 			// comboBoxLoginType
@@ -124,7 +124,7 @@
 			this.comboBoxLoginType.Location = new System.Drawing.Point(17, 283);
 			this.comboBoxLoginType.Name = "comboBoxLoginType";
 			this.comboBoxLoginType.Size = new System.Drawing.Size(135, 30);
-			this.comboBoxLoginType.TabIndex = 7;
+			this.comboBoxLoginType.TabIndex = 6;
 			// 
 			// buttonLogIn
 			// 
@@ -134,7 +134,7 @@
 			this.buttonLogIn.Location = new System.Drawing.Point(60, 343);
 			this.buttonLogIn.Name = "buttonLogIn";
 			this.buttonLogIn.Size = new System.Drawing.Size(177, 41);
-			this.buttonLogIn.TabIndex = 8;
+			this.buttonLogIn.TabIndex = 7;
 			this.buttonLogIn.Text = "Log In";
 			this.buttonLogIn.UseVisualStyleBackColor = false;
 			this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click);
