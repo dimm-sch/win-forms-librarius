@@ -55,10 +55,8 @@ namespace forms_librarie_app
 			DataGridViewCell selectedCell = dataGrid.SelectedCells[0];
 			string bookName = (string)selectedCell.Value;
 
-			Control[] control;
-			control = bookInfo.Controls.Find("labelPlaceholderBookName", false);
-			Label labelBookName = (Label)control[0];
-			labelBookName.Text = bookName;
+
+			//string[] list = { "BookName", "Author", ""}
 
 			string[] bookAttributes = LibraryDatabase.getBookAttributes(bookName);
 			string price = bookAttributes[1];
@@ -71,28 +69,54 @@ namespace forms_librarie_app
 			string genre = bookAttributes[8];
 			string isbn = bookAttributes[9];
 
+			// TEST
 			string output = "";
-			foreach (var elm in bookAttributes)
-			{
-				output += elm + "\r\n";
+			IEnumerable<Label> placeholders = bookInfo.Controls.OfType<Label>();
+			// DEBUG
+			foreach(var elm in placeholders)
+            {
+				if (elm.Name.Contains("labelPlaceholder"))
+					output += elm.Name + "\r\n";
+            }
+
+			//IMPLEMENTATION
+			
+			foreach (var elm in placeholders)
+            {
+				if (elm.Name.Contains("labelPlaceholder"))
+                {
+					Control[] control;
+					control = bookInfo.Controls.Find("labelPlaceholderBookName", false);
+					Label label = (Label)control[0];
+					//label.Text = 
+				}
+
 			}
 
-			MessageBox.Show(output);
+            MessageBox.Show(output);
+
+            //string output = "";
+            //foreach (var elm in bookAttributes)
+            //{
+            //	output += elm + "\r\n";
+            //}
+
+            //MessageBox.Show(output);
 
 
 
-			/* TODO: maybe return the stringAttributes from separate method (either declared here or in LibraryDatabase)
+            /* TODO: maybe return the stringAttributes from separate method (either declared here or in LibraryDatabase)
 				possible signature: string[] getBookAttributes(string bookName) 
 			*/
 
 
-			//string pret = (string)carteProperties[1].; 
+            //string pret = (string)carteProperties[1].; 
 
-			//control = bookInfo.Controls.Find("labelPlaceholderAuthor", false);
-			//Label labelAuthor = (Label)control[0];
-			//labelAuthor.Text = pret;
+            //control = bookInfo.Controls.Find("labelPlaceholderAuthor", false);
+            //Label labelAuthor = (Label)control[0];
+            //labelAuthor.Text = pret;
 
-			bookInfo.Show();
+            bookInfo.Show();
 		}
 	}
 }
