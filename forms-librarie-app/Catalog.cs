@@ -60,36 +60,26 @@ namespace forms_librarie_app
 			Label labelBookName = (Label)control[0];
 			labelBookName.Text = bookName;
 
-			DataTable carteInfo = LibraryDatabase.getCarteInfoTable(bookName);
-			DataRow attributesRow = carteInfo.Rows[0];
-			object[] attributes = attributesRow.ItemArray;
-			
-			const string NULL_ATTRIBUTE_MESSAGE = "nespecificat";
-			string[] stringAttributes = new string[attributes.Length];
-			for (int i = 0; i < attributes.Length; ++i)
-			{
-				stringAttributes[i] = (!string.IsNullOrEmpty(attributes[i].ToString()))
-					? attributes[i].ToString() 
-					: NULL_ATTRIBUTE_MESSAGE;
-			}
-
-			string price = stringAttributes[1];
-			string publisher = stringAttributes[2];
-			string publishYear = stringAttributes[3];
-			string pages = stringAttributes[4];
-			string stockState = stringAttributes[5];
-			string discount = stringAttributes[6];
-			string type = stringAttributes[7];
-			string genre = stringAttributes[8];
-			string isbn = stringAttributes[9];
+			string[] bookAttributes = LibraryDatabase.getBookAttributes(bookName);
+			string price = bookAttributes[1];
+			string publisher = bookAttributes[2];
+			string publishYear = bookAttributes[3];
+			string pages = bookAttributes[4];
+			string stockState = bookAttributes[5];
+			string discount = bookAttributes[6];
+			string type = bookAttributes[7];
+			string genre = bookAttributes[8];
+			string isbn = bookAttributes[9];
 
 			string output = "";
-			foreach (var elm in stringAttributes)
+			foreach (var elm in bookAttributes)
 			{
 				output += elm + "\r\n";
 			}
 
 			MessageBox.Show(output);
+
+
 
 			/* TODO: maybe return the stringAttributes from separate method (either declared here or in LibraryDatabase)
 				possible signature: string[] getBookAttributes(string bookName) 
@@ -102,7 +92,7 @@ namespace forms_librarie_app
 			//Label labelAuthor = (Label)control[0];
 			//labelAuthor.Text = pret;
 
-			//bookInfo.Show();
+			bookInfo.Show();
 		}
 	}
 }

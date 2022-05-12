@@ -78,5 +78,23 @@ namespace forms_librarie_app
 			return dataTable;
 		}
 
+		public static string[] getBookAttributes(string bookName)
+        {
+			DataTable carteInfo = LibraryDatabase.getCarteInfoTable(bookName);
+			DataRow attributesRow = carteInfo.Rows[0];
+			object[] attributes = attributesRow.ItemArray;
+
+			const string NULL_ATTRIBUTE_MESSAGE = "nespecificat";
+			string[] bookAttributes = new string[attributes.Length];
+			for (int i = 0; i < attributes.Length; ++i)
+			{
+				bookAttributes[i] = (!string.IsNullOrEmpty(attributes[i].ToString()))
+					? attributes[i].ToString()
+					: NULL_ATTRIBUTE_MESSAGE;
+			}
+
+			return bookAttributes;
+		}
+
 	}
 }
