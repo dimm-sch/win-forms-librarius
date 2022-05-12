@@ -18,7 +18,8 @@ namespace forms_librarie_app
 		static LibraryDatabase()
 		{
 			string hostname = Dns.GetHostName();
-			string dataSource = hostname + "\\sqlserver";
+			string serverName = ("win7".Equals(hostname)) ? "sqlserver" : "sqlexpress";
+			string dataSource = hostname + "\\" + serverName;
 			string database = "librarius";
 			string connectionString = "Data Source=" + dataSource + "; Database=" + database + "; Integrated Security = true;";
 			connection = new SqlConnection(connectionString);
