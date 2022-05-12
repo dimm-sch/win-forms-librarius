@@ -57,7 +57,7 @@ namespace forms_librarie_app
 
 
 			string[] list = {
-				"BookName", "Price", "Publisher", "PublishYear", "Pages", "StockState", "Discount", "Type", "Genre", "ISBN"
+				"BookName", "Price", "Publisher", "PublishYear", "Pages", "StockState", "Discount", "Type", "Genre", "ISBN", "Author"
 			};
 
 			string[] bookAttributes = LibraryDatabase.getBookAttributes(bookName);
@@ -70,9 +70,10 @@ namespace forms_librarie_app
 			//string type = bookAttributes[7];
 			//string genre = bookAttributes[8];
 			//string isbn = bookAttributes[9];
+			//string author = bookAttributes[10]
 
 			string labelPrefix = "labelPlaceholder";
-			for (int i = 0; i < 10; ++i)
+			for (int i = 0; i < bookAttributes.Length; ++i)
 			{
 				Control[] labelControl = bookInfo.Controls.Find(labelPrefix + list[i], true);
 				Control ctrl = labelControl[0];
