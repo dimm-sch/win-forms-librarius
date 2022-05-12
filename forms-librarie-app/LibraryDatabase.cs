@@ -85,12 +85,19 @@ namespace forms_librarie_app
 			object[] attributes = attributesRow.ItemArray;
 
 			const string NULL_ATTRIBUTE_MESSAGE = "nespecificat";
+			const string NULL_DISCOUNT_MESSAGE = "";
 			string[] bookAttributes = new string[attributes.Length];
 			for (int i = 0; i < attributes.Length; ++i)
 			{
 				bookAttributes[i] = (!string.IsNullOrEmpty(attributes[i].ToString()))
 					? attributes[i].ToString()
 					: NULL_ATTRIBUTE_MESSAGE;
+			}
+
+			string discount = bookAttributes[6];
+			if (discount.Equals(NULL_ATTRIBUTE_MESSAGE))
+			{
+				bookAttributes[6] = NULL_DISCOUNT_MESSAGE;
 			}
 
 			return bookAttributes;
