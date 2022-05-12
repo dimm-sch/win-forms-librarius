@@ -78,11 +78,5 @@ namespace forms_librarie_app
 			return dataTable;
 		}
 
-		//public static DataRow getCarteInfoRow(string bookName)
-		//{
-		//	DataTable cartiInfo = getCartiInfoTable();
-		//	DataRow row = cartiInfo.Rows.Find(bookName);
-		//	return row;
-		//}
 	}
 }
