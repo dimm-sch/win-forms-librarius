@@ -15,6 +15,8 @@ IF NOT EXISTS (
 CREATE DATABASE Librarius
 GO
 
+-- drop database Librarius
+-- exec sp_who
 
 -- Se conecteaza la baza de date 'Librarie_Darii_Dumitru' pentru a o putea modifica.
 USE Librarius
@@ -326,14 +328,18 @@ CREATE VIEW vCartiInfo
 AS
     SELECT c.denumire AS "Cartea", c.pret AS "Pretul cartii", e.denumire AS "Editura",
         c.anPublicare AS "Anul publicarii", nrPagini,
-        ss.denumire AS "Starea stocului", c.reducere, t.denumire AS "Tipul", Genuri.denumire AS "Gen", c.isbn
+        ss.denumire AS "Starea stocului", c.reducere, t.denumire AS "Tipul", Genuri.denumire AS "Gen", c.isbn,
+		CONCAT(a.nume,' ', a.prenume) as "Autor"
     FROM Carti c
         INNER JOIN Edituri e ON (e.id = c.idEditura)
         INNER JOIN StariStoc ss ON (ss.id = c.idStareStoc)
         INNER JOIN TipuriCarti t ON (t.id = c.idTip)
-        INNER JOIN Genuri ON (Genuri.id = c.idGen);
+        INNER JOIN Genuri ON (Genuri.id = c.idGen)
+		LEFT JOIN CarteAutor ca ON (ca.idCarte = c.id)
+		LEFT JOIN Autori a ON (a.id = ca.idAutor);
 
 GO
+
 -- Vedere care contine Genurile si Categoriile combinate impreuna.
 CREATE VIEW vGenuriUnionCategoriiGenuri
 AS
@@ -420,24 +426,6 @@ FROM Carti c
 WHERE c.anPublicare >= 2005
 ORDER BY c.anPublicare;
 
-
--- Instuctiunea DELETE
-
--- Sterge inregistrarile cartilor a caror stoc este epuizat
-DELETE FROM Carti
-WHERE Carti.idStareStoc = (SELECT StariStoc.id
-FROM StariStoc
-WHERE StariStoc.denumire LIKE 'stoc epuizat');
-
-
--- Instructiunea UPDATE
-
--- Adauga o reducere de 35% pentru toate cartile care au fost publicate in 2007 si mai devreme
-UPDATE Carti
-SET reducere = 35
-WHERE anPublicare <= 2007;
-
-
 -- Darii Dumitru, BD: Librarie_Darii_Dumitru
 -- am utilizat len pentru calcularea lungimii denumirii cartilor
 -- am utilizat concat pentru a concatena intr-un singur camp denumirea cartii si numele, si prenumele autorului
@@ -490,4 +478,4 @@ VALUES
     (@idCarte, @denumireCarte, @pretCarte, @idEdituraCarte, @anPublicareCarte, @nrPaginiCarte,
      @idStareStocCarte, @reducereCarte, @idTipCarte, @idGenCarte, @isbnCarte)
 
-exec sp_insertCarte 50, 'newBook', 200, 1, 2007, 100, 1, 50, 2, 1, '1234567890123'
+-- exec sp_insertCarte 50, 'newBook', 200, 1, 2007, 100, 1, 50, 2, 1, '1234567890123'
