@@ -51,13 +51,14 @@
 			this.labelPlaceholderPublisher = new System.Windows.Forms.Label();
 			this.labelPlaceholderAuthor = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.labelPlaceholderDiscount = new System.Windows.Forms.Label();
-			this.labelPlaceholderStockState = new System.Windows.Forms.Label();
-			this.labelPlaceholderPrice = new System.Windows.Forms.Label();
-			this.labelPlaceholderPriceWithDiscount = new System.Windows.Forms.Label();
-			this.labelPrice = new System.Windows.Forms.Label();
-			this.labelDiscount = new System.Windows.Forms.Label();
 			this.labelPriceWithDiscount = new System.Windows.Forms.Label();
+			this.labelDiscount = new System.Windows.Forms.Label();
+			this.labelPrice = new System.Windows.Forms.Label();
+			this.labelPlaceholderPriceWithDiscount = new System.Windows.Forms.Label();
+			this.labelPlaceholderDiscount = new System.Windows.Forms.Label();
+			this.labelPlaceholderPrice = new System.Windows.Forms.Label();
+			this.labelPlaceholderStockState = new System.Windows.Forms.Label();
+			this.buttonAddFavorite = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceholderBookImage)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -299,76 +300,10 @@
 			this.panel1.Controls.Add(this.labelPlaceholderPriceWithDiscount);
 			this.panel1.Controls.Add(this.labelPlaceholderDiscount);
 			this.panel1.Controls.Add(this.labelPlaceholderPrice);
-			this.panel1.Location = new System.Drawing.Point(213, 418);
+			this.panel1.Location = new System.Drawing.Point(367, 416);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(385, 82);
 			this.panel1.TabIndex = 22;
-			// 
-			// labelPlaceholderDiscount
-			// 
-			this.labelPlaceholderDiscount.AutoSize = true;
-			this.labelPlaceholderDiscount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelPlaceholderDiscount.ForeColor = System.Drawing.Color.White;
-			this.labelPlaceholderDiscount.Location = new System.Drawing.Point(144, 44);
-			this.labelPlaceholderDiscount.Name = "labelPlaceholderDiscount";
-			this.labelPlaceholderDiscount.Size = new System.Drawing.Size(87, 22);
-			this.labelPlaceholderDiscount.TabIndex = 25;
-			this.labelPlaceholderDiscount.Text = "Discount";
-			// 
-			// labelPlaceholderStockState
-			// 
-			this.labelPlaceholderStockState.AutoSize = true;
-			this.labelPlaceholderStockState.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelPlaceholderStockState.ForeColor = System.Drawing.Color.GreenYellow;
-			this.labelPlaceholderStockState.Location = new System.Drawing.Point(318, 371);
-			this.labelPlaceholderStockState.Name = "labelPlaceholderStockState";
-			this.labelPlaceholderStockState.Size = new System.Drawing.Size(89, 34);
-			this.labelPlaceholderStockState.TabIndex = 24;
-			this.labelPlaceholderStockState.Text = "Stock";
-			// 
-			// labelPlaceholderPrice
-			// 
-			this.labelPlaceholderPrice.AutoSize = true;
-			this.labelPlaceholderPrice.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelPlaceholderPrice.ForeColor = System.Drawing.Color.White;
-			this.labelPlaceholderPrice.Location = new System.Drawing.Point(16, 44);
-			this.labelPlaceholderPrice.Name = "labelPlaceholderPrice";
-			this.labelPlaceholderPrice.Size = new System.Drawing.Size(48, 22);
-			this.labelPlaceholderPrice.TabIndex = 23;
-			this.labelPlaceholderPrice.Text = "Pret";
-			// 
-			// labelPlaceholderPriceWithDiscount
-			// 
-			this.labelPlaceholderPriceWithDiscount.AutoSize = true;
-			this.labelPlaceholderPriceWithDiscount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelPlaceholderPriceWithDiscount.ForeColor = System.Drawing.Color.White;
-			this.labelPlaceholderPriceWithDiscount.Location = new System.Drawing.Point(277, 44);
-			this.labelPlaceholderPriceWithDiscount.Name = "labelPlaceholderPriceWithDiscount";
-			this.labelPlaceholderPriceWithDiscount.Size = new System.Drawing.Size(54, 22);
-			this.labelPlaceholderPriceWithDiscount.TabIndex = 26;
-			this.labelPlaceholderPriceWithDiscount.Text = "Total";
-			// 
-			// labelPrice
-			// 
-			this.labelPrice.AutoSize = true;
-			this.labelPrice.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelPrice.ForeColor = System.Drawing.Color.White;
-			this.labelPrice.Location = new System.Drawing.Point(16, 12);
-			this.labelPrice.Name = "labelPrice";
-			this.labelPrice.Size = new System.Drawing.Size(48, 22);
-			this.labelPrice.TabIndex = 27;
-			this.labelPrice.Text = "Preț";
-			// 
-			// labelDiscount
-			// 
-			this.labelDiscount.AutoSize = true;
-			this.labelDiscount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelDiscount.ForeColor = System.Drawing.Color.White;
-			this.labelDiscount.Location = new System.Drawing.Point(144, 12);
-			this.labelDiscount.Name = "labelDiscount";
-			this.labelDiscount.Size = new System.Drawing.Size(93, 22);
-			this.labelDiscount.TabIndex = 28;
-			this.labelDiscount.Text = "Reducere";
 			// 
 			// labelPriceWithDiscount
 			// 
@@ -381,12 +316,93 @@
 			this.labelPriceWithDiscount.TabIndex = 29;
 			this.labelPriceWithDiscount.Text = "Preț final";
 			// 
+			// labelDiscount
+			// 
+			this.labelDiscount.AutoSize = true;
+			this.labelDiscount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelDiscount.ForeColor = System.Drawing.Color.White;
+			this.labelDiscount.Location = new System.Drawing.Point(144, 12);
+			this.labelDiscount.Name = "labelDiscount";
+			this.labelDiscount.Size = new System.Drawing.Size(93, 22);
+			this.labelDiscount.TabIndex = 28;
+			this.labelDiscount.Text = "Reducere";
+			// 
+			// labelPrice
+			// 
+			this.labelPrice.AutoSize = true;
+			this.labelPrice.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPrice.ForeColor = System.Drawing.Color.White;
+			this.labelPrice.Location = new System.Drawing.Point(16, 12);
+			this.labelPrice.Name = "labelPrice";
+			this.labelPrice.Size = new System.Drawing.Size(48, 22);
+			this.labelPrice.TabIndex = 27;
+			this.labelPrice.Text = "Preț";
+			// 
+			// labelPlaceholderPriceWithDiscount
+			// 
+			this.labelPlaceholderPriceWithDiscount.AutoSize = true;
+			this.labelPlaceholderPriceWithDiscount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPlaceholderPriceWithDiscount.ForeColor = System.Drawing.Color.White;
+			this.labelPlaceholderPriceWithDiscount.Location = new System.Drawing.Point(277, 44);
+			this.labelPlaceholderPriceWithDiscount.Name = "labelPlaceholderPriceWithDiscount";
+			this.labelPlaceholderPriceWithDiscount.Size = new System.Drawing.Size(54, 22);
+			this.labelPlaceholderPriceWithDiscount.TabIndex = 26;
+			this.labelPlaceholderPriceWithDiscount.Text = "Total";
+			// 
+			// labelPlaceholderDiscount
+			// 
+			this.labelPlaceholderDiscount.AutoSize = true;
+			this.labelPlaceholderDiscount.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPlaceholderDiscount.ForeColor = System.Drawing.Color.White;
+			this.labelPlaceholderDiscount.Location = new System.Drawing.Point(144, 44);
+			this.labelPlaceholderDiscount.Name = "labelPlaceholderDiscount";
+			this.labelPlaceholderDiscount.Size = new System.Drawing.Size(87, 22);
+			this.labelPlaceholderDiscount.TabIndex = 25;
+			this.labelPlaceholderDiscount.Text = "Discount";
+			// 
+			// labelPlaceholderPrice
+			// 
+			this.labelPlaceholderPrice.AutoSize = true;
+			this.labelPlaceholderPrice.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPlaceholderPrice.ForeColor = System.Drawing.Color.White;
+			this.labelPlaceholderPrice.Location = new System.Drawing.Point(16, 44);
+			this.labelPlaceholderPrice.Name = "labelPlaceholderPrice";
+			this.labelPlaceholderPrice.Size = new System.Drawing.Size(48, 22);
+			this.labelPlaceholderPrice.TabIndex = 23;
+			this.labelPlaceholderPrice.Text = "Pret";
+			// 
+			// labelPlaceholderStockState
+			// 
+			this.labelPlaceholderStockState.AutoSize = true;
+			this.labelPlaceholderStockState.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPlaceholderStockState.ForeColor = System.Drawing.Color.GreenYellow;
+			this.labelPlaceholderStockState.Location = new System.Drawing.Point(472, 369);
+			this.labelPlaceholderStockState.Name = "labelPlaceholderStockState";
+			this.labelPlaceholderStockState.Size = new System.Drawing.Size(89, 34);
+			this.labelPlaceholderStockState.TabIndex = 24;
+			this.labelPlaceholderStockState.Text = "Stock";
+			// 
+			// buttonAddFavorite
+			// 
+			this.buttonAddFavorite.BackColor = System.Drawing.Color.Brown;
+			this.buttonAddFavorite.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonAddFavorite.ForeColor = System.Drawing.Color.Yellow;
+			this.buttonAddFavorite.Location = new System.Drawing.Point(79, 386);
+			this.buttonAddFavorite.Name = "buttonAddFavorite";
+			this.buttonAddFavorite.Size = new System.Drawing.Size(183, 112);
+			this.buttonAddFavorite.TabIndex = 25;
+			this.buttonAddFavorite.Text = "Adaugă la Favorite";
+			this.buttonAddFavorite.UseVisualStyleBackColor = false;
+			this.buttonAddFavorite.MouseLeave += new System.EventHandler(this.buttonAddFavorite_MouseLeave);
+			this.buttonAddFavorite.MouseHover += new System.EventHandler(this.buttonAddFavorite_MouseHover);
+			// 
 			// BookInformation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Brown;
 			this.ClientSize = new System.Drawing.Size(800, 512);
+			this.Controls.Add(this.buttonAddFavorite);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.labelPlaceholderISBN);
 			this.Controls.Add(this.labelPlaceholderType);
@@ -413,6 +429,7 @@
 			this.Controls.Add(this.label1);
 			this.Name = "BookInformation";
 			this.Text = "`";
+			this.Load += new System.EventHandler(this.BookInformation_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceholderBookImage)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -453,5 +470,6 @@
 		private System.Windows.Forms.Label labelPrice;
 		private System.Windows.Forms.Label labelPriceWithDiscount;
 		private System.Windows.Forms.Label labelDiscount;
+		private System.Windows.Forms.Button buttonAddFavorite;
 	}
 }

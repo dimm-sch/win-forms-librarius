@@ -16,5 +16,20 @@ namespace forms_librarie_app
 		{
 			InitializeComponent();
 		}
+
+		private void BookInformation_Load(object sender, EventArgs e)
+		{
+			buttonAddFavorite.Cursor = Cursors.Hand;
+		}
+
+		private void buttonAddFavorite_MouseHover(object sender, EventArgs e)
+		{
+			buttonAddFavorite.BackColor = Color.Crimson;
+		}
+
+		private void buttonAddFavorite_MouseLeave(object sender, EventArgs e)
+		{
+			buttonAddFavorite.BackColor = Color.Brown;
+		}
 	}
 }
