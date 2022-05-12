@@ -56,67 +56,70 @@ namespace forms_librarie_app
 			string bookName = (string)selectedCell.Value;
 
 
-			//string[] list = { "BookName", "Author", ""}
+			string[] list = {
+				"BookName", "Price", "Publisher", "PublishYear", "Pages", "StockState", "Discount", "Type", "Genre", "ISBN"
+			};
 
 			string[] bookAttributes = LibraryDatabase.getBookAttributes(bookName);
-			string price = bookAttributes[1];
-			string publisher = bookAttributes[2];
-			string publishYear = bookAttributes[3];
-			string pages = bookAttributes[4];
-			string stockState = bookAttributes[5];
-			string discount = bookAttributes[6];
-			string type = bookAttributes[7];
-			string genre = bookAttributes[8];
-			string isbn = bookAttributes[9];
+			//string price = bookAttributes[1];
+			//string publisher = bookAttributes[2];
+			//string publishYear = bookAttributes[3];
+			//string pages = bookAttributes[4];
+			//string stockState = bookAttributes[5];
+			//string discount = bookAttributes[6];
+			//string type = bookAttributes[7];
+			//string genre = bookAttributes[8];
+			//string isbn = bookAttributes[9];
 
-			// TEST
-			string output = "";
-			IEnumerable<Label> placeholders = bookInfo.Controls.OfType<Label>();
-			// DEBUG
-			foreach(var elm in placeholders)
-            {
-				if (elm.Name.Contains("labelPlaceholder"))
-					output += elm.Name + "\r\n";
-            }
-
-			//IMPLEMENTATION
-			
-			foreach (var elm in placeholders)
-            {
-				if (elm.Name.Contains("labelPlaceholder"))
-                {
-					Control[] control;
-					control = bookInfo.Controls.Find("labelPlaceholderBookName", false);
-					Label label = (Label)control[0];
-					//label.Text = 
-				}
-
+			string labelPrefix = "labelPlaceholder";
+			for (int i = 0; i < 10; ++i)
+			{
+				Control[] labelControl = bookInfo.Controls.Find(labelPrefix + list[i], true);
+				Control ctrl = labelControl[0];
+				Label label = (Label)ctrl;
+				label.Text = bookAttributes[i];
 			}
 
-            MessageBox.Show(output);
-
-            //string output = "";
-            //foreach (var elm in bookAttributes)
-            //{
-            //	output += elm + "\r\n";
-            //}
-
-            //MessageBox.Show(output);
-
-
-
-            /* TODO: maybe return the stringAttributes from separate method (either declared here or in LibraryDatabase)
-				possible signature: string[] getBookAttributes(string bookName) 
-			*/
-
-
-            //string pret = (string)carteProperties[1].; 
-
-            //control = bookInfo.Controls.Find("labelPlaceholderAuthor", false);
-            //Label labelAuthor = (Label)control[0];
-            //labelAuthor.Text = pret;
+			string discount = bookAttributes[6];
+			string price = bookAttributes[1];
+			if (!string.IsNullOrEmpty((discount)))
+			{
+				formatDiscountControls(bookInfo, price, discount);
+			} 
+			else
+			{
+				hideDiscountControls(bookInfo);
+			}
 
             bookInfo.Show();
+		}
+
+		private void formatDiscountControls(BookInformation bookInfo, string price, string discount)
+		{
+			double priceNum = double.Parse(price);
+			double total =  priceNum - (double.Parse(discount) * 0.01) * priceNum;
+			Control[] labelControl = bookInfo.Controls.Find("labelPlaceholderPriceWithDiscount", true);
+			Label label = (Label)labelControl[0];
+			label.Text = total.ToString();
+
+			labelControl = bookInfo.Controls.Find("labelPlaceholderDiscount", true);
+			label = (Label)labelControl[0];
+			label.Text += "%";
+		}
+
+		private void hideDiscountControls(BookInformation bookInfo)
+		{
+			Control[] labelControl = bookInfo.Controls.Find("labelPriceWithDiscount", true);
+			Label label = (Label)labelControl[0];
+			label.Hide();
+
+			labelControl = bookInfo.Controls.Find("labelPlaceholderPriceWithDiscount", true);
+			label = (Label)labelControl[0];
+			label.Hide();
+
+			labelControl = bookInfo.Controls.Find("labelDiscount", true);
+			label = (Label)labelControl[0];
+			label.Hide();
 		}
 	}
 }
