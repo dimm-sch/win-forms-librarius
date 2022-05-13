@@ -331,7 +331,7 @@ AS
     SELECT c.denumire AS "Cartea", c.pret AS "Pretul cartii", e.denumire AS "Editura",
         c.anPublicare AS "Anul publicarii", nrPagini,
         ss.denumire AS "Starea stocului", c.reducere, t.denumire AS "Tipul", Genuri.denumire AS "Gen", c.isbn,
-		CONCAT(a.nume,' ', a.prenume) as "Autor"
+		CONCAT(a.nume,' ', a.prenume) as "Autor", c.imagePath as "ImagePath", c.link as "Link"
     FROM Carti c
         INNER JOIN Edituri e ON (e.id = c.idEditura)
         INNER JOIN StariStoc ss ON (ss.id = c.idStareStoc)
