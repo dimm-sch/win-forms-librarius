@@ -124,7 +124,8 @@ CREATE TABLE Carti
     idTip INTEGER,
     idGen INTEGER,
     isbn CHAR(13) NOT NULL,
-    PRIMARY KEY(id),
+	imagePath NVARCHAR(250) NOT NULL,
+    PRIMARY KEY(id)
 );
 
 /* Tabelul Autori contine autorii cartilor.
