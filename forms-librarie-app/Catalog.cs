@@ -71,9 +71,11 @@ namespace forms_librarie_app
 			//string genre = bookAttributes[8];
 			//string isbn = bookAttributes[9];
 			//string author = bookAttributes[10]
+			//string imagePath = bookAttributes[11]
+			//string link = bookAttributes[12]
 
 			string labelPrefix = "labelPlaceholder";
-			for (int i = 0; i < bookAttributes.Length; ++i)
+			for (int i = 0; i <= 10; ++i)
 			{
 				Control[] labelControl = bookInfo.Controls.Find(labelPrefix + list[i], true);
 				Control ctrl = labelControl[0];
@@ -91,6 +93,14 @@ namespace forms_librarie_app
 			{
 				hideDiscountControls(bookInfo);
 			}
+
+			Control[] pictureControl = bookInfo.Controls.Find("pictureBoxPlaceholderBookImage", true);
+			PictureBox picture = (PictureBox)pictureControl[0];
+			string imagePath = bookAttributes[11];
+			picture.Image = Image.FromFile("..\\..\\..\\" + imagePath);
+
+			string link = bookAttributes[12];
+			bookInfo.setLink(link);
 
             bookInfo.Show();
 		}

@@ -12,3 +12,17 @@ C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\
 C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.BookInformation.resources
 C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.Authentification.resources
 C:\Users\lxrdszn\Documents\vs-repo\forms-lucrul-individual-3\forms-librarie-app\obj\Debug\forms_librarie_app.Registration.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\bin\Debug\forms-librarie-app.exe.config
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\bin\Debug\forms-librarie-app.exe
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\bin\Debug\forms-librarie-app.pdb
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms-librarie.csproj.AssemblyReference.cache
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms_librarie_app.Authentification.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms_librarie_app.BookInformation.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms_librarie_app.Catalog.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms_librarie_app.Main.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms_librarie_app.Properties.Resources.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms_librarie_app.Registration.resources
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms-librarie.csproj.GenerateResource.cache
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms-librarie.csproj.CoreCompileInputs.cache
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms-librarie-app.exe
+C:\Users\User\AppData\Local\tmp\win-forms-librarius\forms-librarie-app\obj\Debug\forms-librarie-app.pdb
