@@ -255,21 +255,21 @@ VALUES
 INSERT INTO Carti
 (id, denumire, pret, idEditura, anPublicare, nrPagini, idStareStoc, reducere, idTip, idGen, isbn, imagePath, link)
 VALUES
- (1,N'Kathie si hipopotamul',132.0000,1,2010,264,1,NULL,1,1,'9786065880702', 'images\\kathie-si-hipopotamul.jpg', 'https://librarius.md/ro/book/000744-kathie-si-hipopotamul')
-,(2,N'Drumul spre Biserica',60.0000,2,2013,312,1,NULL,1,2,'9789975444606', 'images\\drumul-spre-biserica.jpg', 'https://librarius.md/ro/book/drumul-spre-biserica-348165')
-,(3,N'Venus ia foc Marte e de gheata',235.0000,3,2013,232,2,NULL,1,3,'9789736455575', 'images\\venus-ia-foc.jpg', 'https://librarius.md/ro/book/venus-ia-foc-marte-e-de-ghiata-326823')
-,(4,N'Cu ochii mintii',170.0000,4,2016,216,1,30,1,3,'9786067198157', 'images\\cu-ochii-mintii.jpg', 'https://librarius.md/ro/book/cu-ochii-intii-474355')
-,(5,N'In apararea pietelor',185.0000,1,2012,416,3,NULL,1,4,'9786065883239', 'images\\in-apararea-pietelor.jpg', 'https://librarius.md/ro/book/000260-in-apararea-pietelor')
-,(6,N'Cele 12 elemente ale managementului performant',155.0000,5,2009,272,3,NULL,1,5,'9789737241887', 'images\\12-elemente-management.jpg', 'https://librarius.md/ro/book/007339-cele-12-elemente-ale-managementului-performant')
-,(7,N'Adobe InDesign CC. Официальный учебный курс (+ CD-ROM)',740.0000,6,2014,496,1,NULL,1,6,'9785699696598', 'images\\adobe-indesign.jpg', 'https://librarius.md/ro/book/006182-adobe-indesign-cc-oficialinyy-uchebnyy-kurs-cd')
-,(8,N'Щенок Элфи или Не хочу быть один!',65.0000,6,2014,144,3,NULL,2,7,'9785699711932', 'images\\shenok-elfi.jpg', 'https://librarius.md/ro/book/018514-schenok-elfi-ili-ne-hochu-byti-odin')
-,(9,N'Povesti in romana si germana',174.0000,7,2010,104,2,70,2,8,'9789738873308', 'images\\povesti-ro-germ.jpg', 'https://librarius.md/ro/book/001372-povesti-in-romana-si-germana')
-,(10,N'Dictionar roman-englez',450.0000,8,NULL,NULL,2,NULL,2,9,'9789736019999', 'images\\dictionar-ro-en.jpg', 'https://librarius.md/ro/book/dictionar-roman-englez-496328')
-,(11,N'Dictionar Oxford de istorie universala contemporana (2 vol.)',395.0000,5,2007,504,1,NULL,1,10,'9789735715519', 'images\\dictionar-oxford.jpg', 'https://librarius.md/ro/book/007666-dictionar-oxford-de-istorie-universala-contemporana-2-vol')
-,(12,N'Harta Bulgaria',106.0000,9,2006,2,2,NULL,1,11,'9789737480804', 'images\\harta-bulgaria.jpg', 'https://librarius.md/ro/book/007787-harta-bulgaria')
-,(13,N'Политическая карта мира 1:35000000',135.0000,10,2011,NULL,2,NULL,1,11,'9789669460608', 'images\\harta-politica-lume.jpg', 'https://librarius.md/ro/book/politicheskaya-karta-mira-135000000-130527')
-,(14,N'Ghid de conversatie roman–german',60.0000,11,NULL,NULL,2,NULL,1,12,'9786065114685', 'images\\ghid-convers-ro-germ.jpg', 'https://librarius.md/ro/book/007688-ghid-de-conversatie-roman-german')
-,(15,N'Abecedar 6-7 ani',45.0000,12,2014,NULL,2,NULL,1,13,'9789975140379', 'images\\abecedar-6-7.jpg', 'https://librarius.md/ro/book/abecedar-6-7-ani-ed-2014-poligraf-design-372486');
+ (1,N'Kathie si hipopotamul',132.0000,1,2010,264,1,NULL,1,1,'9786065880702', 'images\kathie-si-hipopotamul.jpg', 'https://librarius.md/ro/book/000744-kathie-si-hipopotamul')
+,(2,N'Drumul spre Biserica',60.0000,2,2013,312,1,NULL,1,2,'9789975444606', 'images\drumul-spre-biserica.jpg', 'https://librarius.md/ro/book/drumul-spre-biserica-348165')
+,(3,N'Venus ia foc Marte e de gheata',235.0000,3,2013,232,2,NULL,1,3,'9789736455575', 'images\venus-ia-foc.jpg', 'https://librarius.md/ro/book/venus-ia-foc-marte-e-de-ghiata-326823')
+,(4,N'Cu ochii mintii',170.0000,4,2016,216,1,30,1,3,'9786067198157', 'images\cu-ochii-mintii.jpg', 'https://librarius.md/ro/book/cu-ochii-intii-474355')
+,(5,N'In apararea pietelor',185.0000,1,2012,416,3,NULL,1,4,'9786065883239', 'images\in-apararea-pietelor.jpg', 'https://librarius.md/ro/book/000260-in-apararea-pietelor')
+,(6,N'Cele 12 elemente ale managementului performant',155.0000,5,2009,272,3,NULL,1,5,'9789737241887', 'images\12-elemente-management.jpg', 'https://librarius.md/ro/book/007339-cele-12-elemente-ale-managementului-performant')
+,(7,N'Adobe InDesign CC. Официальный учебный курс (+ CD-ROM)',740.0000,6,2014,496,1,NULL,1,6,'9785699696598', 'images\adobe-indesign.jpg', 'https://librarius.md/ro/book/006182-adobe-indesign-cc-oficialinyy-uchebnyy-kurs-cd')
+,(8,N'Щенок Элфи или Не хочу быть один!',65.0000,6,2014,144,3,NULL,2,7,'9785699711932', 'images\shenok-elfi.jpg', 'https://librarius.md/ro/book/018514-schenok-elfi-ili-ne-hochu-byti-odin')
+,(9,N'Povesti in romana si germana',174.0000,7,2010,104,2,70,2,8,'9789738873308', 'images\povesti-ro-germ.jpg', 'https://librarius.md/ro/book/001372-povesti-in-romana-si-germana')
+,(10,N'Dictionar roman-englez',450.0000,8,NULL,NULL,2,NULL,2,9,'9789736019999', 'images\dictionar-ro-en.jpg', 'https://librarius.md/ro/book/dictionar-roman-englez-496328')
+,(11,N'Dictionar Oxford de istorie universala contemporana (2 vol.)',395.0000,5,2007,504,1,NULL,1,10,'9789735715519', 'images\dictionar-oxford.jpg', 'https://librarius.md/ro/book/007666-dictionar-oxford-de-istorie-universala-contemporana-2-vol')
+,(12,N'Harta Bulgaria',106.0000,9,2006,2,2,NULL,1,11,'9789737480804', 'images\harta-bulgaria.jpg', 'https://librarius.md/ro/book/007787-harta-bulgaria')
+,(13,N'Политическая карта мира 1:35000000',135.0000,10,2011,NULL,2,NULL,1,11,'9789669460608', 'images\harta-politica-lume.jpg', 'https://librarius.md/ro/book/politicheskaya-karta-mira-135000000-130527')
+,(14,N'Ghid de conversatie roman–german',60.0000,11,NULL,NULL,2,NULL,1,12,'9786065114685', 'images\ghid-convers-ro-germ.jpg', 'https://librarius.md/ro/book/007688-ghid-de-conversatie-roman-german')
+,(15,N'Abecedar 6-7 ani',45.0000,12,2014,NULL,2,NULL,1,13,'9789975140379', 'images\abecedar-6-7.jpg', 'https://librarius.md/ro/book/abecedar-6-7-ani-ed-2014-poligraf-design-372486');
 
 INSERT INTO Autori
 (id, nume, prenume)
