@@ -125,6 +125,7 @@ CREATE TABLE Carti
     idGen INTEGER,
     isbn CHAR(13) NOT NULL,
 	imagePath NVARCHAR(250) NOT NULL,
+	link NVARCHAR(300) NOT NULL,
     PRIMARY KEY(id)
 );
 
