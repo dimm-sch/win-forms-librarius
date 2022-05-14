@@ -91,7 +91,6 @@
 			this.labelNavSearch.TabIndex = 1;
 			this.labelNavSearch.Text = "Căutare";
 			this.labelNavSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.labelNavSearch.Click += new System.EventHandler(this.labelNavSearch_Click);
 			this.labelNavSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.search_Click);
 			this.labelNavSearch.MouseEnter += new System.EventHandler(this.menuEntrySearch_Select);
 			// 

@@ -18,6 +18,9 @@ namespace forms_librarie_app
 		private SearchPage searchPage;
 		private FavoriteBooks favoriteBooksPage;
 
+		private Color SELECTED_COLOR = Color.FromArgb(222, 220, 82);
+		private Color UNSELECTED_COLOR = Color.Empty;
+
 		public Main()
 		{
 			InitializeComponent();
@@ -46,32 +49,52 @@ namespace forms_librarie_app
 
 		private void menuEntryCatalog_Select(object sender, EventArgs e)
 		{
-			panelNavCatalog.BackColor = Color.Yellow;
+			panelNavCatalog.BackColor = SELECTED_COLOR;
 		}
 
 		private void menuEntryCatalog_Unselect(object sender, EventArgs e)
 		{
-			panelNavCatalog.BackColor = Color.Empty;
+			panelNavCatalog.BackColor = UNSELECTED_COLOR;
 		}
 
 		private void menuEntryMainPage_Select(object sender, EventArgs e)
 		{
-			panelNavMainPage.BackColor = Color.Yellow;
+			panelNavMainPage.BackColor = SELECTED_COLOR;
 		}
 
 		private void menuEntryMainPage_Unselect(object sender, EventArgs e)
 		{
-			panelNavMainPage.BackColor = Color.Empty;
+			panelNavMainPage.BackColor = UNSELECTED_COLOR;
 		}
 
 		private void menuEntrySearch_Select(object sender, EventArgs e)
 		{
-			panelNavSearch.BackColor = Color.Yellow;
+			panelNavSearch.BackColor = SELECTED_COLOR;
 		}
 
 		private void menuEntrySearch_Unselect(object sender, EventArgs e)
 		{
-			panelNavSearch.BackColor = Color.Empty;
+			panelNavSearch.BackColor = UNSELECTED_COLOR;
+		}
+
+		private void menuEntryFavorites_Select(object sender, EventArgs e)
+		{
+			panelNavFavorites.BackColor = SELECTED_COLOR;
+		}
+
+		private void menuEntryFavorites_Unselect(object sender, EventArgs e)
+		{
+			panelNavFavorites.BackColor = UNSELECTED_COLOR;
+		}
+
+		private void menuEntryAdmin_Select(object sender, EventArgs e)
+		{
+			panelNavAdmin.BackColor = SELECTED_COLOR;
+		}
+
+		private void menuEntryAdmin_Unselect(object sender, EventArgs e)
+		{
+			panelNavAdmin.BackColor = UNSELECTED_COLOR;
 		}
 
 		// TODO remove
@@ -145,31 +168,6 @@ namespace forms_librarie_app
 			buttonMainPageAuthentification.Visible = true;
 			buttonMainPageLogOut.Visible = false;
 			labelMainPageAuthentificationStatus.Text = "Vă rugăm să vă autentificați";
-		}
-
-		private void labelNavSearch_Click(object sender, EventArgs e)
-		{
-			
-		}
-
-		private void menuEntryFavorites_Select(object sender, EventArgs e)
-		{
-			panelNavFavorites.BackColor = Color.Yellow;
-		}
-
-		private void menuEntryFavorites_Unselect(object sender, EventArgs e)
-		{
-			panelNavFavorites.BackColor = Color.Empty;
-		}
-
-		private void menuEntryAdmin_Select(object sender, EventArgs e)
-		{
-			panelNavAdmin.BackColor = Color.Yellow;
-		}
-
-		private void menuEntryAdmin_Unselect(object sender, EventArgs e)
-		{
-			panelNavAdmin.BackColor = Color.Empty;
 		}
 
 		private void favorites_Click(object sender, MouseEventArgs e)
