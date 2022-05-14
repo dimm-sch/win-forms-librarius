@@ -33,15 +33,13 @@
 			this.labelNavCatalog = new System.Windows.Forms.Label();
 			this.panelNavMainPage = new System.Windows.Forms.Panel();
 			this.labelNavMainPage = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.textBoxDebug = new System.Windows.Forms.TextBox();
 			this.panelContent = new System.Windows.Forms.Panel();
 			this.panelMainPage = new System.Windows.Forms.Panel();
+			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
 			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
-			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavCatalog.SuspendLayout();
 			this.panelNavMainPage.SuspendLayout();
@@ -55,8 +53,6 @@
 			this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.panelSidebar.Controls.Add(this.panelNavCatalog);
 			this.panelSidebar.Controls.Add(this.panelNavMainPage);
-			this.panelSidebar.Controls.Add(this.button1);
-			this.panelSidebar.Controls.Add(this.textBoxDebug);
 			this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelSidebar.Location = new System.Drawing.Point(0, 0);
 			this.panelSidebar.Name = "panelSidebar";
@@ -110,24 +106,6 @@
 			this.labelNavMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
 			this.labelNavMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(64, 227);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(82, 51);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// textBoxDebug
-			// 
-			this.textBoxDebug.Location = new System.Drawing.Point(12, 284);
-			this.textBoxDebug.Multiline = true;
-			this.textBoxDebug.Name = "textBoxDebug";
-			this.textBoxDebug.Size = new System.Drawing.Size(190, 90);
-			this.textBoxDebug.TabIndex = 1;
-			// 
 			// panelContent
 			// 
 			this.panelContent.BackColor = System.Drawing.Color.Brown;
@@ -149,6 +127,19 @@
 			this.panelMainPage.Name = "panelMainPage";
 			this.panelMainPage.Size = new System.Drawing.Size(818, 605);
 			this.panelMainPage.TabIndex = 0;
+			// 
+			// buttonMainPageLogOut
+			// 
+			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
+			this.buttonMainPageLogOut.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonMainPageLogOut.ForeColor = System.Drawing.Color.White;
+			this.buttonMainPageLogOut.Location = new System.Drawing.Point(185, 408);
+			this.buttonMainPageLogOut.Name = "buttonMainPageLogOut";
+			this.buttonMainPageLogOut.Size = new System.Drawing.Size(451, 94);
+			this.buttonMainPageLogOut.TabIndex = 9;
+			this.buttonMainPageLogOut.Text = "Deconectare";
+			this.buttonMainPageLogOut.UseVisualStyleBackColor = false;
+			this.buttonMainPageLogOut.Click += new System.EventHandler(this.buttonMainPageLogOut_Click);
 			// 
 			// panel2
 			// 
@@ -195,19 +186,6 @@
 			this.buttonMainPageAuthentification.UseVisualStyleBackColor = false;
 			this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAthentification_Click);
 			// 
-			// buttonMainPageLogOut
-			// 
-			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
-			this.buttonMainPageLogOut.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonMainPageLogOut.ForeColor = System.Drawing.Color.White;
-			this.buttonMainPageLogOut.Location = new System.Drawing.Point(185, 408);
-			this.buttonMainPageLogOut.Name = "buttonMainPageLogOut";
-			this.buttonMainPageLogOut.Size = new System.Drawing.Size(451, 94);
-			this.buttonMainPageLogOut.TabIndex = 9;
-			this.buttonMainPageLogOut.Text = "Deconectare";
-			this.buttonMainPageLogOut.UseVisualStyleBackColor = false;
-			this.buttonMainPageLogOut.Click += new System.EventHandler(this.buttonMainPageLogOut_Click);
-			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,7 +201,6 @@
 			this.Text = "Librarius";
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.panelSidebar.ResumeLayout(false);
-			this.panelSidebar.PerformLayout();
 			this.panelNavCatalog.ResumeLayout(false);
 			this.panelNavCatalog.PerformLayout();
 			this.panelNavMainPage.ResumeLayout(false);
@@ -241,8 +218,6 @@
 		private System.Windows.Forms.Panel panelSidebar;
 		private System.Windows.Forms.Panel panelNavCatalog;
 		private System.Windows.Forms.Label labelNavCatalog;
-		private System.Windows.Forms.TextBox textBoxDebug;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panelContent;
 		private System.Windows.Forms.Panel panelNavMainPage;
 		private System.Windows.Forms.Label labelNavMainPage;
