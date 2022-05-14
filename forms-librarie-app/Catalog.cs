@@ -50,6 +50,7 @@ namespace forms_librarie_app
 		private void dataGridViewCarti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
 			BookInformation bookInfo = new BookInformation();
+			bookInfo.Text = "Detalii Carte";
 
 			DataGridView dataGrid = (DataGridView)sender;
 			DataGridViewCell selectedCell = dataGrid.SelectedCells[0];
