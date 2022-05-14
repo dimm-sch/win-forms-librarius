@@ -30,6 +30,7 @@ namespace forms_librarie_app
 			labelNavMainPage.Cursor = Cursors.Hand;
 			buttonMainPageAuthentification.Cursor = Cursors.Hand;
 			buttonMainPageLogOut.Cursor = Cursors.Hand;
+			panelNavFavorites.Cursor = Cursors.Hand;
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
 
@@ -148,5 +149,24 @@ namespace forms_librarie_app
 			
 		}
 
+		private void menuEntryFavorites_Select(object sender, EventArgs e)
+		{
+			panelNavFavorites.BackColor = Color.Yellow;
+		}
+
+		private void menuEntryFavorites_Unselect(object sender, EventArgs e)
+		{
+			panelNavFavorites.BackColor = Color.Empty;
+		}
+
+		private void menuEntryAdmin_Select(object sender, EventArgs e)
+		{
+			panelNavAdmin.BackColor = Color.Yellow;
+		}
+
+		private void menuEntryAdmin_Unselect(object sender, EventArgs e)
+		{
+			panelNavAdmin.BackColor = Color.Empty;
+		}
 	}
 }

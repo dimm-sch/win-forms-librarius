@@ -44,6 +44,8 @@
 			this.panelContent = new System.Windows.Forms.Panel();
 			this.labelNavFavorites = new System.Windows.Forms.Label();
 			this.panelNavFavorites = new System.Windows.Forms.Panel();
+			this.labelNavAdmin = new System.Windows.Forms.Label();
+			this.panelNavAdmin = new System.Windows.Forms.Panel();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavSearch.SuspendLayout();
 			this.panelNavCatalog.SuspendLayout();
@@ -51,11 +53,13 @@
 			this.panelMainPage.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panelNavFavorites.SuspendLayout();
+			this.panelNavAdmin.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSidebar
 			// 
 			this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.panelSidebar.Controls.Add(this.panelNavAdmin);
 			this.panelSidebar.Controls.Add(this.panelNavFavorites);
 			this.panelSidebar.Controls.Add(this.panelNavSearch);
 			this.panelSidebar.Controls.Add(this.panelNavCatalog);
@@ -228,6 +232,7 @@
 			this.labelNavFavorites.TabIndex = 1;
 			this.labelNavFavorites.Text = "Cărți Favorite";
 			this.labelNavFavorites.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelNavFavorites.MouseEnter += new System.EventHandler(this.menuEntryFavorites_Select);
 			// 
 			// panelNavFavorites
 			// 
@@ -237,6 +242,30 @@
 			this.panelNavFavorites.Name = "panelNavFavorites";
 			this.panelNavFavorites.Size = new System.Drawing.Size(220, 105);
 			this.panelNavFavorites.TabIndex = 5;
+			this.panelNavFavorites.MouseEnter += new System.EventHandler(this.menuEntryFavorites_Select);
+			this.panelNavFavorites.MouseLeave += new System.EventHandler(this.menuEntryFavorites_Unselect);
+			// 
+			// labelNavAdmin
+			// 
+			this.labelNavAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavAdmin.Location = new System.Drawing.Point(12, 8);
+			this.labelNavAdmin.Name = "labelNavAdmin";
+			this.labelNavAdmin.Size = new System.Drawing.Size(202, 89);
+			this.labelNavAdmin.TabIndex = 1;
+			this.labelNavAdmin.Text = "Administrare";
+			this.labelNavAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelNavAdmin.MouseEnter += new System.EventHandler(this.menuEntryAdmin_Select);
+			// 
+			// panelNavAdmin
+			// 
+			this.panelNavAdmin.Controls.Add(this.labelNavAdmin);
+			this.panelNavAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.panelNavAdmin.Location = new System.Drawing.Point(0, 501);
+			this.panelNavAdmin.Name = "panelNavAdmin";
+			this.panelNavAdmin.Size = new System.Drawing.Size(220, 105);
+			this.panelNavAdmin.TabIndex = 6;
+			this.panelNavAdmin.MouseEnter += new System.EventHandler(this.menuEntryAdmin_Select);
+			this.panelNavAdmin.MouseLeave += new System.EventHandler(this.menuEntryAdmin_Unselect);
 			// 
 			// Main
 			// 
@@ -262,6 +291,7 @@
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.panelNavFavorites.ResumeLayout(false);
+			this.panelNavAdmin.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -284,6 +314,8 @@
 		private System.Windows.Forms.Button buttonMainPageAuthentification;
 		private System.Windows.Forms.Panel panelNavFavorites;
 		private System.Windows.Forms.Label labelNavFavorites;
+		private System.Windows.Forms.Panel panelNavAdmin;
+		private System.Windows.Forms.Label labelNavAdmin;
 	}
 }
 
