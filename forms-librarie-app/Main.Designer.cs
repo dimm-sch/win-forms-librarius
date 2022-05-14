@@ -38,22 +38,22 @@
 			this.panelMainPage = new System.Windows.Forms.Panel();
 			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
 			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.label2 = new System.Windows.Forms.Label();
 			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
 			this.panelContent = new System.Windows.Forms.Panel();
 			this.labelNavFavorites = new System.Windows.Forms.Label();
 			this.panelNavFavorites = new System.Windows.Forms.Panel();
 			this.labelNavAdmin = new System.Windows.Forms.Label();
 			this.panelNavAdmin = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.label2 = new System.Windows.Forms.Label();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavSearch.SuspendLayout();
 			this.panelNavCatalog.SuspendLayout();
 			this.panelNavMainPage.SuspendLayout();
 			this.panelMainPage.SuspendLayout();
-			this.panel2.SuspendLayout();
 			this.panelNavFavorites.SuspendLayout();
 			this.panelNavAdmin.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSidebar
@@ -179,27 +179,6 @@
 			this.labelMainPageAuthentificationStatus.TabIndex = 7;
 			this.labelMainPageAuthentificationStatus.Text = "Vă rugăm să vă autentificați";
 			// 
-			// panel2
-			// 
-			this.panel2.BackgroundImage = global::forms_librarie_app.Properties.Resources.logo_removebg;
-			this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.panel2.Controls.Add(this.label2);
-			this.panel2.Location = new System.Drawing.Point(138, 31);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(542, 247);
-			this.panel2.TabIndex = 8;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Cambria", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(19, 181);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(520, 41);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Cartea preferată pentru fiecare";
-			// 
 			// buttonMainPageLogOut
 			// 
 			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
@@ -232,6 +211,7 @@
 			this.labelNavFavorites.TabIndex = 1;
 			this.labelNavFavorites.Text = "Cărți Favorite";
 			this.labelNavFavorites.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelNavFavorites.MouseClick += new System.Windows.Forms.MouseEventHandler(this.favorites_Click);
 			this.labelNavFavorites.MouseEnter += new System.EventHandler(this.menuEntryFavorites_Select);
 			// 
 			// panelNavFavorites
@@ -242,6 +222,7 @@
 			this.panelNavFavorites.Name = "panelNavFavorites";
 			this.panelNavFavorites.Size = new System.Drawing.Size(220, 105);
 			this.panelNavFavorites.TabIndex = 5;
+			this.panelNavFavorites.MouseClick += new System.Windows.Forms.MouseEventHandler(this.favorites_Click);
 			this.panelNavFavorites.MouseEnter += new System.EventHandler(this.menuEntryFavorites_Select);
 			this.panelNavFavorites.MouseLeave += new System.EventHandler(this.menuEntryFavorites_Unselect);
 			// 
@@ -267,6 +248,27 @@
 			this.panelNavAdmin.MouseEnter += new System.EventHandler(this.menuEntryAdmin_Select);
 			this.panelNavAdmin.MouseLeave += new System.EventHandler(this.menuEntryAdmin_Unselect);
 			// 
+			// panel2
+			// 
+			this.panel2.BackgroundImage = global::forms_librarie_app.Properties.Resources.logo_removebg;
+			this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.panel2.Controls.Add(this.label2);
+			this.panel2.Location = new System.Drawing.Point(138, 31);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(542, 247);
+			this.panel2.TabIndex = 8;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Cambria", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.White;
+			this.label2.Location = new System.Drawing.Point(19, 181);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(520, 41);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "Cartea preferată pentru fiecare";
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,10 +290,10 @@
 			this.panelNavMainPage.ResumeLayout(false);
 			this.panelMainPage.ResumeLayout(false);
 			this.panelMainPage.PerformLayout();
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
 			this.panelNavFavorites.ResumeLayout(false);
 			this.panelNavAdmin.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}

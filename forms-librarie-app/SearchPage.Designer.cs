@@ -70,9 +70,12 @@
 			// 
 			// dataGridViewResult
 			// 
+			this.dataGridViewResult.AllowUserToAddRows = false;
+			this.dataGridViewResult.AllowUserToDeleteRows = false;
 			this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewResult.Location = new System.Drawing.Point(117, 330);
 			this.dataGridViewResult.Name = "dataGridViewResult";
+			this.dataGridViewResult.ReadOnly = true;
 			this.dataGridViewResult.Size = new System.Drawing.Size(584, 225);
 			this.dataGridViewResult.TabIndex = 3;
 			// 

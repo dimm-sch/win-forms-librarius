@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace forms_librarie_app
 {
@@ -150,6 +151,20 @@ namespace forms_librarie_app
 		public bool isBookFavorite(string bookName)
 		{
 			return favouriteBooks.Contains(bookName);
+		}
+
+		public DataTable getFavoriteBooksTable()
+		{
+			DataTable table = new DataTable();
+			SqlDataAdapter adapter = new SqlDataAdapter();
+			table.Columns.Add("Cartea");
+			
+			foreach (var book in favouriteBooks)
+			{
+				table.Rows.Add(book);
+			}
+
+			return table;
 		}
 		
 	}

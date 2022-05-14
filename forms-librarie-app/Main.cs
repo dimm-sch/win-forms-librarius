@@ -16,6 +16,7 @@ namespace forms_librarie_app
 		private UserInfo authentifiedUser = null;
 		private Catalog catalog = new Catalog();
 		private SearchPage searchPage = new SearchPage();
+		private FavoriteBooks favoriteBooksPage;
 
 		public Main()
 		{
@@ -34,6 +35,7 @@ namespace forms_librarie_app
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
 
+			favoriteBooksPage = new FavoriteBooks(catalog);
 
 			// avoid log in for testing
 			authentifyUser(new UserInfo("test", "test", "test"));
@@ -167,6 +169,15 @@ namespace forms_librarie_app
 		private void menuEntryAdmin_Unselect(object sender, EventArgs e)
 		{
 			panelNavAdmin.BackColor = Color.Empty;
+		}
+
+		private void favorites_Click(object sender, MouseEventArgs e)
+		{
+			favoriteBooksPage.fillFavoriteBooksTable();
+
+			panelContent.Controls.Clear();
+			panelContent.Controls.Add(favoriteBooksPage);
+			panelContent.Show();
 		}
 	}
 }
