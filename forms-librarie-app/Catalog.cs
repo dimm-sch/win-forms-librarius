@@ -137,7 +137,7 @@ namespace forms_librarie_app
 			label.Hide();
 		}
 
-		public void addFavouriteBook(string bookName)
+		public void addFavoriteBook(string bookName)
 		{
 			favouriteBooks.Add(bookName);
 		}
