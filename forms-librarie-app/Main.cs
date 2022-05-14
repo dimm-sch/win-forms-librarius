@@ -15,6 +15,7 @@ namespace forms_librarie_app
 
 		private UserInfo authentifiedUser = null;
 		private Catalog catalog = new Catalog();
+		private SearchPage searchPage = new SearchPage();
 
 		public Main()
 		{
@@ -28,9 +29,11 @@ namespace forms_librarie_app
 			panelNavMainPage.Cursor = Cursors.Hand;
 			labelNavMainPage.Cursor = Cursors.Hand;
 			buttonMainPageAuthentification.Cursor = Cursors.Hand;
+			buttonMainPageLogOut.Cursor = Cursors.Hand;
 			catalog.Visible = false;
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
+
 
 			// avoid log in for testing
 			authentifyUser(new UserInfo("test", "test", "test"));
@@ -58,6 +61,17 @@ namespace forms_librarie_app
 			panelNavMainPage.BackColor = Color.Empty;
 		}
 
+		private void menuEntrySearch_Select(object sender, EventArgs e)
+		{
+			panelNavSearch.BackColor = Color.Yellow;
+		}
+
+		private void menuEntrySearch_Unselect(object sender, EventArgs e)
+		{
+			panelNavSearch.BackColor = Color.Empty;
+		}
+
+		// TODO remove
 		private void button1_Click(object sender, EventArgs e)
 		{
 			//Catalog c = new Catalog();
@@ -88,6 +102,16 @@ namespace forms_librarie_app
 			panelMainPage.Visible = true;
 		}
 
+		private void search_Click(object sender, MouseEventArgs e)
+		{
+			if (!isUserAuthentified())
+			{
+				MessageBox.Show("Vă rugăm să vă autentificați");
+				return;
+			}
+
+		}
+
 		private void buttonMainPageAthentification_Click(object sender, EventArgs e)
 		{
 			Authentification a = new Authentification(this);
@@ -115,5 +139,11 @@ namespace forms_librarie_app
 			buttonMainPageLogOut.Visible = false;
 			labelMainPageAuthentificationStatus.Text = "Vă rugăm să vă autentificați";
 		}
+
+		private void labelNavSearch_Click(object sender, EventArgs e)
+		{
+			
+		}
+
 	}
 }

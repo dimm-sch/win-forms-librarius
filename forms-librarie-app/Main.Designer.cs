@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.panelSidebar = new System.Windows.Forms.Panel();
+			this.panelNavSearch = new System.Windows.Forms.Panel();
+			this.labelNavSearch = new System.Windows.Forms.Label();
 			this.panelNavCatalog = new System.Windows.Forms.Panel();
 			this.labelNavCatalog = new System.Windows.Forms.Label();
 			this.panelNavMainPage = new System.Windows.Forms.Panel();
@@ -41,6 +43,7 @@
 			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
 			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
 			this.panelSidebar.SuspendLayout();
+			this.panelNavSearch.SuspendLayout();
 			this.panelNavCatalog.SuspendLayout();
 			this.panelNavMainPage.SuspendLayout();
 			this.panelContent.SuspendLayout();
@@ -51,6 +54,7 @@
 			// panelSidebar
 			// 
 			this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.panelSidebar.Controls.Add(this.panelNavSearch);
 			this.panelSidebar.Controls.Add(this.panelNavCatalog);
 			this.panelSidebar.Controls.Add(this.panelNavMainPage);
 			this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -58,6 +62,31 @@
 			this.panelSidebar.Name = "panelSidebar";
 			this.panelSidebar.Size = new System.Drawing.Size(220, 605);
 			this.panelSidebar.TabIndex = 0;
+			// 
+			// panelNavSearch
+			// 
+			this.panelNavSearch.Controls.Add(this.labelNavSearch);
+			this.panelNavSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.panelNavSearch.Location = new System.Drawing.Point(0, 205);
+			this.panelNavSearch.Name = "panelNavSearch";
+			this.panelNavSearch.Size = new System.Drawing.Size(220, 105);
+			this.panelNavSearch.TabIndex = 4;
+			this.panelNavSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.search_Click);
+			this.panelNavSearch.MouseEnter += new System.EventHandler(this.menuEntrySearch_Select);
+			this.panelNavSearch.MouseLeave += new System.EventHandler(this.menuEntrySearch_Unselect);
+			// 
+			// labelNavSearch
+			// 
+			this.labelNavSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavSearch.Location = new System.Drawing.Point(35, 8);
+			this.labelNavSearch.Name = "labelNavSearch";
+			this.labelNavSearch.Size = new System.Drawing.Size(151, 89);
+			this.labelNavSearch.TabIndex = 1;
+			this.labelNavSearch.Text = "Căutare";
+			this.labelNavSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.labelNavSearch.Click += new System.EventHandler(this.labelNavSearch_Click);
+			this.labelNavSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.search_Click);
+			this.labelNavSearch.MouseEnter += new System.EventHandler(this.menuEntrySearch_Select);
 			// 
 			// panelNavCatalog
 			// 
@@ -75,7 +104,7 @@
 			// 
 			this.labelNavCatalog.AutoSize = true;
 			this.labelNavCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelNavCatalog.Location = new System.Drawing.Point(42, 33);
+			this.labelNavCatalog.Location = new System.Drawing.Point(48, 34);
 			this.labelNavCatalog.Name = "labelNavCatalog";
 			this.labelNavCatalog.Size = new System.Drawing.Size(128, 37);
 			this.labelNavCatalog.TabIndex = 1;
@@ -201,6 +230,7 @@
 			this.Text = "Librarius";
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.panelSidebar.ResumeLayout(false);
+			this.panelNavSearch.ResumeLayout(false);
 			this.panelNavCatalog.ResumeLayout(false);
 			this.panelNavCatalog.PerformLayout();
 			this.panelNavMainPage.ResumeLayout(false);
@@ -227,6 +257,8 @@
 		private System.Windows.Forms.Label labelMainPageAuthentificationStatus;
 		private System.Windows.Forms.Button buttonMainPageAuthentification;
 		private System.Windows.Forms.Button buttonMainPageLogOut;
+		private System.Windows.Forms.Panel panelNavSearch;
+		private System.Windows.Forms.Label labelNavSearch;
 	}
 }
 
