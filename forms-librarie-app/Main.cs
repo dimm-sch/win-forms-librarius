@@ -97,13 +97,6 @@ namespace forms_librarie_app
 			panelNavAdmin.BackColor = UNSELECTED_COLOR;
 		}
 
-		// TODO remove
-		private void button1_Click(object sender, EventArgs e)
-		{
-			//Catalog c = new Catalog();
-			//panelContent.Controls.Add(c);
-		}
-
 		private void catalog_Click(object sender, MouseEventArgs e)
 		{
 			if (!isUserAuthentified())
