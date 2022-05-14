@@ -42,7 +42,7 @@ namespace forms_librarie_app
 
 		private void buttonAddFavorite_MouseHover(object sender, EventArgs e)
 		{
-			buttonAddFavorite.BackColor = Color.Crimson;
+			buttonAddFavorite.BackColor = Color.FromArgb(73, 232, 56);
 		}
 
 		private void buttonAddFavorite_MouseLeave(object sender, EventArgs e)

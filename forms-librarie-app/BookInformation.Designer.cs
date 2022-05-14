@@ -31,16 +31,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
-			this.button4 = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
-			this.button5 = new System.Windows.Forms.Button();
 			this.label7 = new System.Windows.Forms.Label();
-			this.button6 = new System.Windows.Forms.Button();
 			this.pictureBoxPlaceholderBookImage = new System.Windows.Forms.PictureBox();
 			this.labelPlaceholderBookName = new System.Windows.Forms.Label();
 			this.labelPlaceholderISBN = new System.Windows.Forms.Label();
@@ -50,7 +44,7 @@
 			this.labelPlaceholderPublishYear = new System.Windows.Forms.Label();
 			this.labelPlaceholderPublisher = new System.Windows.Forms.Label();
 			this.labelPlaceholderAuthor = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.panelPriceSection = new System.Windows.Forms.Panel();
 			this.labelPriceWithDiscount = new System.Windows.Forms.Label();
 			this.labelDiscount = new System.Windows.Forms.Label();
 			this.labelPrice = new System.Windows.Forms.Label();
@@ -61,7 +55,7 @@
 			this.buttonAddFavorite = new System.Windows.Forms.Button();
 			this.buttonDeleteFavorite = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceholderBookImage)).BeginInit();
-			this.panel1.SuspendLayout();
+			this.panelPriceSection.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -97,33 +91,6 @@
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Anul publicării";
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(351, 113);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 10);
-			this.button1.TabIndex = 3;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(351, 153);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 10);
-			this.button2.TabIndex = 4;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(351, 191);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 10);
-			this.button3.TabIndex = 5;
-			this.button3.Text = "button3";
-			this.button3.UseVisualStyleBackColor = true;
-			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
@@ -146,15 +113,6 @@
 			this.label5.TabIndex = 8;
 			this.label5.Text = "Genul";
 			// 
-			// button4
-			// 
-			this.button4.Location = new System.Drawing.Point(351, 229);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(75, 10);
-			this.button4.TabIndex = 7;
-			this.button4.Text = "button4";
-			this.button4.UseVisualStyleBackColor = true;
-			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
@@ -166,15 +124,6 @@
 			this.label6.TabIndex = 10;
 			this.label6.Text = "Tipul";
 			// 
-			// button5
-			// 
-			this.button5.Location = new System.Drawing.Point(351, 267);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(75, 10);
-			this.button5.TabIndex = 9;
-			this.button5.Text = "button5";
-			this.button5.UseVisualStyleBackColor = true;
-			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
@@ -185,15 +134,6 @@
 			this.label7.Size = new System.Drawing.Size(52, 22);
 			this.label7.TabIndex = 12;
 			this.label7.Text = "ISBN";
-			// 
-			// button6
-			// 
-			this.button6.Location = new System.Drawing.Point(351, 305);
-			this.button6.Name = "button6";
-			this.button6.Size = new System.Drawing.Size(75, 10);
-			this.button6.TabIndex = 11;
-			this.button6.Text = "button6";
-			this.button6.UseVisualStyleBackColor = true;
 			// 
 			// pictureBoxPlaceholderBookImage
 			// 
@@ -293,20 +233,20 @@
 			this.labelPlaceholderAuthor.TabIndex = 15;
 			this.labelPlaceholderAuthor.Text = "Autor";
 			// 
-			// panel1
+			// panelPriceSection
 			// 
-			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.panel1.Controls.Add(this.labelPriceWithDiscount);
-			this.panel1.Controls.Add(this.labelDiscount);
-			this.panel1.Controls.Add(this.labelPrice);
-			this.panel1.Controls.Add(this.labelPlaceholderPriceWithDiscount);
-			this.panel1.Controls.Add(this.labelPlaceholderDiscount);
-			this.panel1.Controls.Add(this.labelPlaceholderPrice);
-			this.panel1.Location = new System.Drawing.Point(367, 416);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(385, 82);
-			this.panel1.TabIndex = 22;
+			this.panelPriceSection.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.panelPriceSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.panelPriceSection.Controls.Add(this.labelPriceWithDiscount);
+			this.panelPriceSection.Controls.Add(this.labelDiscount);
+			this.panelPriceSection.Controls.Add(this.labelPrice);
+			this.panelPriceSection.Controls.Add(this.labelPlaceholderPriceWithDiscount);
+			this.panelPriceSection.Controls.Add(this.labelPlaceholderDiscount);
+			this.panelPriceSection.Controls.Add(this.labelPlaceholderPrice);
+			this.panelPriceSection.Location = new System.Drawing.Point(367, 416);
+			this.panelPriceSection.Name = "panelPriceSection";
+			this.panelPriceSection.Size = new System.Drawing.Size(385, 82);
+			this.panelPriceSection.TabIndex = 22;
 			// 
 			// labelPriceWithDiscount
 			// 
@@ -423,7 +363,7 @@
 			this.ClientSize = new System.Drawing.Size(800, 512);
 			this.Controls.Add(this.buttonDeleteFavorite);
 			this.Controls.Add(this.buttonAddFavorite);
-			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.panelPriceSection);
 			this.Controls.Add(this.labelPlaceholderISBN);
 			this.Controls.Add(this.labelPlaceholderType);
 			this.Controls.Add(this.labelPlaceholderGenre);
@@ -435,15 +375,9 @@
 			this.Controls.Add(this.labelPlaceholderBookName);
 			this.Controls.Add(this.pictureBoxPlaceholderBookImage);
 			this.Controls.Add(this.label7);
-			this.Controls.Add(this.button6);
 			this.Controls.Add(this.label6);
-			this.Controls.Add(this.button5);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.button4);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
@@ -451,8 +385,8 @@
 			this.Text = "`";
 			this.Load += new System.EventHandler(this.BookInformation_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceholderBookImage)).EndInit();
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
+			this.panelPriceSection.ResumeLayout(false);
+			this.panelPriceSection.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -463,16 +397,10 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.PictureBox pictureBoxPlaceholderBookImage;
 		private System.Windows.Forms.Label labelPlaceholderBookName;
 		private System.Windows.Forms.Label labelPlaceholderISBN;
@@ -482,7 +410,7 @@
 		private System.Windows.Forms.Label labelPlaceholderPublishYear;
 		private System.Windows.Forms.Label labelPlaceholderPublisher;
 		private System.Windows.Forms.Label labelPlaceholderAuthor;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panelPriceSection;
 		private System.Windows.Forms.Label labelPlaceholderPrice;
 		private System.Windows.Forms.Label labelPlaceholderStockState;
 		private System.Windows.Forms.Label labelPlaceholderDiscount;

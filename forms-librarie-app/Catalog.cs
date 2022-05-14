@@ -97,6 +97,7 @@ namespace forms_librarie_app
 			else
 			{
 				hideDiscountControls(bookInfo);
+				shrinkPriceSection(bookInfo);
 			}
 
 			Control[] pictureControl = bookInfo.Controls.Find("pictureBoxPlaceholderBookImage", true);
@@ -143,6 +144,14 @@ namespace forms_librarie_app
 			label.Hide();
 		}
 
+		private void shrinkPriceSection(BookInformation bookInfo)
+		{
+			Control[] panelControl = bookInfo.Controls.Find("panelPriceSection", true);
+			Panel panel = (Panel)panelControl[0];
+			panel.Size = new Size(80, 82);
+			panel.Location = new Point(520, 416);
+		}
+
 		public bool addFavoriteBook(string bookName)
 		{
 			return favouriteBooks.Add(bookName);
@@ -172,9 +181,5 @@ namespace forms_librarie_app
 			return table;
 		}
 
-		private void dataGridViewCarti_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
 	}
 }

@@ -191,7 +191,6 @@
 			this.dataGridViewCarti.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dataGridViewCarti.Size = new System.Drawing.Size(425, 199);
 			this.dataGridViewCarti.TabIndex = 5;
-			this.dataGridViewCarti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCarti_CellContentClick);
 			this.dataGridViewCarti.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewCarti_CellMouseDoubleClick);
 			// 
 			// Catalog
