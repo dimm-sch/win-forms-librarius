@@ -66,7 +66,7 @@ namespace forms_librarie_app
 		}
 
 		/* Cartea, Pretul cartii, Editura, Anul publicarii, nrPagini,
-		Starea stocului, reducere, Tipul, Gen, isbn */
+		Starea stocului, reducere, Tipul, Gen, isbn, author, imagePath, link */
 		public static DataTable getCarteInfoTable(string bookName)
 		{
 			SqlCommand command = new SqlCommand("select * from vCartiInfo where cartea like N\'" 
