@@ -42,17 +42,21 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
 			this.panelContent = new System.Windows.Forms.Panel();
+			this.labelNavFavorites = new System.Windows.Forms.Label();
+			this.panelNavFavorites = new System.Windows.Forms.Panel();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavSearch.SuspendLayout();
 			this.panelNavCatalog.SuspendLayout();
 			this.panelNavMainPage.SuspendLayout();
 			this.panelMainPage.SuspendLayout();
 			this.panel2.SuspendLayout();
+			this.panelNavFavorites.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSidebar
 			// 
 			this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.panelSidebar.Controls.Add(this.panelNavFavorites);
 			this.panelSidebar.Controls.Add(this.panelNavSearch);
 			this.panelSidebar.Controls.Add(this.panelNavCatalog);
 			this.panelSidebar.Controls.Add(this.panelNavMainPage);
@@ -215,6 +219,25 @@
 			this.panelContent.TabIndex = 10;
 			this.panelContent.Visible = false;
 			// 
+			// labelNavFavorites
+			// 
+			this.labelNavFavorites.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavFavorites.Location = new System.Drawing.Point(35, 8);
+			this.labelNavFavorites.Name = "labelNavFavorites";
+			this.labelNavFavorites.Size = new System.Drawing.Size(151, 89);
+			this.labelNavFavorites.TabIndex = 1;
+			this.labelNavFavorites.Text = "Cărți Favorite";
+			this.labelNavFavorites.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panelNavFavorites
+			// 
+			this.panelNavFavorites.Controls.Add(this.labelNavFavorites);
+			this.panelNavFavorites.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.panelNavFavorites.Location = new System.Drawing.Point(0, 310);
+			this.panelNavFavorites.Name = "panelNavFavorites";
+			this.panelNavFavorites.Size = new System.Drawing.Size(220, 105);
+			this.panelNavFavorites.TabIndex = 5;
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +261,7 @@
 			this.panelMainPage.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			this.panelNavFavorites.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -258,6 +282,8 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label labelMainPageAuthentificationStatus;
 		private System.Windows.Forms.Button buttonMainPageAuthentification;
+		private System.Windows.Forms.Panel panelNavFavorites;
+		private System.Windows.Forms.Label labelNavFavorites;
 	}
 }
 

@@ -107,5 +107,27 @@ namespace forms_librarie_app
 			return bookAttributes;
 		}
 
+		public static DataTable searchBooksByName(string bookName)
+		{
+			SqlCommand command = new SqlCommand(
+				"select Cartea, Autor from vCartiInfo where Cartea like \'%" + bookName + "%\'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+
+			return table;
+		}
+
+		public static DataTable searchBooksByAuthor(string author)
+		{
+			SqlCommand command = new SqlCommand(
+				"select Cartea, Autor from vCartiInfo where Autor like \'%" + author + "%\'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+
+			return table;
+		}
+
 	}
 }

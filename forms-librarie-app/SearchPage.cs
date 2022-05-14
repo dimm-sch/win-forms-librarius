@@ -16,5 +16,47 @@ namespace forms_librarie_app
 		{
 			InitializeComponent();
 		}
+
+		private void SearchPage_Load(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void buttonSearch_Click(object sender, EventArgs e)
+		{
+			executeSearchQuery();
+		}
+
+		private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar.Equals((char)13))
+			{
+				executeSearchQuery();
+			}
+		}
+
+		private void executeSearchQuery()
+		{
+			if (string.IsNullOrWhiteSpace(textBoxSearch.Text))
+			{
+				MessageBox.Show("Completați bara de căutare!");
+				return;
+			}
+
+			string request = textBoxSearch.Text;
+			DataTable result = null;
+			if (radioButtonFilterName.Checked)
+			{
+				result = LibraryDatabase.searchBooksByName(request);
+			}
+			if (radioButtonFilterAuthor.Checked)
+			{
+				result = LibraryDatabase.searchBooksByAuthor(request);
+			}
+
+			dataGridViewResult.DataSource = result;
+			dataGridViewResult.Columns[0].Width = 322;
+			dataGridViewResult.Columns[1].Width = 202;
+		}
 	}
 }
