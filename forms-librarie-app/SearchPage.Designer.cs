@@ -78,6 +78,7 @@
 			this.dataGridViewResult.ReadOnly = true;
 			this.dataGridViewResult.Size = new System.Drawing.Size(584, 225);
 			this.dataGridViewResult.TabIndex = 3;
+			this.dataGridViewResult.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResult_CellMouseDoubleClick);
 			// 
 			// radioButtonFilterName
 			// 

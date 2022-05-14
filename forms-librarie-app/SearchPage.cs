@@ -12,8 +12,12 @@ namespace forms_librarie_app
 {
 	public partial class SearchPage : UserControl
 	{
-		public SearchPage()
+
+		private Catalog catalog;
+
+		public SearchPage(Catalog catalog)
 		{
+			this.catalog = catalog;
 			InitializeComponent();
 		}
 
@@ -57,6 +61,17 @@ namespace forms_librarie_app
 			dataGridViewResult.DataSource = result;
 			dataGridViewResult.Columns[0].Width = 322;
 			dataGridViewResult.Columns[1].Width = 202;
+		}
+
+		private void dataGridViewResult_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			var data = (DataGridView)sender;
+			string colName = data.Columns[data.CurrentCell.ColumnIndex].Name;
+
+			if (colName.Equals("Cartea"))
+			{
+				catalog.showBookInformation(sender);
+			}
 		}
 	}
 }

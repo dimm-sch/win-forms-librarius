@@ -84,7 +84,7 @@
 			// 
 			// labelNavSearch
 			// 
-			this.labelNavSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavSearch.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNavSearch.Location = new System.Drawing.Point(35, 8);
 			this.labelNavSearch.Name = "labelNavSearch";
 			this.labelNavSearch.Size = new System.Drawing.Size(151, 89);
@@ -110,10 +110,10 @@
 			// labelNavCatalog
 			// 
 			this.labelNavCatalog.AutoSize = true;
-			this.labelNavCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavCatalog.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNavCatalog.Location = new System.Drawing.Point(48, 34);
 			this.labelNavCatalog.Name = "labelNavCatalog";
-			this.labelNavCatalog.Size = new System.Drawing.Size(128, 37);
+			this.labelNavCatalog.Size = new System.Drawing.Size(120, 37);
 			this.labelNavCatalog.TabIndex = 1;
 			this.labelNavCatalog.Text = "Catalog";
 			this.labelNavCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
@@ -132,7 +132,8 @@
 			// 
 			// labelNavMainPage
 			// 
-			this.labelNavMainPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavMainPage.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavMainPage.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.labelNavMainPage.Location = new System.Drawing.Point(25, 6);
 			this.labelNavMainPage.Name = "labelNavMainPage";
 			this.labelNavMainPage.Size = new System.Drawing.Size(168, 81);
@@ -204,7 +205,7 @@
 			// 
 			// labelNavFavorites
 			// 
-			this.labelNavFavorites.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavFavorites.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNavFavorites.Location = new System.Drawing.Point(35, 8);
 			this.labelNavFavorites.Name = "labelNavFavorites";
 			this.labelNavFavorites.Size = new System.Drawing.Size(151, 89);
@@ -228,7 +229,7 @@
 			// 
 			// labelNavAdmin
 			// 
-			this.labelNavAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelNavAdmin.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelNavAdmin.Location = new System.Drawing.Point(12, 8);
 			this.labelNavAdmin.Name = "labelNavAdmin";
 			this.labelNavAdmin.Size = new System.Drawing.Size(202, 89);

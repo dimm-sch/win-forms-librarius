@@ -15,7 +15,7 @@ namespace forms_librarie_app
 
 		private UserInfo authentifiedUser = null;
 		private Catalog catalog = new Catalog();
-		private SearchPage searchPage = new SearchPage();
+		private SearchPage searchPage;
 		private FavoriteBooks favoriteBooksPage;
 
 		public Main()
@@ -35,6 +35,7 @@ namespace forms_librarie_app
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
 
+			searchPage = new SearchPage(catalog);
 			favoriteBooksPage = new FavoriteBooks(catalog);
 
 			// avoid log in for testing
