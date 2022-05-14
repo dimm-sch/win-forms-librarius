@@ -94,6 +94,10 @@ namespace forms_librarie_app
 					: NULL_ATTRIBUTE_MESSAGE;
 			}
 
+			double price = double.Parse(bookAttributes[1]);
+			string txtPrice = price.ToString("0.##");
+			bookAttributes[1] = txtPrice;
+
 			string discount = bookAttributes[6];
 			if (discount.Equals(NULL_ATTRIBUTE_MESSAGE))
 			{
