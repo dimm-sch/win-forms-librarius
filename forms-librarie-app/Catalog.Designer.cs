@@ -28,6 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
@@ -46,9 +52,10 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(116, 24);
+			this.label1.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(3, 13);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(133, 13);
+			this.label1.Size = new System.Drawing.Size(391, 37);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Categorii de genuri de cărți";
 			// 
@@ -66,9 +73,10 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(567, 24);
+			this.label2.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(507, 14);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(76, 13);
+			this.label2.Size = new System.Drawing.Size(222, 37);
 			this.label2.TabIndex = 3;
 			this.label2.Text = "Genuri de cărți";
 			// 
@@ -76,7 +84,7 @@
 			// 
 			this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.panel2.Controls.Add(this.label3);
-			this.panel2.Location = new System.Drawing.Point(0, 269);
+			this.panel2.Location = new System.Drawing.Point(0, 287);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(820, 62);
 			this.panel2.TabIndex = 2;
@@ -84,9 +92,10 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(391, 24);
+			this.label3.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(364, 14);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(28, 13);
+			this.label3.Size = new System.Drawing.Size(84, 37);
 			this.label3.TabIndex = 1;
 			this.label3.Text = "Cărți";
 			// 
@@ -95,7 +104,23 @@
 			this.dataGridViewCategoriiGenuri.AllowUserToAddRows = false;
 			this.dataGridViewCategoriiGenuri.AllowUserToDeleteRows = false;
 			this.dataGridViewCategoriiGenuri.AllowUserToResizeRows = false;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewCategoriiGenuri.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridViewCategoriiGenuri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridViewCategoriiGenuri.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dataGridViewCategoriiGenuri.Location = new System.Drawing.Point(23, 82);
 			this.dataGridViewCategoriiGenuri.MultiSelect = false;
 			this.dataGridViewCategoriiGenuri.Name = "dataGridViewCategoriiGenuri";
@@ -111,7 +136,23 @@
 			this.dataGridViewGenuri.AllowUserToAddRows = false;
 			this.dataGridViewGenuri.AllowUserToDeleteRows = false;
 			this.dataGridViewGenuri.AllowUserToResizeRows = false;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewGenuri.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.dataGridViewGenuri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridViewGenuri.DefaultCellStyle = dataGridViewCellStyle4;
 			this.dataGridViewGenuri.Location = new System.Drawing.Point(440, 82);
 			this.dataGridViewGenuri.MultiSelect = false;
 			this.dataGridViewGenuri.Name = "dataGridViewGenuri";
@@ -126,14 +167,31 @@
 			this.dataGridViewCarti.AllowUserToAddRows = false;
 			this.dataGridViewCarti.AllowUserToDeleteRows = false;
 			this.dataGridViewCarti.AllowUserToResizeRows = false;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewCarti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.dataGridViewCarti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridViewCarti.Location = new System.Drawing.Point(194, 364);
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridViewCarti.DefaultCellStyle = dataGridViewCellStyle6;
+			this.dataGridViewCarti.Location = new System.Drawing.Point(194, 380);
 			this.dataGridViewCarti.MultiSelect = false;
 			this.dataGridViewCarti.Name = "dataGridViewCarti";
 			this.dataGridViewCarti.ReadOnly = true;
 			this.dataGridViewCarti.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.dataGridViewCarti.Size = new System.Drawing.Size(425, 199);
 			this.dataGridViewCarti.TabIndex = 5;
+			this.dataGridViewCarti.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCarti_CellContentClick);
 			this.dataGridViewCarti.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewCarti_CellMouseDoubleClick);
 			// 
 			// Catalog

@@ -207,11 +207,11 @@
 			// labelPlaceholderBookName
 			// 
 			this.labelPlaceholderBookName.AutoSize = true;
-			this.labelPlaceholderBookName.Font = new System.Drawing.Font("Cambria", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelPlaceholderBookName.Font = new System.Drawing.Font("Cambria", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.labelPlaceholderBookName.ForeColor = System.Drawing.Color.PaleTurquoise;
 			this.labelPlaceholderBookName.Location = new System.Drawing.Point(117, 30);
 			this.labelPlaceholderBookName.Name = "labelPlaceholderBookName";
-			this.labelPlaceholderBookName.Size = new System.Drawing.Size(104, 22);
+			this.labelPlaceholderBookName.Size = new System.Drawing.Size(131, 28);
 			this.labelPlaceholderBookName.TabIndex = 14;
 			this.labelPlaceholderBookName.Text = "bookName";
 			this.labelPlaceholderBookName.Click += new System.EventHandler(this.labelPlaceholderBookName_Click);

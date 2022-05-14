@@ -171,6 +171,10 @@ namespace forms_librarie_app
 
 			return table;
 		}
-		
+
+		private void dataGridViewCarti_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }
