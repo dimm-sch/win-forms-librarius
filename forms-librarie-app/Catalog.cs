@@ -12,6 +12,9 @@ namespace forms_librarie_app
 {
 	public partial class Catalog : UserControl
 	{
+
+		public HashSet<string> favouriteBooks = new HashSet<string>();
+
 		public Catalog()
 		{
 			InitializeComponent();
@@ -49,7 +52,7 @@ namespace forms_librarie_app
 
 		private void dataGridViewCarti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
-			BookInformation bookInfo = new BookInformation();
+			BookInformation bookInfo = new BookInformation(this);
 			bookInfo.Text = "Detalii Carte";
 
 			DataGridView dataGrid = (DataGridView)sender;
@@ -133,5 +136,12 @@ namespace forms_librarie_app
 			label = (Label)labelControl[0];
 			label.Hide();
 		}
+
+		public void addFavouriteBook(string bookName)
+		{
+			favouriteBooks.Add(bookName);
+		}
+
+		
 	}
 }

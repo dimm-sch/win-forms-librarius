@@ -13,9 +13,11 @@ namespace forms_librarie_app
 	public partial class BookInformation : Form
 	{
 		private string link;
+		private Catalog catalog;
 
-		public BookInformation()
+		public BookInformation(Catalog catalog)
 		{
+			this.catalog = catalog;
 			InitializeComponent();
 		}
 
@@ -44,5 +46,10 @@ namespace forms_librarie_app
         {
 			System.Diagnostics.Process.Start(link);
 		}
-    }
+
+		private void buttonAddFavorite_Click(object sender, EventArgs e)
+		{
+			catalog.addFavouriteBook(labelPlaceholderBookName.Text);
+		}
+	}
 }
