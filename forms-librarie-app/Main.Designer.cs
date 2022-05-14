@@ -35,18 +35,17 @@
 			this.labelNavCatalog = new System.Windows.Forms.Label();
 			this.panelNavMainPage = new System.Windows.Forms.Panel();
 			this.labelNavMainPage = new System.Windows.Forms.Label();
-			this.panelContent = new System.Windows.Forms.Panel();
 			this.panelMainPage = new System.Windows.Forms.Panel();
-			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
+			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
+			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
-			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
-			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
+			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
+			this.panelContent = new System.Windows.Forms.Panel();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavSearch.SuspendLayout();
 			this.panelNavCatalog.SuspendLayout();
 			this.panelNavMainPage.SuspendLayout();
-			this.panelContent.SuspendLayout();
 			this.panelMainPage.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -135,40 +134,42 @@
 			this.labelNavMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
 			this.labelNavMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
 			// 
-			// panelContent
-			// 
-			this.panelContent.BackColor = System.Drawing.Color.Brown;
-			this.panelContent.Controls.Add(this.panelMainPage);
-			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelContent.Location = new System.Drawing.Point(220, 0);
-			this.panelContent.Name = "panelContent";
-			this.panelContent.Size = new System.Drawing.Size(818, 605);
-			this.panelContent.TabIndex = 3;
-			// 
 			// panelMainPage
 			// 
+			this.panelMainPage.Controls.Add(this.panelContent);
 			this.panelMainPage.Controls.Add(this.buttonMainPageLogOut);
 			this.panelMainPage.Controls.Add(this.panel2);
 			this.panelMainPage.Controls.Add(this.labelMainPageAuthentificationStatus);
 			this.panelMainPage.Controls.Add(this.buttonMainPageAuthentification);
 			this.panelMainPage.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelMainPage.Location = new System.Drawing.Point(0, 0);
+			this.panelMainPage.Location = new System.Drawing.Point(220, 0);
 			this.panelMainPage.Name = "panelMainPage";
 			this.panelMainPage.Size = new System.Drawing.Size(818, 605);
 			this.panelMainPage.TabIndex = 0;
 			// 
-			// buttonMainPageLogOut
+			// buttonMainPageAuthentification
 			// 
-			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
-			this.buttonMainPageLogOut.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonMainPageLogOut.ForeColor = System.Drawing.Color.White;
-			this.buttonMainPageLogOut.Location = new System.Drawing.Point(185, 408);
-			this.buttonMainPageLogOut.Name = "buttonMainPageLogOut";
-			this.buttonMainPageLogOut.Size = new System.Drawing.Size(451, 94);
-			this.buttonMainPageLogOut.TabIndex = 9;
-			this.buttonMainPageLogOut.Text = "Deconectare";
-			this.buttonMainPageLogOut.UseVisualStyleBackColor = false;
-			this.buttonMainPageLogOut.Click += new System.EventHandler(this.buttonMainPageLogOut_Click);
+			this.buttonMainPageAuthentification.BackColor = System.Drawing.Color.Brown;
+			this.buttonMainPageAuthentification.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonMainPageAuthentification.ForeColor = System.Drawing.Color.White;
+			this.buttonMainPageAuthentification.Location = new System.Drawing.Point(185, 408);
+			this.buttonMainPageAuthentification.Name = "buttonMainPageAuthentification";
+			this.buttonMainPageAuthentification.Size = new System.Drawing.Size(451, 94);
+			this.buttonMainPageAuthentification.TabIndex = 6;
+			this.buttonMainPageAuthentification.Text = "Autentificare";
+			this.buttonMainPageAuthentification.UseVisualStyleBackColor = false;
+			this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAthentification_Click);
+			// 
+			// labelMainPageAuthentificationStatus
+			// 
+			this.labelMainPageAuthentificationStatus.AutoSize = true;
+			this.labelMainPageAuthentificationStatus.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelMainPageAuthentificationStatus.ForeColor = System.Drawing.Color.White;
+			this.labelMainPageAuthentificationStatus.Location = new System.Drawing.Point(232, 359);
+			this.labelMainPageAuthentificationStatus.Name = "labelMainPageAuthentificationStatus";
+			this.labelMainPageAuthentificationStatus.Size = new System.Drawing.Size(353, 34);
+			this.labelMainPageAuthentificationStatus.TabIndex = 7;
+			this.labelMainPageAuthentificationStatus.Text = "Vă rugăm să vă autentificați";
 			// 
 			// panel2
 			// 
@@ -191,29 +192,28 @@
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Cartea preferată pentru fiecare";
 			// 
-			// labelMainPageAuthentificationStatus
+			// buttonMainPageLogOut
 			// 
-			this.labelMainPageAuthentificationStatus.AutoSize = true;
-			this.labelMainPageAuthentificationStatus.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelMainPageAuthentificationStatus.ForeColor = System.Drawing.Color.White;
-			this.labelMainPageAuthentificationStatus.Location = new System.Drawing.Point(232, 359);
-			this.labelMainPageAuthentificationStatus.Name = "labelMainPageAuthentificationStatus";
-			this.labelMainPageAuthentificationStatus.Size = new System.Drawing.Size(353, 34);
-			this.labelMainPageAuthentificationStatus.TabIndex = 7;
-			this.labelMainPageAuthentificationStatus.Text = "Vă rugăm să vă autentificați";
+			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
+			this.buttonMainPageLogOut.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonMainPageLogOut.ForeColor = System.Drawing.Color.White;
+			this.buttonMainPageLogOut.Location = new System.Drawing.Point(185, 408);
+			this.buttonMainPageLogOut.Name = "buttonMainPageLogOut";
+			this.buttonMainPageLogOut.Size = new System.Drawing.Size(451, 94);
+			this.buttonMainPageLogOut.TabIndex = 9;
+			this.buttonMainPageLogOut.Text = "Deconectare";
+			this.buttonMainPageLogOut.UseVisualStyleBackColor = false;
+			this.buttonMainPageLogOut.Click += new System.EventHandler(this.buttonMainPageLogOut_Click);
 			// 
-			// buttonMainPageAuthentification
+			// panelContent
 			// 
-			this.buttonMainPageAuthentification.BackColor = System.Drawing.Color.Brown;
-			this.buttonMainPageAuthentification.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonMainPageAuthentification.ForeColor = System.Drawing.Color.White;
-			this.buttonMainPageAuthentification.Location = new System.Drawing.Point(185, 408);
-			this.buttonMainPageAuthentification.Name = "buttonMainPageAuthentification";
-			this.buttonMainPageAuthentification.Size = new System.Drawing.Size(451, 94);
-			this.buttonMainPageAuthentification.TabIndex = 6;
-			this.buttonMainPageAuthentification.Text = "Autentificare";
-			this.buttonMainPageAuthentification.UseVisualStyleBackColor = false;
-			this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAthentification_Click);
+			this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
+			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelContent.Location = new System.Drawing.Point(0, 0);
+			this.panelContent.Name = "panelContent";
+			this.panelContent.Size = new System.Drawing.Size(818, 605);
+			this.panelContent.TabIndex = 10;
+			this.panelContent.Visible = false;
 			// 
 			// Main
 			// 
@@ -221,7 +221,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Brown;
 			this.ClientSize = new System.Drawing.Size(1038, 605);
-			this.Controls.Add(this.panelContent);
+			this.Controls.Add(this.panelMainPage);
 			this.Controls.Add(this.panelSidebar);
 			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(1054, 643);
@@ -234,7 +234,6 @@
 			this.panelNavCatalog.ResumeLayout(false);
 			this.panelNavCatalog.PerformLayout();
 			this.panelNavMainPage.ResumeLayout(false);
-			this.panelContent.ResumeLayout(false);
 			this.panelMainPage.ResumeLayout(false);
 			this.panelMainPage.PerformLayout();
 			this.panel2.ResumeLayout(false);
@@ -248,17 +247,17 @@
 		private System.Windows.Forms.Panel panelSidebar;
 		private System.Windows.Forms.Panel panelNavCatalog;
 		private System.Windows.Forms.Label labelNavCatalog;
-		private System.Windows.Forms.Panel panelContent;
 		private System.Windows.Forms.Panel panelNavMainPage;
 		private System.Windows.Forms.Label labelNavMainPage;
+		private System.Windows.Forms.Panel panelNavSearch;
+		private System.Windows.Forms.Label labelNavSearch;
 		private System.Windows.Forms.Panel panelMainPage;
+		private System.Windows.Forms.Panel panelContent;
+		private System.Windows.Forms.Button buttonMainPageLogOut;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label labelMainPageAuthentificationStatus;
 		private System.Windows.Forms.Button buttonMainPageAuthentification;
-		private System.Windows.Forms.Button buttonMainPageLogOut;
-		private System.Windows.Forms.Panel panelNavSearch;
-		private System.Windows.Forms.Label labelNavSearch;
 	}
 }
 

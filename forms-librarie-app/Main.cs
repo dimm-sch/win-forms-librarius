@@ -30,7 +30,6 @@ namespace forms_librarie_app
 			labelNavMainPage.Cursor = Cursors.Hand;
 			buttonMainPageAuthentification.Cursor = Cursors.Hand;
 			buttonMainPageLogOut.Cursor = Cursors.Hand;
-			catalog.Visible = false;
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
 
@@ -86,8 +85,9 @@ namespace forms_librarie_app
 				return;
 			}
 
-			catalog.Visible = true;
-			panelMainPage.Visible = false;
+			panelContent.Controls.Clear();
+			panelContent.Controls.Add(catalog);
+			panelContent.Show();
 		}
 
 		private void mainPage_Click(object sender, MouseEventArgs e)
@@ -98,8 +98,8 @@ namespace forms_librarie_app
 				return;
 			}
 
-			catalog.Visible = false;
-			panelMainPage.Visible = true;
+			// panelMainPage by default visible
+			panelContent.Hide();
 		}
 
 		private void search_Click(object sender, MouseEventArgs e)
@@ -110,6 +110,9 @@ namespace forms_librarie_app
 				return;
 			}
 
+			panelContent.Controls.Clear();
+			panelContent.Controls.Add(searchPage);
+			panelContent.Show();
 		}
 
 		private void buttonMainPageAthentification_Click(object sender, EventArgs e)
