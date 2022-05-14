@@ -59,6 +59,7 @@
 			this.labelPlaceholderPrice = new System.Windows.Forms.Label();
 			this.labelPlaceholderStockState = new System.Windows.Forms.Label();
 			this.buttonAddFavorite = new System.Windows.Forms.Button();
+			this.buttonDeleteFavorite = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceholderBookImage)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -399,12 +400,28 @@
 			this.buttonAddFavorite.MouseLeave += new System.EventHandler(this.buttonAddFavorite_MouseLeave);
 			this.buttonAddFavorite.MouseHover += new System.EventHandler(this.buttonAddFavorite_MouseHover);
 			// 
+			// buttonDeleteFavorite
+			// 
+			this.buttonDeleteFavorite.BackColor = System.Drawing.Color.Brown;
+			this.buttonDeleteFavorite.Font = new System.Drawing.Font("Cambria", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonDeleteFavorite.ForeColor = System.Drawing.Color.Yellow;
+			this.buttonDeleteFavorite.Location = new System.Drawing.Point(79, 386);
+			this.buttonDeleteFavorite.Name = "buttonDeleteFavorite";
+			this.buttonDeleteFavorite.Size = new System.Drawing.Size(183, 112);
+			this.buttonDeleteFavorite.TabIndex = 26;
+			this.buttonDeleteFavorite.Text = "Șterge din Favorite";
+			this.buttonDeleteFavorite.UseVisualStyleBackColor = false;
+			this.buttonDeleteFavorite.Click += new System.EventHandler(this.buttonDeleteFavorite_Click);
+			this.buttonDeleteFavorite.MouseLeave += new System.EventHandler(this.buttonDeleteFavorite_MouseLeave);
+			this.buttonDeleteFavorite.MouseHover += new System.EventHandler(this.buttonDeleteFavorite_MouseHover);
+			// 
 			// BookInformation
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Brown;
 			this.ClientSize = new System.Drawing.Size(800, 512);
+			this.Controls.Add(this.buttonDeleteFavorite);
 			this.Controls.Add(this.buttonAddFavorite);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.labelPlaceholderISBN);
@@ -474,5 +491,6 @@
 		private System.Windows.Forms.Label labelPriceWithDiscount;
 		private System.Windows.Forms.Label labelDiscount;
 		private System.Windows.Forms.Button buttonAddFavorite;
+		private System.Windows.Forms.Button buttonDeleteFavorite;
 	}
 }

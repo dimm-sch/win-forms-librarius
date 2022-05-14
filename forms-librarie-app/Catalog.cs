@@ -13,7 +13,7 @@ namespace forms_librarie_app
 	public partial class Catalog : UserControl
 	{
 
-		public HashSet<string> favouriteBooks = new HashSet<string>();
+		private HashSet<string> favouriteBooks = new HashSet<string>();
 
 		public Catalog()
 		{
@@ -137,11 +137,20 @@ namespace forms_librarie_app
 			label.Hide();
 		}
 
-		public void addFavoriteBook(string bookName)
+		public bool addFavoriteBook(string bookName)
 		{
-			favouriteBooks.Add(bookName);
+			return favouriteBooks.Add(bookName);
 		}
 
+		public bool removeFavoriteBook(string bookName)
+		{
+			return favouriteBooks.Remove(bookName);
+		}
+
+		public bool isBookFavorite(string bookName)
+		{
+			return favouriteBooks.Contains(bookName);
+		}
 		
 	}
 }

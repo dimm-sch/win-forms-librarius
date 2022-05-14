@@ -30,6 +30,14 @@ namespace forms_librarie_app
 		{
 			buttonAddFavorite.Cursor = Cursors.Hand;
 			labelPlaceholderBookName.Cursor = Cursors.Hand;
+			buttonDeleteFavorite.Hide();
+			buttonDeleteFavorite.Cursor = Cursors.Hand;
+
+			if (catalog.isBookFavorite(labelPlaceholderBookName.Text))
+			{
+				buttonAddFavorite.Hide();
+				buttonDeleteFavorite.Show();
+			}
 		}
 
 		private void buttonAddFavorite_MouseHover(object sender, EventArgs e)
@@ -49,7 +57,33 @@ namespace forms_librarie_app
 
 		private void buttonAddFavorite_Click(object sender, EventArgs e)
 		{
-			catalog.addFavouriteBook(labelPlaceholderBookName.Text);
+			if (catalog.addFavoriteBook(labelPlaceholderBookName.Text))
+			{
+				buttonAddFavorite.Hide();
+				buttonDeleteFavorite.Show();
+			}
+		}
+
+		private void buttonDeleteFavorite_Click(object sender, EventArgs e)
+		{
+			if (catalog.removeFavoriteBook(labelPlaceholderBookName.Text))
+			{
+				buttonAddFavorite.Show();
+				buttonDeleteFavorite.Hide();
+			} else
+			{
+				throw new NotSupportedException("Unexpected behaviour.");
+			}
+		}
+
+		private void buttonDeleteFavorite_MouseHover(object sender, EventArgs e)
+		{
+			buttonDeleteFavorite.BackColor = Color.Red;
+		}
+
+		private void buttonDeleteFavorite_MouseLeave(object sender, EventArgs e)
+		{
+			buttonDeleteFavorite.BackColor = Color.Brown;
 		}
 	}
 }
