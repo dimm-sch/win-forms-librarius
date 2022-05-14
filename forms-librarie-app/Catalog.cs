@@ -51,7 +51,7 @@ namespace forms_librarie_app
 			dataGridViewCarti.Columns[0].Width = 450;
 		}
 
-		private void dataGridViewCarti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		private void showBookInformation(object sender)
 		{
 			BookInformation bookInfo = new BookInformation(this);
 			bookInfo.Text = "Detalii Carte";
@@ -93,7 +93,7 @@ namespace forms_librarie_app
 			if (!string.IsNullOrEmpty((discount)))
 			{
 				formatDiscountControls(bookInfo, price, discount);
-			} 
+			}
 			else
 			{
 				hideDiscountControls(bookInfo);
@@ -107,7 +107,12 @@ namespace forms_librarie_app
 			string link = bookAttributes[12];
 			bookInfo.setLink(link);
 
-            bookInfo.Show();
+			bookInfo.Show();
+		}
+
+		private void dataGridViewCarti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			showBookInformation(sender);
 		}
 
 		private void formatDiscountControls(BookInformation bookInfo, string price, string discount)
