@@ -51,7 +51,7 @@ namespace forms_librarie_app
 			dataGridViewCarti.Columns[0].Width = 450;
 		}
 
-		private void showBookInformation(object sender)
+		public void showBookInformation(object sender)
 		{
 			BookInformation bookInfo = new BookInformation(this);
 			bookInfo.Text = "Detalii Carte";
