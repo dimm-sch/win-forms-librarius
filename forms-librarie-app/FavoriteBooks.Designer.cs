@@ -54,6 +54,7 @@
 			this.buttonExport.TabIndex = 1;
 			this.buttonExport.Text = "Exportă în Excel";
 			this.buttonExport.UseVisualStyleBackColor = true;
+			this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
 			// 
 			// dataGridViewFavoriteBooks
 			// 
