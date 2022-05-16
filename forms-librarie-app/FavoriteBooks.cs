@@ -44,26 +44,26 @@ namespace forms_librarie_app
 			var sheet = workBook.CreateWorkSheet("Cărți favorite");
 
 			//sheet[""].Value = "";
-			sheet["D4"].Value = "Carte";
-			sheet["E4"].Value = "Autor";
-			sheet["F4"].Value = "Editura";
-			sheet["G4"].Value = "Anul";
-			sheet["H4"].Value = "Pagini";
-			sheet["I4"].Value = "Gen";
-			sheet["J4"].Value = "ISBN";
-			sheet["K4"].Value = "Preț";
-
-			string tableNameRange = "D3:K3";
+			sheet["B3"].Value = "Carte";
+			sheet["C3"].Value = "Autor";
+			sheet["D3"].Value = "Editura";
+			sheet["E3"].Value = "Anul";
+			sheet["F3"].Value = "Pagini";
+			sheet["G3"].Value = "Gen";
+			sheet["H3"].Value = "ISBN";
+			sheet["I3"].Value = "Preț";
+			// Venus ia foc Marte e de gheata
+			string tableNameRange = "B2:I2";
 			var tableName = sheet[tableNameRange];
 			tableName.Value = "Cărți favorite";
 			tableName.Style.HorizontalAlignment = IronXL.Styles.HorizontalAlignment.Center;
 			tableName.Style.Font.Bold = true;
-			wrapCellWithBorders(sheet, "D3:K3", BorderType.Thin);
+			wrapCellWithBorders(sheet, tableNameRange, BorderType.Thin);
 			sheet.Merge(tableNameRange);
 
-			var header = sheet["D4:K4"];
+			var header = sheet["B3:I3"];
 			header.Style.Font.Bold = true;
-			wrapCellWithBorders(sheet, "D4:K4", BorderType.Thin);
+			wrapCellWithBorders(sheet, "B3:I3", BorderType.Thin);
 			header.Style.ShrinkToFit = true;
 
 			return sheet;
@@ -115,9 +115,10 @@ namespace forms_librarie_app
 				return;
 			}
 				 
-			int firstRowNumber = 5;
+			int firstRowNumber = 4;
 			int rowNumber = firstRowNumber + rowIndex;
-			string[] columnLetters = new string[] { "D", "E", "F", "G", "H", "I", "J", "K"};
+			string[] columnLetters = new string[] {"B", "C", "D", "E", "F", "G", "H", "I"};
+
 			for (int i = 0; i < columnLetters.Length; ++i)
 			{
 				string cell = columnLetters[i] + rowNumber;
@@ -128,7 +129,15 @@ namespace forms_librarie_app
 				var c = sheet[cell];
 				c.Style.VerticalAlignment = VerticalAlignment.Center;
 			}
-			
+
+			string bookName = exportAttributes[0];
+			if (bookName.Length > 30)
+			{
+				int rows = sheet.Rows.Length;
+				sheet.Rows[rows - 1].Height = 1300;
+				sheet["B" + rowNumber].Style.WrapText = true;
+			}
+
 		}
 
 
@@ -148,7 +157,5 @@ namespace forms_librarie_app
 
 			sheet.SaveAs("carti_favorite.xlsx");
 		}
-
-		//TODO if text length > 35 then rowWidth = 50
 	}
 }
