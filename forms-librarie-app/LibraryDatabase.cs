@@ -78,6 +78,17 @@ namespace forms_librarie_app
 			return dataTable;
 		}
 
+		/* Get all books from database*/
+		public static DataTable getCarteInfoTable()
+        {
+			SqlCommand command = new SqlCommand("select Cartea from vCartiInfo", connection);
+			SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+			DataTable dataTable = new DataTable();
+			dataAdapter.Fill(dataTable);
+
+			return dataTable;
+		}
+
 		public static string[] getBookAttributes(string bookName)
         {
 			DataTable carteInfo = LibraryDatabase.getCarteInfoTable(bookName);

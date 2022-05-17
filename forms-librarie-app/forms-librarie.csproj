@@ -50,11 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAddBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAddBook.Designer.cs">
+      <DependentUpon>AdminAddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administration.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Administration.Designer.cs">
       <DependentUpon>Administration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRemoveBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminRemoveBook.Designer.cs">
+      <DependentUpon>AdminRemoveBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Authentification.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,14 @@
       <DependentUpon>SearchPage.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
+    <EmbeddedResource Include="AdminAddBook.resx">
+      <DependentUpon>AdminAddBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administration.resx">
       <DependentUpon>Administration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRemoveBook.resx">
+      <DependentUpon>AdminRemoveBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>

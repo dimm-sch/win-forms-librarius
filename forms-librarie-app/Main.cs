@@ -44,7 +44,7 @@ namespace forms_librarie_app
 			administrationPage = new Administration();
 			labelNavAdmin.Enabled = false;
 			// avoid log in for testing
-			authentifyUser(new UserInfo("test", "test", "test"));
+			authentifyUser(new UserInfo("test", "test", "Manager"));
 		}
 
 		// Events
