@@ -2,9 +2,9 @@
 USE master
 GO
 
--- alter database LibrariusDB set single_user with rollback immediate
+-- alter database Librarius set single_user with rollback immediate
 
--- drop database LibrariusDB
+-- drop database Librarius
 
 -- Se creeaza o noua baza de date cu numele de 'Librarie_Darii_Dumitru'.
 IF NOT EXISTS (
@@ -503,3 +503,25 @@ INSERT INTO Genuri
 	(id, denumire, idCategorieGen)
 VALUES
 	(@id, @denumire, @idCategorieGen)
+
+
+	
+go
+create procedure sp_deleteBookFromCarteAutor
+	@bookName NVARCHAR(100)
+as
+	delete from CarteAutor where idCarte = (select id from Carti where denumire like @bookName);
+
+GO
+create procedure sp_removeBook
+	@denumireCarte NVARCHAR(90)
+as
+begin
+	exec sp_deleteBookFromCarteAutor @denumireCarte
+	delete from Carti where denumire like @denumireCarte;
+
+end
+
+-- insert into Carti values(50, N'test', 500.0, 1, 2005, 300, 1, null, 1, 1, '1116065880702', 'images\kathie-si-hipopotamul.jpg', 'https://librarius.md/ro/book/000744-kathie-si-hipopotamul');
+
+
