@@ -68,7 +68,7 @@ namespace forms_librarie_app
 			string loginType = comboBoxLoginType.SelectedItem.ToString();
 			if (!loginType.Equals(foundUser.Role))
 			{
-				MessageBox.Show("Acest cont nu are permisiuni de " + foundUser.Role);
+				MessageBox.Show("Acest cont nu are permisiuni de " + comboBoxLoginType.Text);
 				return;
 			}
 
