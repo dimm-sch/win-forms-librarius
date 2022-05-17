@@ -481,3 +481,25 @@ VALUES
      @idStareStocCarte, @reducereCarte, @idTipCarte, @idGenCarte, @isbnCarte)
 
 -- exec sp_insertCarte 50, 'newBook', 200, 1, 2007, 100, 1, 50, 2, 1, '1234567890123'
+
+GO
+create procedure sp_insertCategorieGen
+	@id int,
+	@denumire NVARCHAR(40)
+as
+INSERT INTO CategoriiGenuri
+	(id, denumire)
+VALUES
+	(@id, @denumire)
+
+
+GO
+create procedure sp_insertGen
+	@id int,
+	@denumire NVARCHAR(60),
+	@idCategorieGen int
+as
+INSERT INTO Genuri
+	(id, denumire, idCategorieGen)
+VALUES
+	(@id, @denumire, @idCategorieGen)
