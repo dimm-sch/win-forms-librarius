@@ -17,6 +17,7 @@ namespace forms_librarie_app
 		private Catalog catalog = new Catalog();
 		private SearchPage searchPage;
 		private FavoriteBooks favoriteBooksPage;
+		private Administration administrationPage;
 
 		private Color SELECTED_COLOR = Color.FromArgb(222, 220, 82);
 		private Color UNSELECTED_COLOR = Color.Empty;
@@ -40,7 +41,8 @@ namespace forms_librarie_app
 
 			searchPage = new SearchPage(catalog);
 			favoriteBooksPage = new FavoriteBooks(catalog);
-
+			administrationPage = new Administration();
+			labelNavAdmin.Enabled = false;
 			// avoid log in for testing
 			authentifyUser(new UserInfo("test", "test", "test"));
 		}
@@ -149,6 +151,11 @@ namespace forms_librarie_app
 
 		public void authentifyUser(UserInfo user)
 		{
+			if (user.Role == "Manager")
+            {
+				labelNavAdmin.Enabled = true;
+            }
+
 			authentifiedUser = user;
 			buttonMainPageAuthentification.Visible = false;
 			buttonMainPageLogOut.Visible = true;
@@ -157,6 +164,8 @@ namespace forms_librarie_app
 
 		private void buttonMainPageLogOut_Click(object sender, EventArgs e)
 		{
+			labelNavAdmin.Enabled = false;
+
 			authentifiedUser = null;
 			buttonMainPageAuthentification.Visible = true;
 			buttonMainPageLogOut.Visible = false;
@@ -171,5 +180,12 @@ namespace forms_librarie_app
 			panelContent.Controls.Add(favoriteBooksPage);
 			panelContent.Show();
 		}
-	}
+
+        private void labelNavAdmin_Click(object sender, EventArgs e)
+        {
+			panelContent.Controls.Clear();
+			panelContent.Controls.Add(administrationPage);
+			panelContent.Show();
+        }
+    }
 }
