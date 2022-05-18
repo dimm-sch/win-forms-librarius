@@ -2,9 +2,7 @@
 USE master
 GO
 
--- alter database Librarius set single_user with rollback immediate
-
--- drop database Librarius
+-- use master; alter database Librarius set single_user with rollback immediate; drop database Librarius
 
 -- Se creeaza o noua baza de date cu numele de 'Librarie_Darii_Dumitru'.
 IF NOT EXISTS (
@@ -38,7 +36,7 @@ GO
 
 CREATE TABLE Edituri
 (
-    id INTEGER,
+    id INTEGER IDENTITY,
     denumire NVARCHAR(30) UNIQUE NOT NULL,
     PRIMARY KEY(id)
 );
@@ -138,7 +136,7 @@ CREATE TABLE Carti
 
 CREATE TABLE Autori
 (
-    id INTEGER,
+    id INTEGER IDENTITY,
     nume NVARCHAR(25) NOT NULL,
     prenume NVARCHAR(25) NOT NULL,
     PRIMARY KEY(id)
@@ -195,20 +193,20 @@ GO
 -- Introducerea datelor in tabele
 
 INSERT INTO Edituri
-(id, denumire)
+( denumire)
 VALUES
- (1,N'Curtea Veche')
-,(2,N'Europress')
-,(3,N'Vremea')
-,(4,N'Trei')
-,(5,N'All')
-,(6,N'Эксмо')
-,(7,N'Flamingo')
-,(8,N'Teora')
-,(9,N'Niculescu')
-,(10,N'Картография')
-,(11,N'Steaua Nordului')
-,(12,N'Poligraf-Design');
+ (N'Curtea Veche')
+,(N'Europress')
+,(N'Vremea')
+,(N'Trei')
+,(N'All')
+,(N'Эксмо')
+,(N'Flamingo')
+,(N'Teora')
+,(N'Niculescu')
+,(N'Картография')
+,(N'Steaua Nordului')
+,(N'Poligraf-Design');
 
 INSERT INTO StariStoc
 (id, denumire)
@@ -272,22 +270,22 @@ VALUES
 ,(15,N'Abecedar 6-7 ani',45.0000,12,2014,NULL,2,NULL,1,13,'9789975140379', 'images\abecedar-6-7.jpg', 'https://librarius.md/ro/book/abecedar-6-7-ani-ed-2014-poligraf-design-372486');
 
 INSERT INTO Autori
-(id, nume, prenume)
+(nume, prenume)
 VALUES
- (1,N'Vargas Llosa',N'Mario')
-,(2,N'Dabija',N'Nicolae')
-,(3,N'Gray',N'John')
-,(4,N'Dashner',N'James')
-,(5,N'James',N'Lucian')
-,(6,N'Wagner',N'R.')
-,(7,N'Круз',N'Дж.')
-,(8,N'Вебб',N'Х.')
-,(9,N'Sojka',N'Anna')
-,(10,N'Levitchi',N'Leon')
-,(11,N'Palmowski',N'J.')
-,(12,N'Huber',N'Niculescu')
-,(13,N'Puscasiu',N'O.')
-,(14,N'Jelescu',N'P.');
+ (N'Vargas Llosa',N'Mario')
+,(N'Dabija',N'Nicolae')
+,(N'Gray',N'John')
+,(N'Dashner',N'James')
+,(N'James',N'Lucian')
+,(N'Wagner',N'R.')
+,(N'Круз',N'Дж.')
+,(N'Вебб',N'Х.')
+,(N'Sojka',N'Anna')
+,(N'Levitchi',N'Leon')
+,(N'Palmowski',N'J.')
+,(N'Huber',N'Niculescu')
+,(N'Puscasiu',N'O.')
+,(N'Jelescu',N'P.');
 
 INSERT INTO CarteAutor
 (idCarte,idAutor)
@@ -480,8 +478,6 @@ VALUES
     (@idCarte, @denumireCarte, @pretCarte, @idEdituraCarte, @anPublicareCarte, @nrPaginiCarte,
      @idStareStocCarte, @reducereCarte, @idTipCarte, @idGenCarte, @isbnCarte)
 
--- exec sp_insertCarte 50, 'newBook', 200, 1, 2007, 100, 1, 50, 2, 1, '1234567890123'
-
 GO
 create procedure sp_insertCategorieGen
 	@id int,
@@ -522,6 +518,98 @@ begin
 
 end
 
--- insert into Carti values(50, N'test', 500.0, 1, 2005, 300, 1, null, 1, 1, '1116065880702', 'images\kathie-si-hipopotamul.jpg', 'https://librarius.md/ro/book/000744-kathie-si-hipopotamul');
+GO
+create procedure sp_addAuthor
+	@lastName NVARCHAR(25),
+	@firstName NVARCHAR(25)
+as
+	insert into Autori(nume, prenume) values (@lastName, @firstName);
 
+GO
+create procedure sp_addPublisher
+	@name NVARCHAR(30)
+as
+	insert into Edituri(denumire) values (@name);
+
+GO
+create procedure sp_addBook
+	@id int,
+	@name nvarchar(90),
+	@price smallmoney,
+	@publisherId int,
+	@publishingYear int,
+	@pages int,
+	@stockStateId int,
+	@discount int,
+	@typeId int,
+	@genreId int,
+	@isbn char(13),
+	@authorId int
+as
+begin
+	declare @imagePath nvarchar(30) = 'images\default.png'
+	declare @link nvarchar(100) = 'https://librarius.md/ro/'
+
+	if @discount = 0
+		set @discount = null
+
+	insert into Carti(id, denumire, pret, idEditura, anPublicare, nrPagini, idStareStoc, reducere, idTip, idGen, isbn, imagePath, link)
+		values (@id, @name, @price, @publisherId, @publishingYear, @pages, @stockStateId, @discount, @typeId, @genreId, @isbn, @imagePath, @link);
+	insert into CarteAutor(idCarte, idAutor) values (@id, @authorId);
+
+	return;
+end
+
+GO
+
+
+--GO
+--create procedure sp_addAuthor
+--	@lastName NVARCHAR(25),
+--	@firstName NVARCHAR(25),
+
+--	@idAuthor int null OUT
+--as
+--begin
+--	insert into Autori(nume, prenume) values (@lastName, @firstName)
+--	select @idAuthor = [id] from Autori where nume like @lastName and prenume like @firstName
+--	return;
+--end
+
+
+
+--GO
+--create procedure sp_addBook
+--	@isAuthorAdded bit,
+--	@isPublisherAdded bit,
+--	@hasDiscount bit,
+--	@id int,
+--	@name nvarchar(90),
+--	@price smallmoney,
+--	@publisher nvarchar(30),
+--	@publishingYear int,
+--	@pages int,
+--	@stockState varchar(25),
+--	@discount int,
+--	@type varchar(20),
+--	@genre varchar(60),
+--	@isbn char(13),
+--	@authorLastName nvarchar(25),
+--	@authorFirstName nvarchar(25),
+
+--	@authorId int null
+--as
+--begin
+--	if @isAuthorAdded = 1
+--		select @authorId = [id] from Autori
+--		where nume like @authorLastName and prenume like @authorFirstName
+--	else
+--		exec sp_addAuthor @authorLastName, @authorFirstName, @idAuthor = @authorId out
+
+
+--end
+
+--		$exception	{"The INSERT statement conflicted with the CHECK constraint \"CK__Carti__reducere__1CF15040\". The conflict occurred in database \"Librarius\", table \"dbo.Carti\",
+--column 'reducere'.\r\nThe INSERT statement conflicted with the FOREIGN KEY constraint \"FK_CarteAutor_Carte\". The conflict occurred in database \"Librarius\", table \"dbo.Carti\", column 'id'.
+--\r\nThe statement has been terminated.\r\nThe statement has been terminated."}	System.Data.SqlClient.SqlException
 

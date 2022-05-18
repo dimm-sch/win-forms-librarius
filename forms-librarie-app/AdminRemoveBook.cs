@@ -19,8 +19,31 @@ namespace forms_librarie_app
 
         private void AdminRemoveBook_Load(object sender, EventArgs e)
         {
-            dataGridViewBooks.DataSource = LibraryDatabase.getCarteInfoTable();
-            dataGridViewBooks.Columns[0].Width = 514;
+			dataGridViewBooks.DataSource = LibraryDatabase.getCarteInfoTable();
+			dataGridViewBooks.Columns[0].Width = 514;
         }
-    }
+
+		private void updateDataGridViewBooks()
+		{
+			dataGridViewBooks.DataSource = LibraryDatabase.getCarteInfoTable();
+		}
+
+		private void buttonRemoveBook_Click(object sender, EventArgs e)
+		{
+			var selectedCells = dataGridViewBooks.SelectedCells;
+			List<string> booksForRemoval = new List<string>();
+			foreach (DataGridViewCell cell in selectedCells)
+			{
+				string book = cell.Value.ToString();
+				booksForRemoval.Add(book);
+			}
+
+			foreach (string book in booksForRemoval)
+			{
+				LibraryDatabase.removeBook(book);
+			}
+
+			updateDataGridViewBooks();
+		}
+	}
 }

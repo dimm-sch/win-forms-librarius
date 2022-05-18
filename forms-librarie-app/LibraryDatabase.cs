@@ -36,13 +36,24 @@ namespace forms_librarie_app
 			return dataTable;
 		}
 
+		public static DataTable getGenuriTable()
+		{
+			string query = "select denumire as [Gen] from Genuri";
+			SqlCommand command = new SqlCommand(query, connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable dataTable = new DataTable();
+			adapter.Fill(dataTable);
+
+			return dataTable;
+		}
+
 		public static DataTable getGenuriTable(string categorieGen)
 		{
 			SqlCommand command = new SqlCommand(
 				"select g.denumire as [Gen] from Genuri g" +
 				" where idCategorieGen in" +
 				" (select id from CategoriiGenuri" +
-				" where CategoriiGenuri.denumire like '"+ categorieGen + "')", connection);
+				" where CategoriiGenuri.denumire like '" + categorieGen + "')", connection);
 
 			SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 			DataTable dataTable = new DataTable();
@@ -69,7 +80,7 @@ namespace forms_librarie_app
 		Starea stocului, reducere, Tipul, Gen, isbn, author, imagePath, link */
 		public static DataTable getCarteInfoTable(string bookName)
 		{
-			SqlCommand command = new SqlCommand("select * from vCartiInfo where cartea like N\'" 
+			SqlCommand command = new SqlCommand("select * from vCartiInfo where cartea like N\'"
 				+ bookName + "\'", connection);
 			SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 			DataTable dataTable = new DataTable();
@@ -80,7 +91,7 @@ namespace forms_librarie_app
 
 		/* Get all books from database*/
 		public static DataTable getCarteInfoTable()
-        {
+		{
 			SqlCommand command = new SqlCommand("select Cartea from vCartiInfo", connection);
 			SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
 			DataTable dataTable = new DataTable();
@@ -90,7 +101,7 @@ namespace forms_librarie_app
 		}
 
 		public static string[] getBookAttributes(string bookName)
-        {
+		{
 			DataTable carteInfo = LibraryDatabase.getCarteInfoTable(bookName);
 			DataRow attributesRow = carteInfo.Rows[0];
 			object[] attributes = attributesRow.ItemArray;
@@ -140,5 +151,171 @@ namespace forms_librarie_app
 			return table;
 		}
 
+		public static HashSet<int> getBookIds()
+		{
+			SqlCommand command = new SqlCommand(
+				"select id from Carti", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+
+			HashSet<int> ids = new HashSet<int>();
+			foreach (DataRow row in table.Rows)
+			{
+				int id = (int)row.ItemArray[0];
+				ids.Add(id);
+			}
+
+			return ids;
+		}
+
+		public static HashSet<string> getBookPublishers()
+		{
+			SqlCommand command = new SqlCommand(
+				"select denumire from Edituri", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+
+			HashSet<string> publishers = new HashSet<string>();
+			foreach (DataRow row in table.Rows)
+			{
+				string publisher = row.ItemArray[0].ToString().ToLower();
+				publishers.Add(publisher);
+			}
+
+			return publishers;
+		}
+
+		public static HashSet<string> getBookAuthors()
+		{
+			SqlCommand command = new SqlCommand(
+				"select Autor from vCartiInfo", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+
+			HashSet<string> authors = new HashSet<string>();
+			foreach (DataRow row in table.Rows)
+			{
+				string author = row.ItemArray[0].ToString().ToLower();
+				authors.Add(author);
+			}
+
+			return authors;
+		}
+
+		public static int getAuthorId(string lastName, string firstName) 
+		{
+			SqlCommand command = new SqlCommand(
+				$"select id from Autori where nume = '{lastName}' and prenume = '{firstName}'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+			DataRow row = table.Rows[0];
+
+			return (int)row.ItemArray[0];
+		}
+
+		public static int getPublisherId(string publisher)
+		{
+			SqlCommand command = new SqlCommand(
+				$"select id from Edituri where denumire = '{publisher}'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+			DataRow row = table.Rows[0];
+
+			return (int)row.ItemArray[0];
+		}
+
+		public static int getStockStateId(string stockState)
+		{
+			SqlCommand command = new SqlCommand(
+				$"select id from StariStoc where denumire = '{stockState}'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+			DataRow row = table.Rows[0];
+
+			return (int)row.ItemArray[0];
+		}
+
+		public static int getBookTypeId(string type)
+		{
+			SqlCommand command = new SqlCommand(
+				$"select id from TipuriCarti where denumire = '{type}'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+			DataRow row = table.Rows[0];
+
+			return (int)row.ItemArray[0];
+		}
+
+		public static int getGenreId(string genre)
+		{
+			SqlCommand command = new SqlCommand(
+				$"select id from Genuri where denumire = '{genre}'", connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+			DataRow row = table.Rows[0];
+
+			return (int)row.ItemArray[0];
+		}
+
+		public static int addAuthor(string lastName, string firstName)
+		{
+			SqlCommand command = new SqlCommand("sp_addAuthor", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			command.Parameters.Add(new SqlParameter("@lastName", lastName));
+			command.Parameters.Add(new SqlParameter("@firstName", firstName));
+			command.ExecuteNonQuery();
+
+			return getAuthorId(lastName, firstName);
+		}
+
+		public static int addPublisher(string publisher)
+		{
+			SqlCommand command = new SqlCommand("sp_addPublisher", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			command.Parameters.Add(new SqlParameter("@name", publisher));
+			command.ExecuteNonQuery();
+
+			return getPublisherId(publisher);
+		}
+
+		public static void addBook(
+			string id, string name, string price,
+			string publisherId, string publishingYear, string pages,
+			string stockStateId, string discount, string typeId,
+			string genreId, string isbn, string authorId)
+		{
+			SqlCommand command = new SqlCommand("sp_addBook", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			command.Parameters.Add(new SqlParameter("@id", id));
+			command.Parameters.Add(new SqlParameter("@name", name));
+			command.Parameters.Add(new SqlParameter("@price", price));
+			command.Parameters.Add(new SqlParameter("@publisherId", publisherId));
+			command.Parameters.Add(new SqlParameter("@publishingYear", publishingYear));
+			command.Parameters.Add(new SqlParameter("@pages", pages));
+			command.Parameters.Add(new SqlParameter("@stockStateId", stockStateId));
+			command.Parameters.Add(new SqlParameter("@discount", discount));
+			command.Parameters.Add(new SqlParameter("@typeId", typeId));
+			command.Parameters.Add(new SqlParameter("@genreId", genreId));
+			command.Parameters.Add(new SqlParameter("@isbn", isbn));
+			command.Parameters.Add(new SqlParameter("@authorId", authorId));
+
+			command.ExecuteNonQuery();
+		}
+
+		public static void removeBook(string book)
+		{
+			SqlCommand command = new SqlCommand("sp_removeBook", connection);
+			command.CommandType = CommandType.StoredProcedure;
+			command.Parameters.Add(new SqlParameter("@denumireCarte", book));
+			command.ExecuteNonQuery();
+		}
 	}
 }
