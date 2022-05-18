@@ -23,7 +23,7 @@ namespace forms_librarie_app
 
 		private void SearchPage_Load(object sender, EventArgs e)
 		{
-			
+			buttonClearSearch.BackgroundImageLayout = ImageLayout.Stretch;
 		}
 
 		private void buttonSearch_Click(object sender, EventArgs e)
@@ -72,6 +72,11 @@ namespace forms_librarie_app
 			{
 				catalog.showBookInformation(sender);
 			}
+		}
+
+		private void buttonClearSearch_Click(object sender, EventArgs e)
+		{
+			textBoxSearch.Clear();
 		}
 	}
 }

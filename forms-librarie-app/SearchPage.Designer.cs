@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.textBoxSearch = new System.Windows.Forms.TextBox();
 			this.buttonSearch = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +37,7 @@
 			this.radioButtonFilterName = new System.Windows.Forms.RadioButton();
 			this.radioButtonFilterAuthor = new System.Windows.Forms.RadioButton();
 			this.label2 = new System.Windows.Forms.Label();
+			this.buttonClearSearch = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -74,23 +75,23 @@
 			// 
 			this.dataGridViewResult.AllowUserToAddRows = false;
 			this.dataGridViewResult.AllowUserToDeleteRows = false;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dataGridViewResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dataGridViewResult.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridViewResult.DefaultCellStyle = dataGridViewCellStyle8;
 			this.dataGridViewResult.Location = new System.Drawing.Point(117, 330);
 			this.dataGridViewResult.Name = "dataGridViewResult";
 			this.dataGridViewResult.ReadOnly = true;
@@ -132,11 +133,22 @@
 			this.label2.TabIndex = 8;
 			this.label2.Text = "După:";
 			// 
+			// buttonClearSearch
+			// 
+			this.buttonClearSearch.BackgroundImage = global::forms_librarie_app.Properties.Resources.gray_x;
+			this.buttonClearSearch.Location = new System.Drawing.Point(76, 151);
+			this.buttonClearSearch.Name = "buttonClearSearch";
+			this.buttonClearSearch.Size = new System.Drawing.Size(35, 32);
+			this.buttonClearSearch.TabIndex = 9;
+			this.buttonClearSearch.UseVisualStyleBackColor = true;
+			this.buttonClearSearch.Click += new System.EventHandler(this.buttonClearSearch_Click);
+			// 
 			// SearchPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Orange;
+			this.Controls.Add(this.buttonClearSearch);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.radioButtonFilterAuthor);
 			this.Controls.Add(this.radioButtonFilterName);
@@ -162,5 +174,6 @@
 		private System.Windows.Forms.RadioButton radioButtonFilterName;
 		private System.Windows.Forms.RadioButton radioButtonFilterAuthor;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button buttonClearSearch;
 	}
 }
