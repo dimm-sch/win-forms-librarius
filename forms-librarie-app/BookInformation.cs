@@ -14,10 +14,12 @@ namespace forms_librarie_app
 	{
 		private string link;
 		private Catalog catalog;
+		private FavoriteBooks favoriteBooksPage;
 
-		public BookInformation(Catalog catalog)
+		public BookInformation(Catalog catalog, FavoriteBooks favoriteBooksPage)
 		{
 			this.catalog = catalog;
+			this.favoriteBooksPage = favoriteBooksPage;
 			InitializeComponent();
 		}
 
@@ -70,6 +72,7 @@ namespace forms_librarie_app
 			{
 				buttonAddFavorite.Show();
 				buttonDeleteFavorite.Hide();
+				favoriteBooksPage.fillFavoriteBooksTable();
 			} else
 			{
 				throw new NotSupportedException("Unexpected behaviour.");

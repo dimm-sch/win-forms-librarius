@@ -14,7 +14,7 @@ namespace forms_librarie_app
 	{
 
 		private UserInfo authentifiedUser = null;
-		private Catalog catalog = new Catalog();
+		private Catalog catalog;
 		private SearchPage searchPage;
 		private FavoriteBooks favoriteBooksPage;
 		private Administration administrationPage;
@@ -39,8 +39,11 @@ namespace forms_librarie_app
 			panelContent.Controls.Add(catalog);
 			buttonMainPageLogOut.Visible = false;
 
-			searchPage = new SearchPage(catalog);
+
+			catalog = new Catalog();
 			favoriteBooksPage = new FavoriteBooks(catalog);
+			catalog.setFavoriteBooksPage(favoriteBooksPage);
+			searchPage = new SearchPage(catalog);
 			administrationPage = new Administration();
 			labelNavAdmin.Enabled = false;
 			// avoid log in for testing

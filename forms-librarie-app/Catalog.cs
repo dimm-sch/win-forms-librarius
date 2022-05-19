@@ -15,6 +15,7 @@ namespace forms_librarie_app
 	{
 
 		private HashSet<string> favouriteBooks = new HashSet<string>();
+		private FavoriteBooks favoriteBooksPage;
 
 		public Catalog()
 		{
@@ -26,6 +27,11 @@ namespace forms_librarie_app
 			dataGridViewCategoriiGenuri.DataSource = LibraryDatabase.getCategoriiGenuriTable();
 			dataGridViewCategoriiGenuri.Columns[0].Width = 330;
 		}
+
+		public void setFavoriteBooksPage(FavoriteBooks favoriteBooksPage)
+        {
+			this.favoriteBooksPage = favoriteBooksPage;
+        }
 
 		private void dataGridViewCategoriiGenuri_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -53,7 +59,7 @@ namespace forms_librarie_app
 
 		public void showBookInformation(object sender)
 		{
-			BookInformation bookInfo = new BookInformation(this);
+			BookInformation bookInfo = new BookInformation(this, favoriteBooksPage);
 			bookInfo.Text = "Detalii Carte";
 
 			DataGridView dataGrid = (DataGridView)sender;
