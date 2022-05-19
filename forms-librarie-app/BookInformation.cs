@@ -34,6 +34,8 @@ namespace forms_librarie_app
 			labelPlaceholderBookName.Cursor = Cursors.Hand;
 			buttonDeleteFavorite.Hide();
 			buttonDeleteFavorite.Cursor = Cursors.Hand;
+			this.MaximumSize = this.Size;
+			this.MinimumSize = this.Size;
 
 			if (catalog.isBookFavorite(labelPlaceholderBookName.Text))
 			{

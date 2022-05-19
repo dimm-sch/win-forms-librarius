@@ -25,6 +25,12 @@ namespace forms_librarie_app
 			this.mainSender = mainSender;
 		}
 
+		private void Registration_Load(object sender, EventArgs e)
+		{
+			this.MaximumSize = this.Size;
+			this.MinimumSize = this.Size;
+		}
+
 		private void saveUser(UserInfo user)
 		{
 			LibraryDatabase.saveUser(user.Name, user.Password, user.Role);

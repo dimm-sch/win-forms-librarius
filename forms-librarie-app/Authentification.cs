@@ -25,6 +25,8 @@ namespace forms_librarie_app
 		{
 			comboBoxLoginType.SelectedItem = comboBoxLoginType.Items[0]; // Client
 			buttonLogIn.Cursor = Cursors.Hand;
+			this.MaximumSize = this.Size;
+			this.MinimumSize = this.Size;
 		}
 
 		private void buttonLogIn_Click(object sender, EventArgs e)
