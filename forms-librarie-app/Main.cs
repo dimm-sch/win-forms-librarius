@@ -174,6 +174,12 @@ namespace forms_librarie_app
 
 		private void favorites_Click(object sender, MouseEventArgs e)
 		{
+			if (!isUserAuthentified())
+			{
+				MessageBox.Show("Vă rugăm să vă autentificați");
+				return;
+			}
+
 			favoriteBooksPage.fillFavoriteBooksTable();
 
 			panelContent.Controls.Clear();
