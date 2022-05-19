@@ -339,17 +339,6 @@ GO
 
 GO
 
--- Afisarea datelor din vederi
-
-SELECT *
-FROM vCategorieGen_Gen;
-
-SELECT * 
-FROM vCartiInfo;
-
-SELECT *
-FROM vGenuriUnionCategoriiGenuri;
-
 -- Proceduri
 
 GO
