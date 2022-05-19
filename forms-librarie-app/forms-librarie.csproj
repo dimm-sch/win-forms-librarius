@@ -174,9 +174,7 @@
   <ItemGroup>
     <None Include="logo-removebg.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="gray-x.png" />
   </ItemGroup>
