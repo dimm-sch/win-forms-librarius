@@ -153,12 +153,9 @@ CREATE TABLE Users
 	id INT IDENTITY,
 	nume NVARCHAR(100) UNIQUE not null,
 	parola NVARCHAR(50) not null,
-	rol NVARCHAR(20) check (rol = 'Client' or rol = 'Manager'),
+	rol NVARCHAR(20) check (rol = 'Client' or rol = 'Manager') not null,
 	PRIMARY KEY(id)
 );
-
-alter table Users
-add rol NVARCHAR(20) check (rol = 'Client' or rol = 'Manager')
 
 GO
 
