@@ -29,7 +29,7 @@ namespace forms_librarie_app
 
 		private void buttonLogIn_Click(object sender, EventArgs e)
 		{
-			Dictionary<string, UserInfo> usersCredentials = Registration.readSavedUsers();
+			Dictionary<string, UserInfo> usersCredentials = LibraryDatabase.getSavedUsers();
 
 			string username = textBoxUserName.Text;
 			string password = textBoxUserPassword.Text;

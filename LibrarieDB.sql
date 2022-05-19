@@ -147,6 +147,19 @@ CREATE TABLE CarteAutor
     idCarte INTEGER NOT NULL,
     idAutor INTEGER NOT NULL,
 );
+
+CREATE TABLE Users 
+(
+	id INT IDENTITY,
+	nume NVARCHAR(100) UNIQUE not null,
+	parola NVARCHAR(50) not null,
+	rol NVARCHAR(20) check (rol = 'Client' or rol = 'Manager'),
+	PRIMARY KEY(id)
+);
+
+alter table Users
+add rol NVARCHAR(20) check (rol = 'Client' or rol = 'Manager')
+
 GO
 
 -- Crearea legaturilor dintre tabele
@@ -298,7 +311,6 @@ VALUES
 ,(12,12)
 ,(14,13)
 ,(15,14);
-
 
 GO
 -- Vedere care contine categoriile si genurile corespunzatoare.

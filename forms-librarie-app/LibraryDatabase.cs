@@ -265,6 +265,40 @@ namespace forms_librarie_app
 			return (int)row.ItemArray[0];
 		}
 
+		public static Dictionary<string, UserInfo> getSavedUsers()
+		{
+			string query = "select nume, parola, rol from Users";
+			SqlCommand command = new SqlCommand(query, connection);
+			SqlDataAdapter adapter = new SqlDataAdapter(command);
+			DataTable table = new DataTable();
+			adapter.Fill(table);
+
+			var rows = table.Rows;
+			string name;
+			string password;
+			string role;
+			UserInfo user;
+			Dictionary<string, UserInfo> users = new Dictionary<string, UserInfo>();
+			foreach (DataRow row in rows)
+			{
+				var items = row.ItemArray;
+				name = items[0].ToString();
+				password = items[1].ToString();
+				role = items[2].ToString();
+				user = new UserInfo(name, password, role);
+				users.Add(name, user);
+			}
+
+			return users;
+		}
+
+		public static void saveUser(string name, string password, string role)
+		{
+			string statement = $"INSERT INTO Users(nume, parola, rol) VALUES('{name}', '{password}', '{role}')";
+			SqlCommand command = new SqlCommand(statement, connection);
+			command.ExecuteNonQuery();
+		}
+
 		public static int addAuthor(string lastName, string firstName)
 		{
 			SqlCommand command = new SqlCommand("sp_addAuthor", connection);

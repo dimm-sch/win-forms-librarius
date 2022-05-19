@@ -27,7 +27,7 @@ namespace forms_librarie_app
 
 		private void saveUser(UserInfo user)
 		{
-			File.AppendAllText(USERS_CREDENTIALS_PATH, user.Name + " " + user.Password + " " + user.Role + "\r\n");
+			LibraryDatabase.saveUser(user.Name, user.Password, user.Role);
 		}
 
 		private void buttonSignUp_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace forms_librarie_app
 				return;
 			}
 
-			Dictionary<string, UserInfo> users = readSavedUsers();
+			Dictionary<string, UserInfo> users = LibraryDatabase.getSavedUsers();
 			if (users.ContainsKey(username))
 			{
 				MessageBox.Show("Numele de utilizator introdus este deja înregistrat. Vă rugăm să introduceți alt nume!");
@@ -77,23 +77,5 @@ namespace forms_librarie_app
 			this.Close();
 		}
 
-		public static Dictionary<string, UserInfo> readSavedUsers()
-		{
-			string[] lines = File.ReadAllLines(USERS_CREDENTIALS_PATH);
-			Dictionary<string, UserInfo> usersCredentials = new Dictionary<string, UserInfo>();
-
-			foreach (string line in lines)
-			{
-				string[] words = line.Split(' ');
-				string username = words[0];
-				string password = words[1];
-				string role = words[2];
-				UserInfo user = new UserInfo(username, password, role);
-
-				usersCredentials.Add(username, user);
-			}
-
-			return usersCredentials;
-		}
 	}
 }
