@@ -13,17 +13,11 @@ IF NOT EXISTS (
 CREATE DATABASE Librarius
 GO
 
--- drop database Librarius
--- exec sp_who
-
 -- Se conecteaza la baza de date 'Librarie_Darii_Dumitru' pentru a o putea modifica.
 USE Librarius
 GO
 
 -- Tema: Evidenta cartilor librariei Librarius
-
--- use master
--- drop database Librarie_Darii_Dumitru
 
 -- Crearea tabelelor bazei de date
 
@@ -307,14 +301,6 @@ VALUES
 
 
 GO
-
-
-SELECT * FROM Edituri;
-
-SELECT * FROM Autori;
-
-
-GO
 -- Vedere care contine categoriile si genurile corespunzatoare.
 CREATE VIEW vCategorieGen_Gen
 AS
@@ -364,79 +350,6 @@ FROM vCartiInfo;
 SELECT *
 FROM vGenuriUnionCategoriiGenuri;
 
-
--- Interogari
-
--- Cartile si autorii
-SELECT c.denumire "carte", a.nume "nume autor", a.prenume "prenume autor"
-FROM CarteAutor ca
-    INNER JOIN Carti c ON (c.id = ca.idCarte)
-    INNER JOIN Autori a ON (a.id = ca.idAutor)
-ORDER BY c.denumire;
-
--- Cartile cu reducere
-SELECT c.denumire "carte", c.reducere "reducere"
-FROM Carti c
-WHERE c.reducere IS NOT NULL;
-
--- Cartile care au stocul epuizat
-SELECT c.denumire "carte", ss.denumire "stare stoc"
-FROM Carti c
-    INNER JOIN StariStoc ss ON (c.idStareStoc = ss.id)
-WHERE ss.denumire LIKE 'stoc epuizat';
-
--- Cartile care au stocul suficient
-SELECT c.denumire "carte", ss.denumire "stare stoc"
-FROM Carti c
-    INNER JOIN StariStoc ss ON (c.idStareStoc = ss.id)
-WHERE ss.denumire LIKE 'stoc suficient';
-
--- Cartile de tip cartonate
-SELECT c.denumire "carte", tc.denumire "tip"
-FROM Carti c
-    INNER JOIN TipuriCarti tc ON (c.idTip = tc.id)
-WHERE tc.denumire LIKE 'cartonata';
-
--- Cartile publicate de editura "vremea"
-SELECT c.denumire "carte", e.denumire "editura"
-FROM Carti c
-    INNER JOIN Edituri e ON (c.idEditura = e.id)
-WHERE e.denumire LIKE 'vremea';
-
--- Cartile scrise de "Dabija Nicolae"
-SELECT c.denumire "carte", a.nume "nume autor", a.prenume "prenume autor"
-FROM CarteAutor ca
-    INNER JOIN Autori a ON (ca.idAutor = a.id)
-    INNER JOIN Carti c ON (ca.idCarte = c.id)
-WHERE a.nume LIKE 'Dabija' AND a.prenume LIKE 'Nicolae';
-
--- Informatille despre cartile ce au mai putin de 200 de pagini
-SELECT *
-FROM vCartiInfo
-WHERE nrPagini < 200;
-
--- Genurile din categoria Dictionare
-SELECT *
-FROM vCategorieGen_Gen
-WHERE Categorie LIKE 'dictionare';
-
--- Cartile ce au fost publicate in 2005 si dupa
-SELECT c.denumire "carte", c.anPublicare
-FROM Carti c
-WHERE c.anPublicare >= 2005
-ORDER BY c.anPublicare;
-
--- Darii Dumitru, BD: Librarie_Darii_Dumitru
--- am utilizat len pentru calcularea lungimii denumirii cartilor
--- am utilizat concat pentru a concatena intr-un singur camp denumirea cartii si numele, si prenumele autorului
-select len(Carti.denumire) as [Lungimea denumirii cartii],
-    concat('Cartea: ', Carti.denumire, ' | Autorul: ', Autori.nume, ' ', Autori.prenume) as [Cartea si autorul]
-from CarteAutor
-    inner join Autori on (Autori.id = CarteAutor.idAutor)
-    inner join Carti on (Carti.id = CarteAutor.idCarte)
-order by [Lungimea denumirii cartii];
-
-
 -- Proceduri
 
 GO
@@ -457,28 +370,7 @@ execute spCartiAutoriInBazaEditurii
 
 
 go
-/*BD: Librarie_Darii_Dumitru*/
-/*Insereaza o noua carte in tabelul carti*/
-create procedure sp_insertCarte
-    @idCarte int,
-    @denumireCarte NVARCHAR(90),
-    @pretCarte SMALLMONEY,
-    @idEdituraCarte int,
-    @anPublicareCarte int,
-    @nrPaginiCarte int,
-    @idStareStocCarte int,
-    @reducereCarte int,
-    @idTipCarte int,
-    @idGenCarte int,
-    @isbnCarte char(13)
-as
-INSERT INTO Carti
-    (id, denumire, pret, idEditura, anPublicare, nrPagini, idStareStoc, reducere, idTip, idGen, isbn)
-VALUES
-    (@idCarte, @denumireCarte, @pretCarte, @idEdituraCarte, @anPublicareCarte, @nrPaginiCarte,
-     @idStareStocCarte, @reducereCarte, @idTipCarte, @idGenCarte, @isbnCarte)
 
-GO
 create procedure sp_insertCategorieGen
 	@id int,
 	@denumire NVARCHAR(40)
@@ -561,55 +453,3 @@ begin
 end
 
 GO
-
-
---GO
---create procedure sp_addAuthor
---	@lastName NVARCHAR(25),
---	@firstName NVARCHAR(25),
-
---	@idAuthor int null OUT
---as
---begin
---	insert into Autori(nume, prenume) values (@lastName, @firstName)
---	select @idAuthor = [id] from Autori where nume like @lastName and prenume like @firstName
---	return;
---end
-
-
-
---GO
---create procedure sp_addBook
---	@isAuthorAdded bit,
---	@isPublisherAdded bit,
---	@hasDiscount bit,
---	@id int,
---	@name nvarchar(90),
---	@price smallmoney,
---	@publisher nvarchar(30),
---	@publishingYear int,
---	@pages int,
---	@stockState varchar(25),
---	@discount int,
---	@type varchar(20),
---	@genre varchar(60),
---	@isbn char(13),
---	@authorLastName nvarchar(25),
---	@authorFirstName nvarchar(25),
-
---	@authorId int null
---as
---begin
---	if @isAuthorAdded = 1
---		select @authorId = [id] from Autori
---		where nume like @authorLastName and prenume like @authorFirstName
---	else
---		exec sp_addAuthor @authorLastName, @authorFirstName, @idAuthor = @authorId out
-
-
---end
-
---		$exception	{"The INSERT statement conflicted with the CHECK constraint \"CK__Carti__reducere__1CF15040\". The conflict occurred in database \"Librarius\", table \"dbo.Carti\",
---column 'reducere'.\r\nThe INSERT statement conflicted with the FOREIGN KEY constraint \"FK_CarteAutor_Carte\". The conflict occurred in database \"Librarius\", table \"dbo.Carti\", column 'id'.
---\r\nThe statement has been terminated.\r\nThe statement has been terminated."}	System.Data.SqlClient.SqlException
-
