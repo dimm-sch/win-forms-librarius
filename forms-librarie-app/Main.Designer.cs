@@ -78,8 +78,6 @@
             this.panelNavAdmin.Name = "panelNavAdmin";
             this.panelNavAdmin.Size = new System.Drawing.Size(220, 105);
             this.panelNavAdmin.TabIndex = 6;
-
-
             // 
             // labelNavAdmin
             // 
@@ -101,8 +99,6 @@
             this.panelNavFavorites.Size = new System.Drawing.Size(220, 105);
             this.panelNavFavorites.TabIndex = 5;
             this.panelNavFavorites.MouseClick += new System.Windows.Forms.MouseEventHandler(this.favorites_Click);
-
-
             // 
             // labelNavFavorites
             // 
@@ -124,8 +120,6 @@
             this.panelNavSearch.Size = new System.Drawing.Size(220, 105);
             this.panelNavSearch.TabIndex = 4;
             this.panelNavSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.search_Click);
-
-
             // 
             // labelNavSearch
             // 
@@ -147,8 +141,6 @@
             this.panelNavCatalog.Size = new System.Drawing.Size(220, 105);
             this.panelNavCatalog.TabIndex = 1;
             this.panelNavCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
-
-
             // 
             // labelNavCatalog
             // 
@@ -168,7 +160,7 @@
             this.panelNavMainPage.Name = "panelNavMainPage";
             this.panelNavMainPage.Size = new System.Drawing.Size(220, 105);
             this.panelNavMainPage.TabIndex = 3;
-
+            this.panelNavMainPage.Click += new System.EventHandler(this.mainPage_Click);
             // 
             // labelNavMainPage
             // 
@@ -180,6 +172,7 @@
             this.labelNavMainPage.TabIndex = 2;
             this.labelNavMainPage.Text = "Pagina principală";
             this.labelNavMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelNavMainPage.Click += new System.EventHandler(this.mainPage_Click);
             // 
             // panelMainPage
             // 

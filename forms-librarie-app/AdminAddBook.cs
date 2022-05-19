@@ -41,30 +41,19 @@ namespace forms_librarie_app
 
 		}
 
-		private bool checkId(string txtId)
-		{
-			if (string.IsNullOrWhiteSpace(txtId))
-			{
-				MessageBox.Show("Completați câmpul ID!");
-				return false;
+		private int findAvailableBookId()
+        {
+			for (int id = 1; id <= int.MaxValue; ++id)
+            {
+				var ids = LibraryDatabase.getBookIds();
+				if (!ids.Contains(id))
+                {
+					return id;
+                }
 			}
 
-			int id;
-			if (!int.TryParse(txtId, out id))
-			{
-				MessageBox.Show("ID-ul introdus nu este un număr întreg!");
-				return false;
-			}
-
-			var ids = LibraryDatabase.getBookIds();
-			if (ids.Contains(id))
-			{
-				MessageBox.Show("ID-ul dat este ocupat!");
-				return false;
-			}
-
-			return true;
-		}
+			return -1;
+        }
 
 		private bool checkPrice(string txtPrice)
 		{
@@ -182,13 +171,6 @@ namespace forms_librarie_app
 
 		private void buttonAdd_Click(object sender, EventArgs e)
 		{
-
-
-			if (!checkId(tBoxId.Text))
-			{
-				tBoxId.Clear();
-				return;
-			}
 			if (string.IsNullOrWhiteSpace(tBoxName.Text))
 			{
 				MessageBox.Show("Completați câmpul Denumire!");
@@ -249,7 +231,7 @@ namespace forms_librarie_app
 				isAuthorAdded = true;
 			}
 
-			string id = tBoxId.Text;
+			string id = findAvailableBookId().ToString();
 			string name = tBoxName.Text;
 			string price = tBoxPrice.Text;
 			string publisherId = (isPublisherAdded) 
@@ -283,7 +265,6 @@ namespace forms_librarie_app
 
 		private void clearInputControls()
 		{
-			tBoxId.Clear();
 			tBoxName.Clear();
 			tBoxPrice.Clear();
 			tBoxPublisher.Clear();
@@ -305,5 +286,6 @@ namespace forms_librarie_app
 				tBoxDiscount.Enabled = true;
 			}
 		}
-	}
+
+    }
 }

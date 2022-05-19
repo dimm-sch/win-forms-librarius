@@ -44,7 +44,7 @@ namespace forms_librarie_app
 			administrationPage = new Administration();
 			labelNavAdmin.Enabled = false;
 			// avoid log in for testing
-			authentifyUser(new UserInfo("test", "test", "Manager"));
+			//authentifyUser(new UserInfo("test", "test", "Manager"));
 		}
 
 		// Events
@@ -62,7 +62,7 @@ namespace forms_librarie_app
 			panelContent.Show();
 		}
 
-		private void mainPage_Click(object sender, MouseEventArgs e)
+		private void mainPage_Click(object sender, EventArgs e)
 		{
 			if (!isUserAuthentified())
 			{
