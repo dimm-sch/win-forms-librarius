@@ -40,12 +40,12 @@
             this.panelNavMainPage = new System.Windows.Forms.Panel();
             this.labelNavMainPage = new System.Windows.Forms.Label();
             this.panelMainPage = new System.Windows.Forms.Panel();
+            this.panelContent = new System.Windows.Forms.Panel();
             this.buttonMainPageLogOut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
             this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.panelSidebar.SuspendLayout();
             this.panelNavAdmin.SuspendLayout();
             this.panelNavFavorites.SuspendLayout();
@@ -78,8 +78,8 @@
             this.panelNavAdmin.Name = "panelNavAdmin";
             this.panelNavAdmin.Size = new System.Drawing.Size(220, 105);
             this.panelNavAdmin.TabIndex = 6;
-            this.panelNavAdmin.MouseEnter += new System.EventHandler(this.menuEntryAdmin_Select);
-            this.panelNavAdmin.MouseLeave += new System.EventHandler(this.menuEntryAdmin_Unselect);
+
+
             // 
             // labelNavAdmin
             // 
@@ -91,7 +91,6 @@
             this.labelNavAdmin.Text = "Administrare";
             this.labelNavAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelNavAdmin.Click += new System.EventHandler(this.labelNavAdmin_Click);
-            this.labelNavAdmin.MouseEnter += new System.EventHandler(this.menuEntryAdmin_Select);
             // 
             // panelNavFavorites
             // 
@@ -102,8 +101,8 @@
             this.panelNavFavorites.Size = new System.Drawing.Size(220, 105);
             this.panelNavFavorites.TabIndex = 5;
             this.panelNavFavorites.MouseClick += new System.Windows.Forms.MouseEventHandler(this.favorites_Click);
-            this.panelNavFavorites.MouseEnter += new System.EventHandler(this.menuEntryFavorites_Select);
-            this.panelNavFavorites.MouseLeave += new System.EventHandler(this.menuEntryFavorites_Unselect);
+
+
             // 
             // labelNavFavorites
             // 
@@ -115,7 +114,6 @@
             this.labelNavFavorites.Text = "Cărți Favorite";
             this.labelNavFavorites.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelNavFavorites.MouseClick += new System.Windows.Forms.MouseEventHandler(this.favorites_Click);
-            this.labelNavFavorites.MouseEnter += new System.EventHandler(this.menuEntryFavorites_Select);
             // 
             // panelNavSearch
             // 
@@ -126,8 +124,8 @@
             this.panelNavSearch.Size = new System.Drawing.Size(220, 105);
             this.panelNavSearch.TabIndex = 4;
             this.panelNavSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.search_Click);
-            this.panelNavSearch.MouseEnter += new System.EventHandler(this.menuEntrySearch_Select);
-            this.panelNavSearch.MouseLeave += new System.EventHandler(this.menuEntrySearch_Unselect);
+
+
             // 
             // labelNavSearch
             // 
@@ -139,7 +137,6 @@
             this.labelNavSearch.Text = "Căutare";
             this.labelNavSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelNavSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.search_Click);
-            this.labelNavSearch.MouseEnter += new System.EventHandler(this.menuEntrySearch_Select);
             // 
             // panelNavCatalog
             // 
@@ -150,8 +147,8 @@
             this.panelNavCatalog.Size = new System.Drawing.Size(220, 105);
             this.panelNavCatalog.TabIndex = 1;
             this.panelNavCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
-            this.panelNavCatalog.MouseEnter += new System.EventHandler(this.menuEntryCatalog_Select);
-            this.panelNavCatalog.MouseLeave += new System.EventHandler(this.menuEntryCatalog_Unselect);
+
+
             // 
             // labelNavCatalog
             // 
@@ -163,7 +160,6 @@
             this.labelNavCatalog.TabIndex = 1;
             this.labelNavCatalog.Text = "Catalog";
             this.labelNavCatalog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.catalog_Click);
-            this.labelNavCatalog.MouseEnter += new System.EventHandler(this.menuEntryCatalog_Select);
             // 
             // panelNavMainPage
             // 
@@ -172,9 +168,7 @@
             this.panelNavMainPage.Name = "panelNavMainPage";
             this.panelNavMainPage.Size = new System.Drawing.Size(220, 105);
             this.panelNavMainPage.TabIndex = 3;
-            this.panelNavMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
-            this.panelNavMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
-            this.panelNavMainPage.MouseLeave += new System.EventHandler(this.menuEntryMainPage_Unselect);
+
             // 
             // labelNavMainPage
             // 
@@ -186,8 +180,6 @@
             this.labelNavMainPage.TabIndex = 2;
             this.labelNavMainPage.Text = "Pagina principală";
             this.labelNavMainPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelNavMainPage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainPage_Click);
-            this.labelNavMainPage.MouseEnter += new System.EventHandler(this.menuEntryMainPage_Select);
             // 
             // panelMainPage
             // 
@@ -201,6 +193,16 @@
             this.panelMainPage.Name = "panelMainPage";
             this.panelMainPage.Size = new System.Drawing.Size(818, 604);
             this.panelMainPage.TabIndex = 0;
+            // 
+            // panelContent
+            // 
+            this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(818, 604);
+            this.panelContent.TabIndex = 10;
+            this.panelContent.Visible = false;
             // 
             // buttonMainPageLogOut
             // 
@@ -259,16 +261,6 @@
             this.buttonMainPageAuthentification.Text = "Autentificare";
             this.buttonMainPageAuthentification.UseVisualStyleBackColor = false;
             this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAthentification_Click);
-            // 
-            // panelContent
-            // 
-            this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
-            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContent.Location = new System.Drawing.Point(0, 0);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(818, 604);
-            this.panelContent.TabIndex = 10;
-            this.panelContent.Visible = false;
             // 
             // Main
             // 

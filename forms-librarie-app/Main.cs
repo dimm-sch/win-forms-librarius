@@ -49,56 +49,6 @@ namespace forms_librarie_app
 
 		// Events
 
-		private void menuEntryCatalog_Select(object sender, EventArgs e)
-		{
-			panelNavCatalog.BackColor = SELECTED_COLOR;
-		}
-
-		private void menuEntryCatalog_Unselect(object sender, EventArgs e)
-		{
-			panelNavCatalog.BackColor = UNSELECTED_COLOR;
-		}
-
-		private void menuEntryMainPage_Select(object sender, EventArgs e)
-		{
-			panelNavMainPage.BackColor = SELECTED_COLOR;
-		}
-
-		private void menuEntryMainPage_Unselect(object sender, EventArgs e)
-		{
-			panelNavMainPage.BackColor = UNSELECTED_COLOR;
-		}
-
-		private void menuEntrySearch_Select(object sender, EventArgs e)
-		{
-			panelNavSearch.BackColor = SELECTED_COLOR;
-		}
-
-		private void menuEntrySearch_Unselect(object sender, EventArgs e)
-		{
-			panelNavSearch.BackColor = UNSELECTED_COLOR;
-		}
-
-		private void menuEntryFavorites_Select(object sender, EventArgs e)
-		{
-			panelNavFavorites.BackColor = SELECTED_COLOR;
-		}
-
-		private void menuEntryFavorites_Unselect(object sender, EventArgs e)
-		{
-			panelNavFavorites.BackColor = UNSELECTED_COLOR;
-		}
-
-		private void menuEntryAdmin_Select(object sender, EventArgs e)
-		{
-			panelNavAdmin.BackColor = SELECTED_COLOR;
-		}
-
-		private void menuEntryAdmin_Unselect(object sender, EventArgs e)
-		{
-			panelNavAdmin.BackColor = UNSELECTED_COLOR;
-		}
-
 		private void catalog_Click(object sender, MouseEventArgs e)
 		{
 			if (!isUserAuthentified())
