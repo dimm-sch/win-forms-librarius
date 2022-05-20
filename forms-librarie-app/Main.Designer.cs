@@ -41,12 +41,12 @@
 			this.panelNavMainPage = new System.Windows.Forms.Panel();
 			this.labelNavMainPage = new System.Windows.Forms.Label();
 			this.panelMainPage = new System.Windows.Forms.Panel();
+			this.panelContent = new System.Windows.Forms.Panel();
 			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
 			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
-			this.panelContent = new System.Windows.Forms.Panel();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavAdmin.SuspendLayout();
 			this.panelNavFavorites.SuspendLayout();
@@ -188,6 +188,16 @@
 			this.panelMainPage.Size = new System.Drawing.Size(818, 605);
 			this.panelMainPage.TabIndex = 0;
 			// 
+			// panelContent
+			// 
+			this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
+			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelContent.Location = new System.Drawing.Point(0, 0);
+			this.panelContent.Name = "panelContent";
+			this.panelContent.Size = new System.Drawing.Size(818, 605);
+			this.panelContent.TabIndex = 10;
+			this.panelContent.Visible = false;
+			// 
 			// buttonMainPageLogOut
 			// 
 			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
@@ -244,17 +254,7 @@
 			this.buttonMainPageAuthentification.TabIndex = 6;
 			this.buttonMainPageAuthentification.Text = "Autentificare";
 			this.buttonMainPageAuthentification.UseVisualStyleBackColor = false;
-			this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAthentification_Click);
-			// 
-			// panelContent
-			// 
-			this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
-			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelContent.Location = new System.Drawing.Point(0, 0);
-			this.panelContent.Name = "panelContent";
-			this.panelContent.Size = new System.Drawing.Size(818, 605);
-			this.panelContent.TabIndex = 10;
-			this.panelContent.Visible = false;
+			this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAuthentification_Click);
 			// 
 			// Main
 			// 
@@ -296,7 +296,6 @@
 		private System.Windows.Forms.Panel panelNavSearch;
 		private System.Windows.Forms.Label labelNavSearch;
 		private System.Windows.Forms.Panel panelMainPage;
-		private System.Windows.Forms.Button buttonMainPageLogOut;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label labelMainPageAuthentificationStatus;
@@ -306,6 +305,7 @@
 		private System.Windows.Forms.Panel panelNavAdmin;
 		private System.Windows.Forms.Label labelNavAdmin;
 		private System.Windows.Forms.Panel panelContent;
+		private System.Windows.Forms.Button buttonMainPageLogOut;
 	}
 }
 

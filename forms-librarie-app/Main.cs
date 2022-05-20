@@ -90,7 +90,7 @@ namespace forms_librarie_app
 			panelContent.Show();
 		}
 
-		private void buttonMainPageAthentification_Click(object sender, EventArgs e)
+		private void buttonMainPageAuthentification_Click(object sender, EventArgs e)
 		{
 			Authentification a = new Authentification(this);
 			a.StartPosition = FormStartPosition.CenterScreen;
@@ -146,5 +146,6 @@ namespace forms_librarie_app
 			panelContent.Controls.Add(administrationPage);
 			panelContent.Show();
         }
-    }
+
+	}
 }
