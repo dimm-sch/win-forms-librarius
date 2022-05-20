@@ -41,12 +41,12 @@
 			this.panelNavMainPage = new System.Windows.Forms.Panel();
 			this.labelNavMainPage = new System.Windows.Forms.Label();
 			this.panelMainPage = new System.Windows.Forms.Panel();
-			this.panelContent = new System.Windows.Forms.Panel();
-			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.labelMainPageAuthentificationStatus = new System.Windows.Forms.Label();
 			this.buttonMainPageAuthentification = new System.Windows.Forms.Button();
+			this.buttonMainPageLogOut = new System.Windows.Forms.Button();
+			this.panelContent = new System.Windows.Forms.Panel();
 			this.panelSidebar.SuspendLayout();
 			this.panelNavAdmin.SuspendLayout();
 			this.panelNavFavorites.SuspendLayout();
@@ -188,29 +188,6 @@
 			this.panelMainPage.Size = new System.Drawing.Size(818, 605);
 			this.panelMainPage.TabIndex = 0;
 			// 
-			// panelContent
-			// 
-			this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
-			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panelContent.Location = new System.Drawing.Point(0, 0);
-			this.panelContent.Name = "panelContent";
-			this.panelContent.Size = new System.Drawing.Size(818, 605);
-			this.panelContent.TabIndex = 10;
-			this.panelContent.Visible = false;
-			// 
-			// buttonMainPageLogOut
-			// 
-			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
-			this.buttonMainPageLogOut.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonMainPageLogOut.ForeColor = System.Drawing.Color.White;
-			this.buttonMainPageLogOut.Location = new System.Drawing.Point(185, 408);
-			this.buttonMainPageLogOut.Name = "buttonMainPageLogOut";
-			this.buttonMainPageLogOut.Size = new System.Drawing.Size(451, 94);
-			this.buttonMainPageLogOut.TabIndex = 9;
-			this.buttonMainPageLogOut.Text = "Deconectare";
-			this.buttonMainPageLogOut.UseVisualStyleBackColor = false;
-			this.buttonMainPageLogOut.Click += new System.EventHandler(this.buttonMainPageLogOut_Click);
-			// 
 			// panel2
 			// 
 			this.panel2.BackgroundImage = global::forms_librarie_app.Properties.Resources.logo_removebg;
@@ -255,6 +232,29 @@
 			this.buttonMainPageAuthentification.Text = "Autentificare";
 			this.buttonMainPageAuthentification.UseVisualStyleBackColor = false;
 			this.buttonMainPageAuthentification.Click += new System.EventHandler(this.buttonMainPageAuthentification_Click);
+			// 
+			// buttonMainPageLogOut
+			// 
+			this.buttonMainPageLogOut.BackColor = System.Drawing.Color.Brown;
+			this.buttonMainPageLogOut.Font = new System.Drawing.Font("Cambria", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonMainPageLogOut.ForeColor = System.Drawing.Color.White;
+			this.buttonMainPageLogOut.Location = new System.Drawing.Point(185, 408);
+			this.buttonMainPageLogOut.Name = "buttonMainPageLogOut";
+			this.buttonMainPageLogOut.Size = new System.Drawing.Size(451, 94);
+			this.buttonMainPageLogOut.TabIndex = 9;
+			this.buttonMainPageLogOut.Text = "Deconectare";
+			this.buttonMainPageLogOut.UseVisualStyleBackColor = false;
+			this.buttonMainPageLogOut.Click += new System.EventHandler(this.buttonMainPageLogOut_Click);
+			// 
+			// panelContent
+			// 
+			this.panelContent.BackColor = System.Drawing.Color.BurlyWood;
+			this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelContent.Location = new System.Drawing.Point(0, 0);
+			this.panelContent.Name = "panelContent";
+			this.panelContent.Size = new System.Drawing.Size(818, 605);
+			this.panelContent.TabIndex = 10;
+			this.panelContent.Visible = false;
 			// 
 			// Main
 			// 
