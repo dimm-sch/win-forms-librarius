@@ -361,11 +361,6 @@ FROM CarteAutor ca
     INNER JOIN Autori a ON (a.id = ca.idAutor)
     INNER JOIN Edituri e ON (e.id = c.idEditura)
     WHERE e.denumire like @editura
-GO
-
-
-execute spCartiAutoriInBazaEditurii
-
 
 go
 
