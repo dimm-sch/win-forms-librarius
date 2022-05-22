@@ -83,7 +83,7 @@ namespace forms_librarie_app
 			char dateRowLetter = 'B';
 			string dateCellLocation = dateRowLetter.ToString() + dateRowNumber.ToString();
 
-			string date = DateTime.UtcNow.ToString("MM/dd/yyyy H:mm");
+			string date = DateTime.Now.ToString("MM/dd/yyyy H:mm");
 			string dateCellContent = $"Data exportării: {date}";
 			sheet[dateCellLocation].Value = dateCellContent;
 		}
