@@ -309,6 +309,30 @@ VALUES
 ,(14,13)
 ,(15,14);
 
+INSERT INTO CarteAutor
+(idCarte,idAutor)
+VALUES
+ (1,1)
+,(2,2)
+,(3,3)
+,(4,4)
+,(5,5)
+,(6,6)
+,(7,7)
+,(8,8)
+,(9,9)
+,(10,10)
+,(11,11)
+,(12,12)
+,(14,13)
+,(15,14);
+
+INSERT INTO Users
+(nume, parola, rol)
+VALUES
+ ('admin', '123', 'Manager')
+,('user', '123', 'Client');
+
 GO
 -- Vedere care contine categoriile si genurile corespunzatoare.
 CREATE VIEW vCategorieGen_Gen
