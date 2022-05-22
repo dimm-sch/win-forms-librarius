@@ -444,8 +444,10 @@ begin
 	if @discount = 0
 		set @discount = null
 
-	insert into Carti(denumire, pret, idEditura, anPublicare, nrPagini, idStareStoc, reducere, idTip, idGen, isbn, imagePath, link)
-		values (@name, @price, @publisherId, @publishingYear, @pages, @stockStateId, @discount, @typeId, @genreId, @isbn, @imagePath, @link);
+	set IDENTITY_INSERT Carti ON
+	insert into Carti(id, denumire, pret, idEditura, anPublicare, nrPagini, idStareStoc, reducere, idTip, idGen, isbn, imagePath, link)
+		values (@id, @name, @price, @publisherId, @publishingYear, @pages, @stockStateId, @discount, @typeId, @genreId, @isbn, @imagePath, @link);
+	set IDENTITY_INSERT Carti OFF
 	insert into CarteAutor(idCarte, idAutor) values (@id, @authorId);
 
 	return;
