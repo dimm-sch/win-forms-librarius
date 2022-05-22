@@ -31,7 +31,16 @@ namespace forms_librarie_app
 
 		private void buttonLogIn_Click(object sender, EventArgs e)
 		{
-			Dictionary<string, UserInfo> usersCredentials = LibraryDatabase.getSavedUsers();
+			Dictionary<string, UserInfo> usersCredentials;
+			try
+			{
+				usersCredentials = LibraryDatabase.getSavedUsers();
+			}
+			catch (Exception)
+			{
+				MessageBox.Show("Baza de date nu există pe server!");
+				return;
+			}
 
 			string username = textBoxUserName.Text;
 			string password = textBoxUserPassword.Text;
